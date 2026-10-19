@@ -6,11 +6,16 @@
 <title>ORN Europe — UK Operation Business Case</title>
 <style>
   :root{
-    --black:#000;--ink:#0b0b0d;--panel:#111114;--panel2:#17171b;--panel3:#1d1d22;
-    --line:#26262c;--line2:#32323a;
-    --red:#DC051E;--red-soft:rgba(220,5,30,.12);--red-line:rgba(220,5,30,.4);
-    --white:#f4f4f5;--grey:#a1a1aa;--grey2:#6b6b73;
-    --green:#22c55e;--green-dim:#15803d;--amber:#d9932a;--blue:#4a83d4;
+    /* LIGHT THEME — white background, black & red text. Header stays black for ORN brand. */
+    --headerbg:#000;                 /* black top bar only */
+    --black:#ffffff;                 /* page background (was black) */
+    --ink:#ffffff;                   /* panel / card background */
+    --panel:#ffffff;--panel2:#f6f6f5;--panel3:#f0f0ef;
+    --line:#e4e4e2;--line2:#d4d4d1;
+    --red:#DC051E;--red-soft:#fdecee;--red-line:#f3c9ce;
+    --white:#18181b;                 /* main TEXT colour (now dark) */
+    --grey:#52525b;--grey2:#8a8a90;
+    --green:#15803d;--green-dim:#15803d;--amber:#b45309;--blue:#1d4ed8;
     --serif:Georgia,'Times New Roman',serif;
     --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
   }
@@ -20,7 +25,11 @@
   .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
 
   /* HEADER */
-  header.top{background:var(--black);border-bottom:3px solid var(--red);position:sticky;top:0;z-index:100}
+  header.top{background:var(--headerbg);border-bottom:3px solid var(--red);position:sticky;top:0;z-index:100}
+  header.top .logo-txt .a{color:#fff}
+  header.top .syncpill{color:#a1a1aa;border-color:#2a2a2e}
+  header.top .btn{color:#d4d4d8;background:#141417;border-color:#2a2a2e}
+  header.top .btn:hover{color:#fff;border-color:var(--red)}
   .top-inner{display:flex;align-items:center;justify-content:space-between;height:62px}
   .logo{display:flex;align-items:center;gap:12px}
   .logo-tile{background:var(--red);color:#fff;font-weight:800;font-size:19px;letter-spacing:-1px;padding:6px 11px 7px;border-radius:8px;line-height:1}
@@ -35,7 +44,7 @@
   .btn:hover{color:var(--white);border-color:var(--red)}
 
   /* TABS */
-  nav.tabs{background:var(--ink);border-bottom:1px solid var(--line);position:sticky;top:62px;z-index:90;overflow-x:auto}
+  nav.tabs{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:62px;z-index:90;overflow-x:auto}
   .tabs-inner{display:flex;gap:2px;min-width:max-content}
   .tab{font-size:12.5px;letter-spacing:.5px;color:var(--grey);padding:15px 18px;white-space:nowrap;border-bottom:2px solid transparent;cursor:pointer;transition:.15s;font-weight:500}
   .tab:hover{color:var(--white)}
@@ -90,8 +99,8 @@
   .ctrl label{font-size:12.5px;color:var(--white)}
   .ctrl .val{font-family:var(--serif);font-size:16px;color:var(--red)}
   input[type=range]{width:100%;height:5px;-webkit-appearance:none;appearance:none;background:var(--panel3);border-radius:100px;outline:none}
-  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--red);cursor:pointer;border:2px solid #fff}
-  input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--red);cursor:pointer;border:2px solid #fff}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--red);cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+  input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--red);cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
 
   /* staff / line rows */
   .lrow{display:grid;grid-template-columns:1fr 92px 86px 30px;gap:8px;align-items:center;margin-bottom:7px}
