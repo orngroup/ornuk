@@ -6,8 +6,7 @@
 <title>ORN Europe — UK Operation Business Case</title>
 <style>
   :root{
-    --headerbg:#000;
-    --bg:#ffffff;--card:#ffffff;--panel2:#f6f6f5;--panel3:#f0f0ef;
+    --headerbg:#000;--bg:#ffffff;--card:#ffffff;--panel2:#f6f6f5;--panel3:#eeeeec;
     --line:#e4e4e2;--line2:#d4d4d1;
     --red:#DC051E;--red-soft:#fdecee;--red-line:#f3c9ce;
     --ink:#18181b;--ink2:#3f3f46;--grey:#52525b;--grey2:#8a8a90;
@@ -16,15 +15,14 @@
     --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+  .wrap{max-width:1680px;margin:0 auto;padding:0 18px}
 
   header.top{background:var(--headerbg);border-bottom:3px solid var(--red);position:sticky;top:0;z-index:100}
-  .top-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .top-inner{display:flex;align-items:center;justify-content:space-between;height:58px}
   .logo{display:flex;align-items:center;gap:12px}
-  .logo-tile{background:var(--red);color:#fff;font-weight:800;font-size:19px;letter-spacing:-1px;padding:6px 11px 7px;border-radius:8px;line-height:1}
-  .logo-txt .a{font-size:13px;letter-spacing:2px;font-weight:600;color:#fff}
+  .logo-tile{background:var(--red);color:#fff;font-weight:800;font-size:18px;letter-spacing:-1px;padding:5px 10px 6px;border-radius:7px;line-height:1}
+  .logo-txt .a{font-size:12px;letter-spacing:2px;font-weight:600;color:#fff}
   .logo-txt .b{font-size:8px;letter-spacing:2px;color:#8a8a90;text-transform:uppercase}
   .top-right{display:flex;align-items:center;gap:8px}
   .lockpill{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:#d4d4d8;padding:5px 11px;border:1px solid #2a2a2e;border-radius:100px}
@@ -32,166 +30,136 @@
   .syncpill{display:flex;align-items:center;gap:6px;font-size:11px;color:#a1a1aa;padding:5px 11px;border:1px solid #2a2a2e;border-radius:100px}
   .syncdot{width:7px;height:7px;border-radius:50%;background:#555}
   .syncdot.on{background:#22c55e;box-shadow:0 0 6px #22c55e}.syncdot.off{background:var(--red)}
-  .btn{font-size:11px;letter-spacing:.5px;font-weight:600;padding:7px 12px;border-radius:6px;border:1px solid #2a2a2e;color:#d4d4d8;background:#141417;cursor:pointer;transition:.15s}
+  .btn{font-size:11px;font-weight:600;padding:7px 12px;border-radius:6px;border:1px solid #2a2a2e;color:#d4d4d8;background:#141417;cursor:pointer}
   .btn:hover{color:#fff;border-color:var(--red)}
 
-  nav.tabs{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:60px;z-index:90;overflow-x:auto}
+  nav.tabs{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:58px;z-index:90;overflow-x:auto}
   .tabs-inner{display:flex;gap:2px;min-width:max-content}
-  .tab{font-size:12.5px;letter-spacing:.3px;color:var(--grey);padding:14px 16px;white-space:nowrap;border-bottom:2px solid transparent;cursor:pointer;transition:.15s;font-weight:500}
-  .tab:hover{color:var(--ink)}
-  .tab.active{color:var(--ink);border-bottom-color:var(--red)}
+  .tab{font-size:12.5px;color:var(--grey);padding:14px 16px;white-space:nowrap;border-bottom:2px solid transparent;cursor:pointer;font-weight:500}
+  .tab:hover{color:var(--ink)}.tab.active{color:var(--ink);border-bottom-color:var(--red)}
   .tab .n{color:var(--red);font-weight:700;margin-right:6px}
 
-  section.page{display:none}
-  section.page.active{display:block}
+  section.page{display:none}section.page.active{display:block}
 
-  /* ===== MODEL PAGE ===== */
-  .modelhead{padding:22px 0 6px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px}
-  .modelhead h1{font-family:var(--serif);font-weight:400;font-size:28px;letter-spacing:-.4px}
+  .modelhead{padding:20px 0 4px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .modelhead h1{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:-.4px}
   .modelhead h1 em{color:var(--red);font-style:italic}
   .modelhead .sub{font-size:12px;color:var(--grey2);margin-top:3px}
-  .editacts{display:flex;gap:8px;align-items:center}
+  .editacts{display:flex;gap:8px}
   .lgbtn{font-size:12px;font-weight:600;padding:9px 15px;border-radius:7px;cursor:pointer;border:1px solid var(--line2);background:#fff;color:var(--ink)}
-  .lgbtn.pri{background:var(--red);border-color:var(--red);color:#fff}
-  .lgbtn.pri:hover{background:#b8041a}
+  .lgbtn.pri{background:var(--red);border-color:var(--red);color:#fff}.lgbtn.pri:hover{background:#b8041a}
   .lgbtn:disabled{opacity:.4;cursor:default}
 
-  /* SUMMARY BOXES */
   .summary{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px 0 8px}
-  @media(max-width:860px){.summary{grid-template-columns:repeat(2,1fr)}}
-  .sbox{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);border-top:3px solid var(--line2)}
-  .sbox.rev{border-top-color:var(--green)}
-  .sbox.cost{border-top-color:var(--red)}
-  .sbox.net{border-top-color:var(--ink)}
-  .sbox.fund{border-top-color:var(--amber)}
-  .sbox.margin{border-top-color:var(--blue)}
+  @media(max-width:900px){.summary{grid-template-columns:repeat(2,1fr)}}
+  .sbox{border:1px solid var(--line);border-radius:12px;padding:15px 17px;background:var(--card);border-top:3px solid var(--line2)}
+  .sbox.rev{border-top-color:var(--green)}.sbox.cost{border-top-color:var(--red)}.sbox.net{border-top-color:var(--ink)}.sbox.fund{border-top-color:var(--amber)}.sbox.margin{border-top-color:var(--blue)}
   .sbox .l{font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey2)}
-  .sbox .v{font-family:var(--serif);font-size:27px;margin-top:5px;line-height:1}
+  .sbox .v{font-family:var(--serif);font-size:25px;margin-top:5px;line-height:1}
   .sbox .v.green{color:var(--green)}.sbox .v.red{color:var(--red)}.sbox .v.amber{color:var(--amber)}.sbox .v.blue{color:var(--blue)}
   .sbox .sub{font-size:11px;color:var(--grey2);margin-top:5px}
 
-  .editbar{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--grey);background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:9px 14px;margin:6px 0 14px}
-  .editbar .dot{width:9px;height:9px;border-radius:50%;background:var(--amber);flex:none}
-  .editbar.locked .dot{background:var(--red)}
-
-  /* SPREADSHEET TABLES */
-  .sheet{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:16px}
-  .sheet .cap{background:#000;color:#fff;padding:11px 16px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;display:flex;justify-content:space-between;align-items:center}
-  .sheet .cap .capr{font-family:var(--serif);font-size:16px;letter-spacing:0;text-transform:none;font-weight:400}
-  table.st{width:100%;border-collapse:collapse;font-size:13px}
-  table.st th{background:var(--panel2);font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--grey2);font-weight:700;padding:8px 12px;text-align:right;border-bottom:1px solid var(--line)}
-  table.st th:first-child{text-align:left}
-  table.st td{padding:6px 12px;border-bottom:1px solid var(--line);text-align:right}
-  table.st td:first-child{text-align:left}
-  table.st tr:last-child td{border-bottom:none}
-  table.st input{font-family:var(--sans);font-size:13px;border:1px solid transparent;background:transparent;border-radius:5px;padding:6px 7px;color:var(--ink)}
-  table.st input:hover:not(:disabled){border-color:var(--line2);background:#fff}
-  table.st input:focus{outline:none;border-color:var(--red);background:#fff}
-  table.st input:disabled{color:var(--ink);cursor:default}
-  table.st input.name{width:100%;text-align:left;font-weight:500}
-  table.st input.num{width:100%;text-align:right}
-  table.st .calc{font-family:var(--serif);font-size:14px;font-weight:400}
-  table.st .calc.green{color:var(--green)}
-  table.st .ann{font-family:var(--serif);color:var(--grey);font-size:13px}
-  table.st td.delc{width:34px;text-align:center;padding:6px 4px}
-  table.st .del{background:transparent;border:none;color:var(--grey2);cursor:pointer;font-size:14px}
-  table.st .del:hover{color:var(--red)}
-  table.st .del:disabled{opacity:.25;cursor:default}
-  table.st tr.subtot td{background:var(--panel3);font-weight:700}
-  table.st tr.subtot td .calc,table.st tr.subtot td{font-family:var(--serif)}
-  .addrow td{padding:0;border-bottom:1px solid var(--line)}
-  .addrow button{width:100%;text-align:left;background:transparent;border:none;color:var(--grey);font-size:12px;padding:9px 16px;cursor:pointer}
-  .addrow button:hover{color:var(--red);background:var(--panel2)}
-  .addrow button:disabled{opacity:.4;cursor:default}
-
-  /* column widths */
-  .sales col.cName{width:38%}.sales col.cNum{width:15%}
-  .costs col.cName{width:58%}.costs col.cMth{width:18%}.costs col.cAnn{width:18%}
-
-  .netbar{display:grid;grid-template-columns:1fr auto auto;gap:0;align-items:center;border:2px solid var(--ink);border-radius:12px;overflow:hidden;margin:4px 0 26px}
-  .netbar .nlbl{padding:16px 20px;font-family:var(--serif);font-size:19px}
-  .netbar .nmth,.netbar .nann{padding:16px 22px;text-align:right;font-family:var(--serif);font-size:22px;border-left:1px solid var(--line)}
-  .netbar .cap2{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--grey2);display:block;font-family:var(--sans);margin-bottom:2px}
-  .netbar.pos{border-color:var(--green)}.netbar.pos .nmth,.netbar.pos .nann{color:var(--green)}
-  .netbar.neg{border-color:var(--red)}.netbar.neg .nmth,.netbar.neg .nann{color:var(--red)}
-
-  .scn{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px;align-items:center}
+  .editbar{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--grey);background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:9px 14px;margin:6px 0 12px}
+  .editbar .dot{width:9px;height:9px;border-radius:50%;background:var(--amber);flex:none}.editbar.locked .dot{background:var(--red)}
+  .scn{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px;align-items:center}
   .scn .lbl{font-size:11px;color:var(--grey2);letter-spacing:1px;text-transform:uppercase}
   .scn button{font-size:11px;padding:7px 13px;border-radius:100px;border:1px solid var(--line2);background:#fff;color:var(--grey);cursor:pointer}
-  .scn button:hover{border-color:var(--red-line);color:var(--ink)}
-  .scn button:disabled{opacity:.4;cursor:default}
+  .scn button:hover{border-color:var(--red-line);color:var(--ink)}.scn button:disabled{opacity:.4}
 
-  /* content tabs */
+  /* GRID */
+  .gridwrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin-bottom:16px}
+  table.grid{border-collapse:collapse;font-size:12px;width:max-content;min-width:100%}
+  table.grid th,table.grid td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:0;white-space:nowrap}
+  table.grid thead th{background:#000;color:#fff;font-size:10px;letter-spacing:.5px;text-transform:uppercase;font-weight:700;padding:9px 8px;text-align:right;position:sticky;top:0;z-index:5}
+  table.grid thead th.cap{text-align:left;font-family:var(--serif);font-size:14px;letter-spacing:0;text-transform:none;font-weight:400}
+  table.grid thead th.tot{background:#1a1a1a;border-left:2px solid #333}
+  /* frozen first column */
+  table.grid th.lbl,table.grid td.lbl{position:sticky;left:0;z-index:4;background:#fff;text-align:left;min-width:220px;max-width:220px;padding:7px 10px;border-right:2px solid var(--line2)}
+  table.grid thead th.lbl{z-index:6;background:#000}
+  table.grid td.mcell{padding:0;min-width:74px}
+  table.grid td.mcell input{width:100%;border:none;background:transparent;text-align:right;font-size:12px;padding:7px 8px;font-family:var(--sans);color:var(--ink)}
+  table.grid td.mcell input:hover:not(:disabled){background:#fff8f8;outline:1px solid var(--red-line)}
+  table.grid td.mcell input:focus{outline:2px solid var(--red);background:#fff;position:relative;z-index:3}
+  table.grid td.mcell input:disabled{color:var(--ink2)}
+  table.grid td.calc{text-align:right;padding:7px 8px;font-family:var(--serif);color:var(--green);background:#fafdfb}
+  table.grid td.tot{text-align:right;padding:7px 9px;font-family:var(--serif);font-weight:400;background:var(--panel2);border-left:2px solid var(--line2);min-width:92px}
+  table.grid td.calc.tot{color:var(--green)}
+  table.grid tr.grp td.lbl{font-weight:600}
+  table.grid tr.subrow td.lbl{color:var(--grey);padding-left:22px;font-size:11px}
+  table.grid tr.revrow td{background:#f3faf5;font-weight:700}
+  table.grid tr.revrow td.lbl{color:var(--green);font-weight:700}
+  table.grid tr.sectn td{background:#000;color:#fff;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;text-align:left;padding:8px 10px}
+  table.grid tr.sectn td.lbl{background:#000;color:#fff}
+  table.grid tr.totrow td{background:var(--panel3);font-weight:700;font-family:var(--serif)}
+  table.grid tr.totrow td.lbl{background:var(--panel3)}
+  table.grid tr.netrow td{background:var(--red-soft);font-weight:700;font-family:var(--serif);border-top:2px solid var(--red-line);border-bottom:2px solid var(--red-line)}
+  table.grid tr.netrow td.lbl{background:var(--red-soft)}
+  table.grid tr.netrow td.neg{color:var(--red)}table.grid tr.netrow td.pos{color:var(--green)}
+  table.grid tr.cumrow td{background:#fff;color:var(--grey);font-style:italic}
+  table.grid tr.cumrow td.lbl{background:#fff}
+  .lblflex{display:flex;align-items:center;gap:6px}
+  .lblflex input.nm{flex:1;border:1px solid transparent;background:transparent;font-size:12px;padding:3px 5px;border-radius:4px;color:var(--ink);font-weight:inherit;font-family:var(--sans)}
+  .lblflex input.nm:hover:not(:disabled){border-color:var(--line2);background:#fff}
+  .lblflex input.nm:focus{outline:none;border-color:var(--red);background:#fff}
+  .lblflex .del{background:transparent;border:none;color:var(--grey2);cursor:pointer;font-size:13px;flex:none}
+  .lblflex .del:hover{color:var(--red)}.lblflex .del:disabled{opacity:.25}
+  .addbtnrow{padding:8px 10px;border-bottom:1px solid var(--line)}
+  .addbtnrow button{background:transparent;border:1px dashed var(--line2);border-radius:7px;color:var(--grey);font-size:12px;padding:7px 12px;cursor:pointer}
+  .addbtnrow button:hover{border-color:var(--red-line);color:var(--red)}.addbtnrow button:disabled{opacity:.4}
+
+  /* content tabs (unchanged look) */
   .ct{padding:34px 0 70px}
-  .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-  .eyebrow .rule{width:34px;height:2px;background:var(--red)}
+  .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:16px}.eyebrow .rule{width:34px;height:2px;background:var(--red)}
   .eyebrow span{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red)}
-  h1.big{font-family:var(--serif);font-weight:400;font-size:36px;line-height:1.08;letter-spacing:-.5px;margin-bottom:16px}
-  h1.big em{color:var(--red);font-style:italic}
-  h2{font-family:var(--serif);font-weight:400;font-size:24px;margin:28px 0 14px}
-  h2 em{color:var(--red);font-style:italic}
+  h1.big{font-family:var(--serif);font-weight:400;font-size:36px;line-height:1.08;margin-bottom:16px}h1.big em{color:var(--red);font-style:italic}
+  h2{font-family:var(--serif);font-weight:400;font-size:24px;margin:28px 0 14px}h2 em{color:var(--red);font-style:italic}
   .lead{font-size:16px;color:var(--grey);max-width:800px;line-height:1.7;margin-bottom:10px}
   p.body{font-size:14px;color:var(--grey);max-width:820px;margin-bottom:12px;line-height:1.7}
-  .grid{display:grid;gap:14px}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:1fr 1fr}
+  .grid2{display:grid;gap:14px}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:1fr 1fr}
   @media(max-width:820px){.g3,.g2{grid-template-columns:1fr}}
   .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;border-top:3px solid var(--red)}
   .card h3{font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:9px}.card .ic{font-size:20px}
-  .card p{font-size:13px;color:var(--grey);line-height:1.6}
-  .card ul{list-style:none;margin-top:8px}
-  .card ul li{font-size:12.5px;color:var(--grey);padding:4px 0 4px 16px;position:relative}
-  .card ul li::before{content:"→";position:absolute;left:0;color:var(--red)}
-  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
-  .pill{font-size:11px;padding:6px 12px;border-radius:100px;background:var(--red-soft);border:1px solid var(--red-line);color:#b8041a}
-  .mbars{margin-top:14px}
-  .mbar{display:grid;grid-template-columns:170px 1fr 90px;gap:12px;align-items:center;margin-bottom:9px}
-  .mbar .ml{font-size:12.5px}.mbar .track{height:10px;background:var(--panel3);border-radius:100px;overflow:hidden}
-  .mbar .fill{height:100%;background:var(--red);border-radius:100px}.mbar .mv{font-family:var(--serif);font-size:14px;text-align:right;color:var(--red)}
-  .investbox{background:linear-gradient(180deg,var(--red-soft),transparent);border:1px solid var(--red-line);border-radius:14px;padding:24px;margin-top:10px}
-  .investbox .big{font-family:var(--serif);font-size:44px;line-height:1}.investbox .big .cur{color:var(--red)}
-  .investrow{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
-  .investrow:last-child{border-bottom:none}.investrow .v{font-family:var(--serif);font-size:17px}
-  .ctrl{margin-bottom:15px}.ctrl .top{display:flex;justify-content:space-between;margin-bottom:6px}
-  .ctrl label{font-size:12.5px}.ctrl .val{font-family:var(--serif);font-size:16px;color:var(--red)}
+  .card p{font-size:13px;color:var(--grey);line-height:1.6}.card ul{list-style:none;margin-top:8px}
+  .card ul li{font-size:12.5px;color:var(--grey);padding:4px 0 4px 16px;position:relative}.card ul li::before{content:"→";position:absolute;left:0;color:var(--red)}
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.pill{font-size:11px;padding:6px 12px;border-radius:100px;background:var(--red-soft);border:1px solid var(--red-line);color:#b8041a}
+  .investbox{background:linear-gradient(180deg,var(--red-soft),transparent);border:1px solid var(--red-line);border-radius:14px;padding:24px;margin-top:10px;max-width:520px}
+  .investbox .big{font-family:var(--serif);font-size:42px;line-height:1}.investbox .big .cur{color:var(--red)}
+  .investrow{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}.investrow:last-child{border-bottom:none}.investrow .v{font-family:var(--serif);font-size:17px}
+  .ctrlbox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;max-width:460px;margin-bottom:16px}
+  .ctrlbox h3{font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
+  .ctrl{margin-bottom:15px}.ctrl .top{display:flex;justify-content:space-between;margin-bottom:6px}.ctrl label{font-size:12.5px}.ctrl .val{font-family:var(--serif);font-size:16px;color:var(--red)}
   input[type=range]{width:100%;height:5px;-webkit-appearance:none;appearance:none;background:var(--panel3);border-radius:100px}
   input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--red);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2);cursor:pointer}
-  .ctrlbox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;max-width:460px}
-  .ctrlbox h3{font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
-
-  footer{padding:26px 0 60px;text-align:center;border-top:1px solid var(--line);color:var(--grey2);font-size:12px;line-height:1.8}
-  footer b{color:var(--grey)}
+  footer{padding:26px 0 60px;text-align:center;border-top:1px solid var(--line);color:var(--grey2);font-size:12px;line-height:1.8}footer b{color:var(--grey)}
   .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;font-size:12px;font-weight:700;padding:9px 17px;border-radius:100px;opacity:0;transition:.25s;pointer-events:none;z-index:200}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  .hint{font-size:12px;color:var(--grey2);margin:-6px 0 14px}
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="wrap top-inner">
-    <div class="logo"><div class="logo-tile">orn</div>
-      <div class="logo-txt"><div class="a">EUROPE</div><div class="b">UK Operation · Business Case</div></div></div>
-    <div class="top-right">
-      <div class="lockpill" id="lockpill"><span id="lockicon">🔓</span><span id="lockword">Unlocked</span></div>
-      <div class="syncpill"><span class="syncdot" id="syncdot"></span><span id="synctext">Connecting…</span></div>
-      <button class="btn" onclick="window.print()">Print</button>
-    </div>
+<header class="top"><div class="wrap top-inner">
+  <div class="logo"><div class="logo-tile">orn</div><div class="logo-txt"><div class="a">EUROPE</div><div class="b">UK Operation · Business Case</div></div></div>
+  <div class="top-right">
+    <div class="lockpill" id="lockpill"><span id="lockicon">🔓</span><span id="lockword">Unlocked</span></div>
+    <div class="syncpill"><span class="syncdot" id="syncdot"></span><span id="synctext">Connecting…</span></div>
+    <button class="btn" onclick="window.print()">Print</button>
   </div>
-</header>
+</div></header>
 
 <nav class="tabs"><div class="wrap"><div class="tabs-inner" id="tabs">
   <div class="tab active" data-p="model"><span class="n">£</span>The Model</div>
   <div class="tab" data-p="opportunity"><span class="n">1</span>The Opportunity</div>
   <div class="tab" data-p="deliver"><span class="n">2</span>What We Deliver</div>
-  <div class="tab" data-p="marketing"><span class="n">3</span>Marketing</div>
-  <div class="tab" data-p="invest"><span class="n">4</span>Investment</div>
+  <div class="tab" data-p="invest"><span class="n">3</span>Investment</div>
 </div></div></nav>
 
 <div class="wrap">
 
-<!-- ===== MODEL (landing) ===== -->
 <section class="page active" id="model">
   <div class="modelhead">
     <div><h1>ORN Europe — UK operation <em>revenue model</em></h1>
-      <div class="sub">12-month projection · all figures £ · monthly unless shown as annual</div></div>
+      <div class="sub">12-month seasonal projection · Nov 2026 → Oct 2027 · every month editable · all £</div></div>
     <div class="editacts">
       <button class="lgbtn pri" id="saveLockBtn" onclick="saveAndLock()">Save &amp; Lock</button>
       <button class="lgbtn" id="unlockBtn" onclick="unlock()" style="display:none">Unlock</button>
@@ -199,181 +167,146 @@
     </div>
   </div>
 
-  <!-- SUMMARY BOXES -->
   <div class="summary" id="summary"></div>
-
-  <div class="editbar" id="editbar"><span class="dot"></span><span id="editstate">Unlocked — click any figure to edit. Totals update live.</span></div>
-
+  <div class="editbar" id="editbar"><span class="dot"></span><span id="editstate">Unlocked — click any month cell to edit. Totals update live.</span></div>
   <div class="scn"><span class="lbl">Scenarios:</span>
     <button id="scnLean" onclick="applyScenario('lean')">Lean start</button>
     <button id="scnBase" onclick="applyScenario('base')">Base case</button>
     <button id="scnGrowth" onclick="applyScenario('growth')">Growth 2027</button></div>
+  <p class="hint">Scroll the grid sideways to see all 12 months. The row label stays fixed on the left. Each revenue line shows Bookings · Value · Margin per month, with the calculated Revenue beneath.</p>
 
-  <!-- SALES -->
-  <div class="sheet sales">
-    <div class="cap">Revenue — sales &amp; member bookings<span class="capr">bookings × value × margin % = revenue</span></div>
-    <table class="st"><colgroup><col class="cName"><col class="cNum"><col class="cNum"><col class="cNum"><col class="cNum"><col style="width:34px"></colgroup>
-    <thead><tr><th>Revenue line</th><th>Bookings / mth</th><th>Booking value £</th><th>Margin %</th><th>Revenue / mth</th><th></th></tr></thead>
-    <tbody id="salesRows"></tbody>
-    <tbody><tr class="addrow"><td colspan="6"><button id="addSalesBtn" onclick="addSales()">+ Add revenue line</button></td></tr>
-      <tr class="subtot"><td>Total revenue</td><td></td><td></td><td></td><td class="calc green" id="revTotal">£0</td><td></td></tr></tbody>
-    </table>
-  </div>
-
-  <!-- COSTS -->
-  <div class="sheet costs">
-    <div class="cap">Costs — staff, premises, technology &amp; overheads<span class="capr">monthly £ · annual = ×12</span></div>
-    <table class="st"><colgroup><col class="cName"><col class="cMth"><col class="cAnn"><col style="width:34px"></colgroup>
-    <thead><tr><th>Cost line</th><th>Per month £</th><th>Annual £</th><th></th></tr></thead>
-    <tbody id="costRows"></tbody>
-    <tbody><tr class="addrow"><td colspan="4"><button id="addCostBtn" onclick="addCost()">+ Add cost line</button></td></tr>
-      <tr class="subtot"><td>Total costs</td><td class="calc" id="costTotalM">£0</td><td class="calc" id="costTotalA">£0</td><td></td></tr></tbody>
-    </table>
-  </div>
-
-  <!-- NET -->
-  <div class="netbar" id="netbar">
-    <div class="nlbl">Net profit / (loss)</div>
-    <div class="nmth"><span class="cap2">Per month</span><span id="netMth">£0</span></div>
-    <div class="nann"><span class="cap2">Annual</span><span id="netAnn">£0</span></div>
-  </div>
+  <div class="gridwrap"><table class="grid" id="grid"></table></div>
 </section>
 
-<!-- ===== CONTENT TABS ===== -->
 <section class="page ct" id="opportunity">
   <div class="eyebrow"><span class="rule"></span><span>The Opportunity · 2027</span></div>
   <h1 class="big">A serious UK operation — <em>Europe's delivery engine.</em></h1>
-  <p class="lead">For ORN to win in Europe, it needs a real European office — not a nominal one. A London-based operational DMC that contracts product, controls quality, delivers every booking, and owns the member-club credit programme. This is the only way the UK and Europe will work now.</p>
-  <div class="grid g3" style="margin-top:8px">
-    <div class="card"><h3><span class="ic">🇪🇺</span>Europe is the prize</h3><p>High-value inbound from India, the Middle East, Southeast Asia and Australia — all flowing into European product. The margin is real; today it leaks through poor booking and no control on the ground.</p></div>
-    <div class="card"><h3><span class="ic">🏛️</span>Mayfair base</h3><p>17 Hanover Square — best-in-class London address. A credible operational HQ that partners, hotels and airlines take seriously.</p></div>
-    <div class="card"><h3><span class="ic">🎫</span>Member clubs &amp; credits</h3><p>A recurring revenue line beyond servicing — white-label membership travel clubs distributing member credits, on our own platform.</p></div>
+  <p class="lead">For ORN to win in Europe, it needs a real European office — not a nominal one. A London-based operational DMC that contracts product, controls quality, delivers every booking, and owns the member-club credit programme.</p>
+  <div class="grid2 g3" style="margin-top:8px">
+    <div class="card"><h3><span class="ic">🇪🇺</span>Europe is the prize</h3><p>High-value inbound from India, the Middle East, Southeast Asia and Australia — all flowing into European product. The margin leaks today through poor booking and no control on the ground.</p></div>
+    <div class="card"><h3><span class="ic">🏛️</span>Mayfair base</h3><p>17 Hanover Square — a credible operational HQ that partners, hotels and airlines take seriously.</p></div>
+    <div class="card"><h3><span class="ic">🎫</span>Member clubs &amp; credits</h3><p>A recurring revenue line beyond servicing — white-label membership travel clubs distributing member credits.</p></div>
   </div>
   <h2>Why <em>now</em></h2>
-  <div class="grid g2">
-    <div class="card" style="border-top-color:var(--line)"><h3>The cost of doing nothing</h3><p>Europe has been funded for years with no delivery to standard. Bookings are mishandled, product wrongly loaded, and margin that belongs to the group is lost. Every month without a real operation is money left on the table.</p></div>
-    <div class="card" style="border-top-color:var(--line)"><h3>The 2027 window</h3><p>With licensing in place, a funded team and an agreed marketing budget, we move from fixing to selling. Set up now and 2027 is a full trading year as a licensed UK operation.</p></div>
+  <div class="grid2 g2">
+    <div class="card" style="border-top-color:var(--line)"><h3>The cost of doing nothing</h3><p>Europe has been funded for years with no delivery to standard. Every month without a real operation is money left on the table.</p></div>
+    <div class="card" style="border-top-color:var(--line)"><h3>The 2027 window</h3><p>Set up now and 2027 is a full trading year as a licensed UK operation — not a standing start.</p></div>
   </div>
 </section>
 
 <section class="page ct" id="deliver">
   <div class="eyebrow"><span class="rule"></span><span>What We Deliver</span></div>
   <h1 class="big">One operation. <em>The full European chain.</em></h1>
-  <p class="lead">ORN Europe owns the end-to-end delivery chain and runs it to a single standard — for every office selling Europe, and increasingly selling in its own right.</p>
-  <div class="grid g3">
-    <div class="card"><h3><span class="ic">📝</span>Contracting</h3><ul><li>Hotels at source across Europe</li><li>Cruise &amp; river product</li><li>Transfers, coaches, guides</li><li>10%+ below market targets</li></ul></div>
-    <div class="card"><h3><span class="ic">✅</span>Quality control</h3><ul><li>6-point reconfirmation</li><li>Correcting wrongly-loaded product</li><li>Supplier verification</li><li>One delivery standard</li></ul></div>
-    <div class="card"><h3><span class="ic">🎬</span>Operations &amp; delivery</h3><ul><li>Booking &amp; reconfirmation</li><li>24/7 guest support</li><li>Arrivals &amp; escalation</li><li>Live on the Ops Hub</li></ul></div>
-    <div class="card"><h3><span class="ic">🧳</span>Product</h3><ul><li>White-label running tours</li><li>Bespoke ORN itineraries</li><li>Series &amp; FIT programmes</li><li>Loaded for live booking</li></ul></div>
-    <div class="card"><h3><span class="ic">🎫</span>Member clubs &amp; credits</h3><ul><li>White-label travel clubs</li><li>Member credits &amp; rewards</li><li>Branded booking sites</li><li>Recurring revenue</li></ul></div>
-    <div class="card"><h3><span class="ic">💳</span>Financial control</h3><ul><li>Same-day supplier payment</li><li>Xero transparent reporting</li><li>Margin protection</li><li>Cost savings on components</li></ul></div>
+  <div class="grid2 g3">
+    <div class="card"><h3><span class="ic">📝</span>Contracting</h3><ul><li>Hotels at source across Europe</li><li>Cruise &amp; river product</li><li>Transfers, coaches, guides</li></ul></div>
+    <div class="card"><h3><span class="ic">✅</span>Quality control</h3><ul><li>6-point reconfirmation</li><li>Correcting wrongly-loaded product</li><li>One delivery standard</li></ul></div>
+    <div class="card"><h3><span class="ic">🎬</span>Operations &amp; delivery</h3><ul><li>Booking &amp; reconfirmation</li><li>24/7 guest support</li><li>Live on the Ops Hub</li></ul></div>
+    <div class="card"><h3><span class="ic">🧳</span>Product</h3><ul><li>White-label running tours</li><li>Bespoke ORN itineraries</li><li>Series &amp; FIT programmes</li></ul></div>
+    <div class="card"><h3><span class="ic">🎫</span>Member clubs</h3><ul><li>White-label travel clubs</li><li>Member credits &amp; rewards</li><li>Recurring revenue</li></ul></div>
+    <div class="card"><h3><span class="ic">💳</span>Financial control</h3><ul><li>Same-day supplier payment</li><li>Xero reporting</li><li>Margin protection</li></ul></div>
   </div>
   <h2>The global <em>operating model</em></h2>
-  <div class="grid g3">
-    <div class="card" style="border-top-color:var(--blue)"><h3><span class="ic">🇮🇳</span>India — Bangalore</h3><p>Inbound sales &amp; technology for India. ORN Europe services, QCs and delivers every booking — and sells once licensed.</p></div>
-    <div class="card" style="border-top-color:var(--blue)"><h3><span class="ic">🇦🇺</span>Oceania — Australia</h3><p>Inbound sales for Australia &amp; NZ. Europe owns reconfirmation, QC and ground delivery, follow-the-sun.</p></div>
-    <div class="card" style="border-top-color:var(--red)"><h3><span class="ic">🇬🇧</span>UK &amp; Europe — London</h3><p>The operational hub: contracting, QC, delivery, product, member clubs — and direct sales once licensed.</p></div>
+  <div class="grid2 g3">
+    <div class="card" style="border-top-color:var(--blue)"><h3><span class="ic">🇮🇳</span>India — Bangalore</h3><p>Inbound sales &amp; tech for India. Europe services, QCs and delivers — and sells once licensed.</p></div>
+    <div class="card" style="border-top-color:var(--blue)"><h3><span class="ic">🇦🇺</span>Oceania — Australia</h3><p>Inbound sales for Australia &amp; NZ. Europe owns reconfirmation, QC and delivery.</p></div>
+    <div class="card" style="border-top-color:var(--red)"><h3><span class="ic">🇬🇧</span>UK &amp; Europe — London</h3><p>The hub: contracting, QC, delivery, product, member clubs — and direct sales once licensed.</p></div>
   </div>
-  <div class="pill-row"><span class="pill">Service &amp; QC for all offices today</span><span class="pill">Direct sales once licensed</span><span class="pill">Member-club credits</span><span class="pill">ATOL / ABTA licensed</span></div>
-</section>
-
-<section class="page ct" id="marketing">
-  <div class="eyebrow"><span class="rule"></span><span>Marketing</span></div>
-  <h1 class="big">A funded plan to <em>drive European sales.</em></h1>
-  <p class="lead">Marketing lines live in the cost sheet on The Model tab (edit them there). This is the channel view.</p>
-  <h2>Spend by <em>channel</em></h2>
-  <div class="mbars" id="mktBars"></div>
-  <p class="body" id="mktNote"></p>
+  <div class="pill-row"><span class="pill">Service &amp; QC for all offices today</span><span class="pill">Direct sales once licensed</span><span class="pill">ATOL / ABTA licensed</span></div>
 </section>
 
 <section class="page ct" id="invest">
   <div class="eyebrow"><span class="rule"></span><span>Investment Needed</span></div>
   <h1 class="big">What we need to <em>set this up now.</em></h1>
-  <p class="lead">A fixed funding commitment covers the running cost while sales build, plus one-off set-up and licensing.</p>
+  <p class="lead">Funding covers the cumulative loss across the funded months while sales build seasonally, plus one-off set-up and licensing.</p>
   <div class="ctrlbox">
-    <h3>Funding logic</h3>
     <div class="ctrl"><div class="top"><label>One-off set-up &amp; licensing (£)</label><span class="val" id="setupV">£20,000</span></div><input type="range" id="setup" min="0" max="60000" step="1000"></div>
-    <div class="ctrl"><div class="top"><label>Months funded</label><span class="val" id="runwayV">6</span></div><input type="range" id="runway" min="3" max="12" step="1"></div>
+    <div class="ctrl"><div class="top"><label>Months funded (from month 1)</label><span class="val" id="runwayV">6</span></div><input type="range" id="runway" min="3" max="12" step="1"></div>
   </div>
   <div class="investbox">
     <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b8041a;margin-bottom:8px">Total funding to agree</div>
     <div class="big"><span class="cur">£</span><span id="fundBig">0</span></div>
     <div style="margin-top:18px">
-      <div class="investrow"><span>Net monthly position</span><span class="v" id="invNet">£0</span></div>
-      <div class="investrow"><span>Months funded</span><span class="v" id="invRunway">6</span></div>
-      <div class="investrow"><span>Running cost cover (if loss-making)</span><span class="v" id="invCover">£0</span></div>
+      <div class="investrow"><span>Cumulative loss across funded months</span><span class="v" id="invGap">£0</span></div>
       <div class="investrow"><span>One-off set-up &amp; licensing</span><span class="v" id="invSetup">£0</span></div>
+      <div class="investrow"><span>Year-1 net (all 12 months)</span><span class="v" id="invYear">£0</span></div>
     </div>
   </div>
-  <p class="body" style="font-size:12.5px;color:var(--grey2);margin-top:12px">If the model is already profitable monthly, funding covers only the one-off set-up. If it runs at a monthly loss, funding also covers that loss across the funded months while volume builds.</p>
 </section>
 
 </div>
 
 <footer><div class="wrap">
   <b>ORN Europe Limited</b> · 17 Hanover Square · London W1S 1BN · Confidential — Internal<br>
-  UK Operation Business Case · Prepared by Ajay Kawa for Raj Kumar &amp; Vinay Gupta
+  UK Operation Business Case · Nov 2026 → Oct 2027 · Prepared by Ajay Kawa for Raj Kumar &amp; Vinay Gupta
 </div></footer>
 
 <div class="toast" id="toast">Saved</div>
 
 <script type="module">
 let FB=null;
-async function loadFirebase(){
-  const a=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
-  const d=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js");
-  return {initializeApp:a.initializeApp,getDatabase:d.getDatabase,ref:d.ref,onValue:d.onValue,set:d.set};
-}
+async function loadFirebase(){const a=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");const d=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js");return {initializeApp:a.initializeApp,getDatabase:d.getDatabase,ref:d.ref,onValue:d.onValue,set:d.set};}
 const firebaseConfig={apiKey:"AIzaSyDEA_UgSvAUEWoyJHF6qBw3zWD_7-uiNKo",authDomain:"orn-hotel-review.firebaseapp.com",databaseURL:"https://orn-hotel-review-default-rtdb.europe-west1.firebasedatabase.app",projectId:"orn-hotel-review",storageBucket:"orn-hotel-review.firebasestorage.app",messagingSenderId:"130842489297",appId:"1:130842489297:web:5a554ef0691b42182330f0"};
-const DB_PATH="orn_board/uk_business_case/model_v3";
+const DB_PATH="orn_board/uk_business_case/model_v4";
 const UNLOCK_PW="3131";
+const MONTHS=["Nov 26","Dec 26","Jan 27","Feb 27","Mar 27","Apr 27","May 27","Jun 27","Jul 27","Aug 27","Sep 27","Oct 27"];
+const N=12;
+const arr=(v)=>Array.from({length:N},()=>v);
 
 function defaults(){return{
   sales:[
-    {name:"FIT bookings — ORN AU + TAG + India",bk:20,val:5000,mgn:15},
-    {name:"Membership club bookings",bk:10,val:1500,mgn:15},
-    {name:"Group / series bookings",bk:4,val:8000,mgn:15},
-    {name:"Other / misc revenue",bk:4,val:2500,mgn:15},
+    {name:"FIT bookings — ORN AU + TAG + India", bk:arr(20), val:arr(5000), mgn:arr(15)},
+    {name:"Membership club bookings", bk:arr(10), val:arr(1500), mgn:arr(15)},
+    {name:"Group / series bookings", bk:arr(4), val:arr(8000), mgn:arr(15)},
+    {name:"Other / misc revenue", bk:arr(4), val:arr(2500), mgn:arr(15)},
   ],
   costs:[
-    {name:"Ken Newton — Operations Manager",cost:3000},
-    {name:"Contractor — Contracting",cost:3000},
-    {name:"Tim Windsor — GIT QC Manager",cost:2400},
-    {name:"Admin — Office Support",cost:2400},
-    {name:"Office rent — 17 Hanover Sq, Mayfair",cost:3500},
-    {name:"Office services & business rates",cost:1100},
-    {name:"Phones (3CX / mobiles)",cost:250},
-    {name:"IT, software & systems (Zoho / Nexus)",cost:400},
-    {name:"Insurance",cost:150},
-    {name:"Legal & compliance",cost:200},
-    {name:"Marketing — social & digital",cost:1500},
-    {name:"Marketing — events & roadshows",cost:2200},
-    {name:"Marketing — offline / print & PR",cost:1000},
-    {name:"Marketing — content & CRM",cost:300},
-    {name:"Travel & client entertainment",cost:500},
-    {name:"Contingency / misc",cost:400},
+    {name:"Ken Newton — Operations Manager",m:arr(3000)},
+    {name:"Contractor — Contracting",m:arr(3000)},
+    {name:"Tim Windsor — GIT QC Manager",m:arr(2400)},
+    {name:"Admin — Office Support",m:arr(2400)},
+    {name:"Office rent — 17 Hanover Sq, Mayfair",m:arr(3500)},
+    {name:"Office services & business rates",m:arr(1100)},
+    {name:"Phones (3CX / mobiles)",m:arr(250)},
+    {name:"IT, software & systems",m:arr(400)},
+    {name:"Insurance",m:arr(150)},
+    {name:"Legal & compliance",m:arr(200)},
+    {name:"Marketing — social & digital",m:arr(1500)},
+    {name:"Marketing — events & roadshows",m:arr(2200)},
+    {name:"Marketing — offline / print & PR",m:arr(1000)},
+    {name:"Travel & client entertainment",m:arr(500)},
+    {name:"Contingency / misc",m:arr(400)},
   ],
   setup:20000, runway:6, locked:false
 };}
 
-let M=defaults();
+let M=migrate(load()||defaults());
 let db=null,connected=false;
-const LKEY="orn_uk_case_v3";
+const LKEY="orn_uk_case_v4";
+function load(){try{return JSON.parse(localStorage.getItem(LKEY));}catch(e){return null;}}
 
+function migrate(v){
+  const d=defaults();v=Object.assign({},d,v||{});
+  // ensure arrays length N on every line
+  (v.sales||[]).forEach(s=>{["bk","val","mgn"].forEach(k=>{if(!Array.isArray(s[k]))s[k]=arr(s[k]||0);while(s[k].length<N)s[k].push(s[k][s[k].length-1]||0);s[k]=s[k].slice(0,N);});});
+  (v.costs||[]).forEach(c=>{if(!Array.isArray(c.m))c.m=arr(c.m||c.cost||0);while(c.m.length<N)c.m.push(c.m[c.m.length-1]||0);c.m=c.m.slice(0,N);});
+  return v;
+}
+
+/* helpers */
 const gbp=n=>"£"+Math.round(n).toLocaleString("en-GB");
-const revOf=r=>(Number(r.bk)||0)*(Number(r.val)||0)*((Number(r.mgn)||0)/100);
-const revTotal=()=>M.sales.reduce((a,r)=>a+revOf(r),0);
-const costTotal=()=>M.costs.reduce((a,c)=>a+(Number(c.cost)||0),0);
-const netM=()=>revTotal()-costTotal();
-const isMkt=c=>/market/i.test(c.name);
+const num=n=>Math.round(n).toLocaleString("en-GB");
+const salesRevMonth=(s,i)=>(Number(s.bk[i])||0)*(Number(s.val[i])||0)*((Number(s.mgn[i])||0)/100);
+function revMonth(i){return M.sales.reduce((a,s)=>a+salesRevMonth(s,i),0);}
+function costMonth(i){return M.costs.reduce((a,c)=>a+(Number(c.m[i])||0),0);}
+function netMonthI(i){return revMonth(i)-costMonth(i);}
+function revYear(){let t=0;for(let i=0;i<N;i++)t+=revMonth(i);return t;}
+function costYear(){let t=0;for(let i=0;i<N;i++)t+=costMonth(i);return t;}
+function netYear(){return revYear()-costYear();}
 
 /* firebase */
-async function initFB(){
-  try{FB=await loadFirebase();const app=FB.initializeApp(firebaseConfig);db=FB.getDatabase(app);
-    FB.onValue(FB.ref(db,DB_PATH),snap=>{connected=true;setSync(true);const v=snap.val();if(v){M=migrate(v);localStorage.setItem(LKEY,JSON.stringify(M));renderAll();}},e=>{setSync(false);console.warn(e.message);});
-  }catch(e){setSync(false);console.warn("fb off",e.message);}
-}
-function migrate(v){return Object.assign({},defaults(),v);}
+async function initFB(){try{FB=await loadFirebase();const app=FB.initializeApp(firebaseConfig);db=FB.getDatabase(app);
+  FB.onValue(FB.ref(db,DB_PATH),snap=>{connected=true;setSync(true);const v=snap.val();if(v){M=migrate(v);localStorage.setItem(LKEY,JSON.stringify(M));renderAll();}},e=>{setSync(false);console.warn(e.message);});
+}catch(e){setSync(false);console.warn("fb off",e.message);}}
 function setSync(on){const d=document.getElementById("syncdot"),t=document.getElementById("synctext");if(!d)return;d.className="syncdot "+(on?"on":"off");t.textContent=on?"Live · synced":"Offline · local";}
 function pushSave(){localStorage.setItem(LKEY,JSON.stringify(M));if(db&&connected&&FB){FB.set(FB.ref(db,DB_PATH),M).then(()=>toast("Saved")).catch(()=>{setSync(false);toast("Saved locally");});}else toast("Saved locally");}
 let saveT;function liveSave(){clearTimeout(saveT);saveT=setTimeout(pushSave,600);}
@@ -385,76 +318,134 @@ window.unlock=()=>{const pw=prompt("Password to unlock editing:");if(pw===null)r
 window.resetModel=()=>{if(locked()){alert("Locked — unlock first.");return;}if(confirm("Reset to base plan?")){M=defaults();pushSave();renderAll();}};
 
 /* tabs */
-document.getElementById("tabs").addEventListener("click",e=>{const t=e.target.closest(".tab");if(!t)return;
-  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
-  document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
-  t.classList.add("active");document.getElementById(t.dataset.p).classList.add("active");window.scrollTo({top:0,behavior:"smooth"});});
+document.getElementById("tabs").addEventListener("click",e=>{const t=e.target.closest(".tab");if(!t)return;document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));t.classList.add("active");document.getElementById(t.dataset.p).classList.add("active");window.scrollTo({top:0,behavior:"smooth"});});
 
-/* ---- rows: inputs are not rebuilt while focused (totals update via recalc only) ---- */
-function renderSales(){
-  const tb=document.getElementById("salesRows");if(!tb)return;const dis=locked()?"disabled":"";tb.innerHTML="";
-  M.sales.forEach((r,i)=>{
-    const tr=document.createElement("tr");
-    tr.innerHTML=`<td><input class="name" type="text" value="${(r.name||'').replace(/"/g,'&quot;')}" ${dis}></td>
-      <td><input class="num" type="number" min="0" step="1" value="${r.bk}" ${dis}></td>
-      <td><input class="num" type="number" min="0" step="100" value="${r.val}" ${dis}></td>
-      <td><input class="num" type="number" min="0" step="1" value="${r.mgn}" ${dis}></td>
-      <td class="calc green" data-rev>${gbp(revOf(r))}</td>
-      <td class="delc"><button class="del" ${dis}>✕</button></td>`;
-    const [nm,bk,val,mgn]=tr.querySelectorAll("input");const revCell=tr.querySelector("[data-rev]");
-    nm.addEventListener("input",()=>{r.name=nm.value;liveSave();renderMktBars();});
-    const upd=()=>{r.bk=Number(bk.value)||0;r.val=Number(val.value)||0;r.mgn=Number(mgn.value)||0;revCell.textContent=gbp(revOf(r));recalcTotals();liveSave();};
-    bk.addEventListener("input",upd);val.addEventListener("input",upd);mgn.addEventListener("input",upd);
-    tr.querySelector(".del").addEventListener("click",()=>{if(locked())return;M.sales.splice(i,1);renderSales();recalcTotals();liveSave();});
-    tb.appendChild(tr);
-  });
-}
-function renderCosts(){
-  const tb=document.getElementById("costRows");if(!tb)return;const dis=locked()?"disabled":"";tb.innerHTML="";
-  M.costs.forEach((c,i)=>{
-    const tr=document.createElement("tr");
-    tr.innerHTML=`<td><input class="name" type="text" value="${(c.name||'').replace(/"/g,'&quot;')}" ${dis}></td>
-      <td><input class="num" type="number" min="0" step="50" value="${c.cost}" ${dis}></td>
-      <td class="ann" data-ann>${gbp((Number(c.cost)||0)*12)}</td>
-      <td class="delc"><button class="del" ${dis}>✕</button></td>`;
-    const [nm,cost]=tr.querySelectorAll("input");const annCell=tr.querySelector("[data-ann]");
-    nm.addEventListener("input",()=>{c.name=nm.value;liveSave();renderMktBars();});
-    cost.addEventListener("input",()=>{c.cost=Number(cost.value)||0;annCell.textContent=gbp(c.cost*12);recalcTotals();liveSave();renderMktBars();});
-    tr.querySelector(".del").addEventListener("click",()=>{if(locked())return;M.costs.splice(i,1);renderCosts();recalcTotals();liveSave();renderMktBars();});
-    tb.appendChild(tr);
-  });
-}
-window.addSales=()=>{if(locked())return;M.sales.push({name:"New revenue line",bk:5,val:1500,mgn:15});renderSales();recalcTotals();liveSave();};
-window.addCost=()=>{if(locked())return;M.costs.push({name:"New cost line",cost:500});renderCosts();recalcTotals();liveSave();renderMktBars();};
+/* ---------- GRID RENDER ----------
+   Inputs carry data-* coords. We only rebuild on structural change (add/remove/lock),
+   NOT on each keystroke — keystrokes update model + recomputed output cells in place. */
+function cellInput(val,cls,ds){const dis=locked()?"disabled":"";return `<input type="number" class="${cls}" value="${val}" ${dis} ${ds}>`;}
 
-function recalcTotals(){
-  const rev=revTotal(),cost=costTotal(),net=rev-cost;
-  set("revTotal",gbp(rev));set("costTotalM",gbp(cost));set("costTotalA",gbp(cost*12));
-  set("netMth",net<0?"("+gbp(-net)+")":gbp(net));set("netAnn",net<0?"("+gbp(-net*12)+")":gbp(net*12));
-  const nb=document.getElementById("netbar");if(nb)nb.className="netbar "+(net>=0?"pos":"neg");
-  // summary boxes
-  const mgn=rev>0?(net/rev*100):0;
+function renderGrid(){
+  const g=document.getElementById("grid");if(!g)return;
+  let h="";
+  // header
+  h+="<thead><tr><th class='lbl cap'>Revenue model</th>"+MONTHS.map(m=>`<th>${m}</th>`).join("")+"<th class='tot'>Year 1</th></tr></thead>";
+  // ----- REVENUE -----
+  h+="<tbody id='salesBody'>";
+  h+=`<tr class='sectn'><td class='lbl'>Revenue — sales &amp; member bookings</td>${MONTHS.map(()=>"<td></td>").join("")}<td class='tot'></td></tr>`;
+  M.sales.forEach((s,si)=>{
+    const del=locked()?"disabled":"";
+    // name row (group)
+    h+=`<tr class='grp'><td class='lbl'><div class='lblflex'><input class='nm' data-snm='${si}' value="${(s.name||'').replace(/"/g,'&quot;')}" ${locked()?'disabled':''}><button class='del' data-sdel='${si}' ${del}>✕</button></div></td>${MONTHS.map(()=>"<td></td>").join("")}<td class='tot'></td></tr>`;
+    // bookings
+    h+=`<tr class='subrow'><td class='lbl'>Bookings</td>${s.bk.map((v,i)=>`<td class='mcell'>${cellInput(v,'sbk',`data-s='${si}' data-i='${i}'`)}</td>`).join("")}<td class='tot' data-stot='bk-${si}'>${num(s.bk.reduce((a,x)=>a+(+x||0),0))}</td></tr>`;
+    // value
+    h+=`<tr class='subrow'><td class='lbl'>Value £</td>${s.val.map((v,i)=>`<td class='mcell'>${cellInput(v,'sval',`data-s='${si}' data-i='${i}'`)}</td>`).join("")}<td class='tot'>—</td></tr>`;
+    // margin
+    h+=`<tr class='subrow'><td class='lbl'>Margin %</td>${s.mgn.map((v,i)=>`<td class='mcell'>${cellInput(v,'smgn',`data-s='${si}' data-i='${i}'`)}</td>`).join("")}<td class='tot'>—</td></tr>`;
+    // revenue (calc)
+    h+=`<tr class='revrow'><td class='lbl'>Revenue</td>${s.bk.map((_,i)=>`<td class='calc' data-srev='${si}-${i}'>${gbp(salesRevMonth(s,i))}</td>`).join("")}<td class='calc tot' data-srevtot='${si}'>${gbp(s.bk.reduce((a,_,i)=>a+salesRevMonth(s,i),0))}</td></tr>`;
+  });
+  h+=`<tr class='addbtnrow'><td colspan='${N+2}'><button data-add='sales' ${locked()?'disabled':''}>+ Add revenue line</button></td></tr>`;
+  h+=`<tr class='totrow'><td class='lbl'>Total revenue</td>${MONTHS.map((_,i)=>`<td data-revtot='${i}'>${gbp(revMonth(i))}</td>`).join("")}<td class='tot' data-revtotY>${gbp(revYear())}</td></tr>`;
+  h+="</tbody>";
+  // ----- COSTS -----
+  h+="<tbody id='costBody'>";
+  h+=`<tr class='sectn'><td class='lbl'>Costs — staff, premises, technology &amp; overheads</td>${MONTHS.map(()=>"<td></td>").join("")}<td class='tot'></td></tr>`;
+  M.costs.forEach((c,ci)=>{
+    const del=locked()?"disabled":"";
+    h+=`<tr><td class='lbl'><div class='lblflex'><input class='nm' data-cnm='${ci}' value="${(c.name||'').replace(/"/g,'&quot;')}" ${locked()?'disabled':''}><button class='del' data-cdel='${ci}' ${del}>✕</button></div></td>${c.m.map((v,i)=>`<td class='mcell'>${cellInput(v,'cm',`data-c='${ci}' data-i='${i}'`)}</td>`).join("")}<td class='tot' data-ctot='${ci}'>${gbp(c.m.reduce((a,x)=>a+(+x||0),0))}</td></tr>`;
+  });
+  h+=`<tr class='addbtnrow'><td colspan='${N+2}'><button data-add='cost' ${locked()?'disabled':''}>+ Add cost line</button></td></tr>`;
+  h+=`<tr class='totrow'><td class='lbl'>Total costs</td>${MONTHS.map((_,i)=>`<td data-costtot='${i}'>${gbp(costMonth(i))}</td>`).join("")}<td class='tot' data-costtotY>${gbp(costYear())}</td></tr>`;
+  h+="</tbody>";
+  // ----- NET + CUM -----
+  h+="<tbody>";
+  h+=`<tr class='netrow'><td class='lbl'>Net profit / (loss)</td>${MONTHS.map((_,i)=>{const n=netMonthI(i);return `<td class='${n<0?'neg':'pos'}' data-net='${i}'>${n<0?'('+gbp(-n)+')':gbp(n)}</td>`;}).join("")}<td class='tot ${netYear()<0?'neg':'pos'}' data-netY>${netYear()<0?'('+gbp(-netYear())+')':gbp(netYear())}</td></tr>`;
+  let cum=0;h+=`<tr class='cumrow'><td class='lbl'>Cumulative net</td>${MONTHS.map((_,i)=>{cum+=netMonthI(i);return `<td data-cum='${i}'>${cum<0?'('+gbp(-cum)+')':gbp(cum)}</td>`;}).join("")}<td class='tot' data-cumY>${cum<0?'('+gbp(-cum)+')':gbp(cum)}</td></tr>`;
+  h+="</tbody>";
+  g.innerHTML=h;
+  bindGrid();
+}
+
+function bindGrid(){
+  const g=document.getElementById("grid");
+  // name inputs
+  g.querySelectorAll("input.nm").forEach(inp=>{
+    inp.addEventListener("input",()=>{
+      if(inp.dataset.snm!==undefined)M.sales[+inp.dataset.snm].name=inp.value;
+      if(inp.dataset.cnm!==undefined)M.costs[+inp.dataset.cnm].name=inp.value;
+      liveSave();
+    });
+  });
+  // number cells
+  g.querySelectorAll("input.sbk,input.sval,input.smgn").forEach(inp=>{
+    inp.addEventListener("input",()=>{
+      const si=+inp.dataset.s,i=+inp.dataset.i,v=Number(inp.value)||0;
+      const s=M.sales[si];
+      if(inp.classList.contains("sbk"))s.bk[i]=v;
+      if(inp.classList.contains("sval"))s.val[i]=v;
+      if(inp.classList.contains("smgn"))s.mgn[i]=v;
+      updateOutputs();liveSave();
+    });
+  });
+  g.querySelectorAll("input.cm").forEach(inp=>{
+    inp.addEventListener("input",()=>{const ci=+inp.dataset.c,i=+inp.dataset.i;M.costs[ci].m[i]=Number(inp.value)||0;updateOutputs();liveSave();});
+  });
+  // delete / add
+  g.querySelectorAll("[data-sdel]").forEach(b=>b.addEventListener("click",()=>{if(locked())return;M.sales.splice(+b.dataset.sdel,1);renderGrid();updateOutputs();liveSave();}));
+  g.querySelectorAll("[data-cdel]").forEach(b=>b.addEventListener("click",()=>{if(locked())return;M.costs.splice(+b.dataset.cdel,1);renderGrid();updateOutputs();liveSave();}));
+  g.querySelectorAll("[data-add]").forEach(b=>b.addEventListener("click",()=>{if(locked())return;
+    if(b.dataset.add==="sales")M.sales.push({name:"New revenue line",bk:arr(5),val:arr(1500),mgn:arr(15)});
+    else M.costs.push({name:"New cost line",m:arr(500)});
+    renderGrid();updateOutputs();liveSave();}));
+}
+
+/* update only OUTPUT cells (not inputs) so typing is never interrupted */
+function updateOutputs(){
+  const g=document.getElementById("grid");if(!g)return;
+  // per-sales revenue + row totals
+  M.sales.forEach((s,si)=>{
+    let rt=0;
+    for(let i=0;i<N;i++){const rv=salesRevMonth(s,i);rt+=rv;const c=g.querySelector(`[data-srev='${si}-${i}']`);if(c)c.textContent=gbp(rv);}
+    const ct=g.querySelector(`[data-srevtot='${si}']`);if(ct)ct.textContent=gbp(rt);
+    const bkt=g.querySelector(`[data-stot='bk-${si}']`);if(bkt)bkt.textContent=num(s.bk.reduce((a,x)=>a+(+x||0),0));
+  });
+  // cost row totals
+  M.costs.forEach((c,ci)=>{const t=g.querySelector(`[data-ctot='${ci}']`);if(t)t.textContent=gbp(c.m.reduce((a,x)=>a+(+x||0),0));});
+  // monthly totals, net, cum
+  let cum=0;
+  for(let i=0;i<N;i++){
+    const rv=revMonth(i),co=costMonth(i),nt=rv-co;cum+=nt;
+    upd(g,`[data-revtot='${i}']`,gbp(rv));
+    upd(g,`[data-costtot='${i}']`,gbp(co));
+    const ncell=g.querySelector(`[data-net='${i}']`);if(ncell){ncell.textContent=nt<0?'('+gbp(-nt)+')':gbp(nt);ncell.className=nt<0?'neg':'pos';}
+    upd(g,`[data-cum='${i}']`,cum<0?'('+gbp(-cum)+')':gbp(cum));
+  }
+  upd(g,"[data-revtotY]",gbp(revYear()));
+  upd(g,"[data-costtotY]",gbp(costYear()));
+  const nY=g.querySelector("[data-netY]");if(nY){nY.textContent=netYear()<0?'('+gbp(-netYear())+')':gbp(netYear());nY.className="tot "+(netYear()<0?'neg':'pos');}
+  upd(g,"[data-cumY]",cum<0?'('+gbp(-cum)+')':gbp(cum));
+  renderSummary();renderInvest();
+}
+function upd(g,sel,txt){const el=g.querySelector(sel);if(el)el.textContent=txt;}
+
+function renderSummary(){
+  const rev=revYear()/N,cost=costYear()/N,net=netYear(),mgn=revYear()>0?(net/revYear()*100):0;
   set("summary",`
-    <div class="sbox rev"><div class="l">Revenue / month</div><div class="v green">${gbp(rev)}</div><div class="sub">${gbp(rev*12)} / year</div></div>
-    <div class="sbox cost"><div class="l">Costs / month</div><div class="v red">${gbp(cost)}</div><div class="sub">${gbp(cost*12)} / year</div></div>
-    <div class="sbox net"><div class="l">Net / month</div><div class="v ${net>=0?'green':'red'}">${net<0?'('+gbp(-net)+')':gbp(net)}</div><div class="sub">${net<0?'('+gbp(-net*12)+')':gbp(net*12)} / year</div></div>
+    <div class="sbox rev"><div class="l">Avg revenue / month</div><div class="v green">${gbp(rev)}</div><div class="sub">${gbp(revYear())} year 1</div></div>
+    <div class="sbox cost"><div class="l">Avg cost / month</div><div class="v red">${gbp(cost)}</div><div class="sub">${gbp(costYear())} year 1</div></div>
+    <div class="sbox net"><div class="l">Year-1 net</div><div class="v ${net>=0?'green':'red'}">${net<0?'('+gbp(-net)+')':gbp(net)}</div><div class="sub">across 12 months</div></div>
     <div class="sbox margin"><div class="l">Net margin</div><div class="v blue">${Math.round(mgn)}%</div><div class="sub">of revenue</div></div>
     <div class="sbox fund"><div class="l">Funding to agree</div><div class="v amber">${gbp(funding())}</div><div class="sub">${M.runway} mth + set-up</div></div>`,true);
-  // investment
-  set("fundBig",Math.round(funding()).toLocaleString("en-GB"));
-  const inv=document.getElementById("invNet");if(inv){inv.textContent=net<0?"("+gbp(-net)+")":gbp(net);inv.className="v "+(net>=0?"":"");}
-  set("invRunway",M.runway);set("invCover",gbp(net<0?-net*M.runway:0));set("invSetup",gbp(M.setup));
 }
-function funding(){const net=netM();return (net<0?-net*M.runway:0)+M.setup;}
-
-function renderMktBars(){
-  const bars=document.getElementById("mktBars");if(!bars)return;
-  const mkt=M.costs.filter(isMkt);
-  if(!mkt.length){bars.innerHTML='<p class="body">No marketing lines yet — add cost lines named "Marketing…" on The Model tab.</p>';set("mktNote","");return;}
-  const mx=Math.max(1,...mkt.map(c=>Number(c.cost)||0));
-  bars.innerHTML=mkt.map(c=>`<div class="mbar"><div class="ml">${c.name}</div><div class="track"><div class="fill" style="width:${(c.cost/mx*100)}%"></div></div><div class="mv">${gbp(c.cost)}</div></div>`).join("");
-  const tot=mkt.reduce((a,c)=>a+(Number(c.cost)||0),0);
-  set("mktNote",`Total marketing: ${gbp(tot)} / month · ${gbp(tot*12)} / year.`);
+function cumLossOverRunway(){let gap=0,cum=0;for(let i=0;i<M.runway&&i<N;i++){cum+=netMonthI(i);}if(cum<0)gap=-cum;return gap;}
+function funding(){return cumLossOverRunway()+M.setup;}
+function renderInvest(){
+  set("fundBig",Math.round(funding()).toLocaleString("en-GB"));
+  set("invGap",gbp(cumLossOverRunway()));set("invSetup",gbp(M.setup));
+  const ny=netYear();set("invYear",ny<0?"("+gbp(-ny)+")":gbp(ny));
+  set("runwayV",M.runway);set("setupV",gbp(M.setup));
 }
 
 function renderLockUI(){
@@ -463,35 +454,27 @@ function renderLockUI(){
   document.getElementById("lockicon").textContent=L?"🔒":"🔓";
   document.getElementById("lockword").textContent=L?"Locked":"Unlocked";
   document.getElementById("editbar").className="editbar"+(L?" locked":"");
-  document.getElementById("editstate").textContent=L?"Locked — figures are fixed. Unlock with password to edit.":"Unlocked — click any figure to edit. Totals update live, then Save & Lock.";
+  document.getElementById("editstate").textContent=L?"Locked — figures are fixed. Unlock with password to edit.":"Unlocked — click any month cell to edit. Totals update live, then Save & Lock.";
   document.getElementById("saveLockBtn").style.display=L?"none":"";
   document.getElementById("unlockBtn").style.display=L?"":"none";
-  ["resetBtn","addSalesBtn","addCostBtn","scnLean","scnBase","scnGrowth","setup","runway"].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=L;});
+  ["resetBtn","scnLean","scnBase","scnGrowth","setup","runway"].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=L;});
 }
 
-function renderAll(){
-  renderLockUI();renderSales();renderCosts();renderMktBars();
+function renderAll(){renderLockUI();renderGrid();updateOutputs();
   const sv=document.getElementById("setup"),rw=document.getElementById("runway");
-  if(sv){sv.value=M.setup;document.getElementById("setupV").textContent=gbp(M.setup);}
-  if(rw){rw.value=M.runway;document.getElementById("runwayV").textContent=M.runway;}
-  recalcTotals();
-}
+  if(sv)sv.value=M.setup;if(rw)rw.value=M.runway;}
 
-/* investment sliders */
-["setup","runway"].forEach(id=>{const el=document.getElementById(id);if(!el)return;
-  el.addEventListener("input",()=>{if(locked())return;M[id]=Number(el.value);document.getElementById(id+"V").textContent=id==="setup"?gbp(M[id]):M[id];recalcTotals();liveSave();});});
+["setup","runway"].forEach(id=>{const el=document.getElementById(id);if(!el)return;el.addEventListener("input",()=>{if(locked())return;M[id]=Number(el.value);renderInvest();liveSave();});});
 
-/* scenarios */
 window.applyScenario=function(s){if(locked()){alert("Locked — unlock first.");return;}
   if(s==="base"){const k=M.locked;M=defaults();M.locked=k;}
-  if(s==="lean"){M.sales.forEach(r=>r.bk=Math.round(r.bk*0.6));M.costs.filter(isMkt).forEach(c=>c.cost=Math.round(c.cost*0.6));M.runway=6;}
-  if(s==="growth"){M.sales.forEach(r=>r.bk=Math.round(r.bk*1.8));M.runway=9;}
+  if(s==="lean"){M.sales.forEach(x=>x.bk=x.bk.map(v=>Math.round(v*0.6)));M.runway=6;}
+  if(s==="growth"){M.sales.forEach(x=>x.bk=x.bk.map((v,i)=>Math.round(v*(1.2+i*0.08))));M.runway=9;} // seasonal build
   renderAll();liveSave();};
 
 function set(id,val,html){const el=document.getElementById(id);if(!el)return;if(html)el.innerHTML=val;else el.textContent=val;}
 let toastT;function toast(m){const e=document.getElementById("toast");e.textContent=m;e.classList.add("show");clearTimeout(toastT);toastT=setTimeout(()=>e.classList.remove("show"),1300);}
 
-try{const c=JSON.parse(localStorage.getItem(LKEY));if(c)M=migrate(c);}catch(e){}
 renderAll();initFB();
 </script>
 </body>
