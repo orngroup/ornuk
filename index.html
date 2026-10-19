@@ -17,6 +17,7 @@
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
   .wrap{max-width:1680px;margin:0 auto;padding:0 18px}
+  .narrow{max-width:1080px}
 
   header.top{background:var(--headerbg);border-bottom:3px solid var(--red);position:sticky;top:0;z-index:100}
   .top-inner{display:flex;align-items:center;justify-content:space-between;height:58px}
@@ -28,52 +29,68 @@
   .lockpill{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:#d4d4d8;padding:5px 11px;border:1px solid #2a2a2e;border-radius:100px}
   .lockpill.locked{color:#ff6274;border-color:var(--red)}
   .syncpill{display:flex;align-items:center;gap:6px;font-size:11px;color:#a1a1aa;padding:5px 11px;border:1px solid #2a2a2e;border-radius:100px}
-  .syncdot{width:7px;height:7px;border-radius:50%;background:#555}
-  .syncdot.on{background:#22c55e;box-shadow:0 0 6px #22c55e}.syncdot.off{background:var(--red)}
+  .syncdot{width:7px;height:7px;border-radius:50%;background:#555}.syncdot.on{background:#22c55e;box-shadow:0 0 6px #22c55e}.syncdot.off{background:var(--red)}
   .btn{font-size:11px;font-weight:600;padding:7px 12px;border-radius:6px;border:1px solid #2a2a2e;color:#d4d4d8;background:#141417;cursor:pointer}
   .btn:hover{color:#fff;border-color:var(--red)}
 
   nav.tabs{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:58px;z-index:90;overflow-x:auto}
   .tabs-inner{display:flex;gap:2px;min-width:max-content}
-  .tab{font-size:12.5px;color:var(--grey);padding:14px 16px;white-space:nowrap;border-bottom:2px solid transparent;cursor:pointer;font-weight:500}
+  .tab{font-size:13px;color:var(--grey);padding:14px 20px;white-space:nowrap;border-bottom:2px solid transparent;cursor:pointer;font-weight:500}
   .tab:hover{color:var(--ink)}.tab.active{color:var(--ink);border-bottom-color:var(--red)}
-  .tab .n{color:var(--red);font-weight:700;margin-right:6px}
+  .tab .n{color:var(--red);font-weight:700;margin-right:7px}
 
   section.page{display:none}section.page.active{display:block}
 
+  /* ---------- OPPORTUNITY ---------- */
+  .op{padding:36px 0 60px}
+  .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:16px}.eyebrow .rule{width:34px;height:2px;background:var(--red)}
+  .eyebrow span{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red)}
+  h1.big{font-family:var(--serif);font-weight:400;font-size:40px;line-height:1.08;margin-bottom:16px;letter-spacing:-.5px}h1.big em{color:var(--red);font-style:italic}
+  h2{font-family:var(--serif);font-weight:400;font-size:26px;margin:34px 0 14px}h2 em{color:var(--red);font-style:italic}
+  .lead{font-size:17px;color:var(--grey);max-width:860px;line-height:1.7;margin-bottom:10px}
+  p.body{font-size:14.5px;color:var(--ink2);max-width:860px;margin-bottom:14px;line-height:1.75}
+  .grid2{display:grid;gap:14px}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:1fr 1fr}
+  @media(max-width:820px){.g3,.g2{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;border-top:3px solid var(--red)}
+  .card h3{font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:9px}.card .ic{font-size:20px}
+  .card p{font-size:13px;color:var(--grey);line-height:1.6}.card ul{list-style:none;margin-top:8px}
+  .card ul li{font-size:12.5px;color:var(--grey);padding:4px 0 4px 16px;position:relative}.card ul li::before{content:"→";position:absolute;left:0;color:var(--red)}
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.pill{font-size:11px;padding:6px 12px;border-radius:100px;background:var(--red-soft);border:1px solid var(--red-line);color:#b8041a}
+  .flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0}
+  .flow .node{border:1px solid var(--line);border-radius:10px;padding:12px 16px;background:var(--panel2);font-size:13px;font-weight:600}
+  .flow .node.red{border-color:var(--red-line);background:var(--red-soft);color:#b8041a}
+  .flow .arw{color:var(--red);font-size:18px}
+  .quote{border-left:3px solid var(--red);padding:8px 0 8px 18px;font-family:var(--serif);font-size:19px;color:var(--ink);margin:18px 0;max-width:820px;font-style:italic}
+
+  /* ---------- MODEL / BUDGET ---------- */
   .modelhead{padding:20px 0 4px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px}
-  .modelhead h1{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:-.4px}
-  .modelhead h1 em{color:var(--red);font-style:italic}
+  .modelhead h1{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:-.4px}.modelhead h1 em{color:var(--red);font-style:italic}
   .modelhead .sub{font-size:12px;color:var(--grey2);margin-top:3px}
   .editacts{display:flex;gap:8px}
   .lgbtn{font-size:12px;font-weight:600;padding:9px 15px;border-radius:7px;cursor:pointer;border:1px solid var(--line2);background:#fff;color:var(--ink)}
-  .lgbtn.pri{background:var(--red);border-color:var(--red);color:#fff}.lgbtn.pri:hover{background:#b8041a}
-  .lgbtn:disabled{opacity:.4;cursor:default}
-
+  .lgbtn.pri{background:var(--red);border-color:var(--red);color:#fff}.lgbtn.pri:hover{background:#b8041a}.lgbtn:disabled{opacity:.4;cursor:default}
   .summary{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px 0 8px}
   @media(max-width:900px){.summary{grid-template-columns:repeat(2,1fr)}}
   .sbox{border:1px solid var(--line);border-radius:12px;padding:15px 17px;background:var(--card);border-top:3px solid var(--line2)}
-  .sbox.rev{border-top-color:var(--green)}.sbox.cost{border-top-color:var(--red)}.sbox.net{border-top-color:var(--ink)}.sbox.fund{border-top-color:var(--amber)}.sbox.margin{border-top-color:var(--blue)}
+  .sbox.rev{border-top-color:var(--green)}.sbox.cost{border-top-color:var(--red)}.sbox.net{border-top-color:var(--ink)}.sbox.fund{border-top-color:var(--amber)}.sbox.margin{border-top-color:var(--blue)}.sbox.pax{border-top-color:var(--blue)}
   .sbox .l{font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey2)}
   .sbox .v{font-family:var(--serif);font-size:25px;margin-top:5px;line-height:1}
   .sbox .v.green{color:var(--green)}.sbox .v.red{color:var(--red)}.sbox .v.amber{color:var(--amber)}.sbox .v.blue{color:var(--blue)}
   .sbox .sub{font-size:11px;color:var(--grey2);margin-top:5px}
-
   .editbar{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--grey);background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:9px 14px;margin:6px 0 12px}
   .editbar .dot{width:9px;height:9px;border-radius:50%;background:var(--amber);flex:none}.editbar.locked .dot{background:var(--red)}
   .scn{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px;align-items:center}
   .scn .lbl{font-size:11px;color:var(--grey2);letter-spacing:1px;text-transform:uppercase}
   .scn button{font-size:11px;padding:7px 13px;border-radius:100px;border:1px solid var(--line2);background:#fff;color:var(--grey);cursor:pointer}
   .scn button:hover{border-color:var(--red-line);color:var(--ink)}.scn button:disabled{opacity:.4}
+  .hint{font-size:12px;color:var(--grey2);margin:-6px 0 14px}
 
-  /* GRID */
   .gridwrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin-bottom:16px}
   table.grid{border-collapse:collapse;font-size:12px;width:max-content;min-width:100%}
   table.grid th,table.grid td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:0;white-space:nowrap}
   table.grid thead th{background:#000;color:#fff;font-size:10px;letter-spacing:.5px;text-transform:uppercase;font-weight:700;padding:9px 8px;text-align:right;position:sticky;top:0;z-index:5}
   table.grid thead th.cap{text-align:left;font-family:var(--serif);font-size:14px;letter-spacing:0;text-transform:none;font-weight:400}
   table.grid thead th.tot{background:#1a1a1a;border-left:2px solid #333}
-  /* frozen first column */
   table.grid th.lbl,table.grid td.lbl{position:sticky;left:0;z-index:4;background:#fff;text-align:left;min-width:220px;max-width:220px;padding:7px 10px;border-right:2px solid var(--line2)}
   table.grid thead th.lbl{z-index:6;background:#000}
   table.grid td.mcell{padding:0;min-width:74px}
@@ -82,58 +99,60 @@
   table.grid td.mcell input:focus{outline:2px solid var(--red);background:#fff;position:relative;z-index:3}
   table.grid td.mcell input:disabled{color:var(--ink2)}
   table.grid td.calc{text-align:right;padding:7px 8px;font-family:var(--serif);color:var(--green);background:#fafdfb}
-  table.grid td.tot{text-align:right;padding:7px 9px;font-family:var(--serif);font-weight:400;background:var(--panel2);border-left:2px solid var(--line2);min-width:92px}
+  table.grid td.tot{text-align:right;padding:7px 9px;font-family:var(--serif);background:var(--panel2);border-left:2px solid var(--line2);min-width:92px}
   table.grid td.calc.tot{color:var(--green)}
   table.grid tr.grp td.lbl{font-weight:600}
   table.grid tr.subrow td.lbl{color:var(--grey);padding-left:22px;font-size:11px}
-  table.grid tr.revrow td{background:#f3faf5;font-weight:700}
-  table.grid tr.revrow td.lbl{color:var(--green);font-weight:700}
+  table.grid tr.revrow td{background:#f3faf5;font-weight:700}table.grid tr.revrow td.lbl{color:var(--green);font-weight:700}
   table.grid tr.sectn td{background:#000;color:#fff;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;text-align:left;padding:8px 10px}
   table.grid tr.sectn td.lbl{background:#000;color:#fff}
-  table.grid tr.totrow td{background:var(--panel3);font-weight:700;font-family:var(--serif)}
-  table.grid tr.totrow td.lbl{background:var(--panel3)}
-  table.grid tr.netrow td{background:var(--red-soft);font-weight:700;font-family:var(--serif);border-top:2px solid var(--red-line);border-bottom:2px solid var(--red-line)}
-  table.grid tr.netrow td.lbl{background:var(--red-soft)}
+  table.grid tr.totrow td{background:var(--panel3);font-weight:700;font-family:var(--serif)}table.grid tr.totrow td.lbl{background:var(--panel3)}
+  table.grid tr.netrow td{background:var(--red-soft);font-weight:700;font-family:var(--serif);border-top:2px solid var(--red-line);border-bottom:2px solid var(--red-line)}table.grid tr.netrow td.lbl{background:var(--red-soft)}
   table.grid tr.netrow td.neg{color:var(--red)}table.grid tr.netrow td.pos{color:var(--green)}
-  table.grid tr.cumrow td{background:#fff;color:var(--grey);font-style:italic}
-  table.grid tr.cumrow td.lbl{background:#fff}
+  table.grid tr.cumrow td{background:#fff;color:var(--grey);font-style:italic}table.grid tr.cumrow td.lbl{background:#fff}
   .lblflex{display:flex;align-items:center;gap:6px}
   .lblflex input.nm{flex:1;border:1px solid transparent;background:transparent;font-size:12px;padding:3px 5px;border-radius:4px;color:var(--ink);font-weight:inherit;font-family:var(--sans)}
-  .lblflex input.nm:hover:not(:disabled){border-color:var(--line2);background:#fff}
-  .lblflex input.nm:focus{outline:none;border-color:var(--red);background:#fff}
-  .lblflex .del{background:transparent;border:none;color:var(--grey2);cursor:pointer;font-size:13px;flex:none}
-  .lblflex .del:hover{color:var(--red)}.lblflex .del:disabled{opacity:.25}
+  .lblflex input.nm:hover:not(:disabled){border-color:var(--line2);background:#fff}.lblflex input.nm:focus{outline:none;border-color:var(--red);background:#fff}
+  .lblflex .del{background:transparent;border:none;color:var(--grey2);cursor:pointer;font-size:13px;flex:none}.lblflex .del:hover{color:var(--red)}.lblflex .del:disabled{opacity:.25}
   .addbtnrow{padding:8px 10px;border-bottom:1px solid var(--line)}
   .addbtnrow button{background:transparent;border:1px dashed var(--line2);border-radius:7px;color:var(--grey);font-size:12px;padding:7px 12px;cursor:pointer}
   .addbtnrow button:hover{border-color:var(--red-line);color:var(--red)}.addbtnrow button:disabled{opacity:.4}
 
-  /* content tabs (unchanged look) */
-  .ct{padding:34px 0 70px}
-  .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:16px}.eyebrow .rule{width:34px;height:2px;background:var(--red)}
-  .eyebrow span{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red)}
-  h1.big{font-family:var(--serif);font-weight:400;font-size:36px;line-height:1.08;margin-bottom:16px}h1.big em{color:var(--red);font-style:italic}
-  h2{font-family:var(--serif);font-weight:400;font-size:24px;margin:28px 0 14px}h2 em{color:var(--red);font-style:italic}
-  .lead{font-size:16px;color:var(--grey);max-width:800px;line-height:1.7;margin-bottom:10px}
-  p.body{font-size:14px;color:var(--grey);max-width:820px;margin-bottom:12px;line-height:1.7}
-  .grid2{display:grid;gap:14px}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:1fr 1fr}
-  @media(max-width:820px){.g3,.g2{grid-template-columns:1fr}}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;border-top:3px solid var(--red)}
-  .card h3{font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:9px}.card .ic{font-size:20px}
-  .card p{font-size:13px;color:var(--grey);line-height:1.6}.card ul{list-style:none;margin-top:8px}
-  .card ul li{font-size:12.5px;color:var(--grey);padding:4px 0 4px 16px;position:relative}.card ul li::before{content:"→";position:absolute;left:0;color:var(--red)}
-  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.pill{font-size:11px;padding:6px 12px;border-radius:100px;background:var(--red-soft);border:1px solid var(--red-line);color:#b8041a}
-  .investbox{background:linear-gradient(180deg,var(--red-soft),transparent);border:1px solid var(--red-line);border-radius:14px;padding:24px;margin-top:10px;max-width:520px}
-  .investbox .big{font-family:var(--serif);font-size:42px;line-height:1}.investbox .big .cur{color:var(--red)}
-  .investrow{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}.investrow:last-child{border-bottom:none}.investrow .v{font-family:var(--serif);font-size:17px}
-  .ctrlbox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;max-width:460px;margin-bottom:16px}
-  .ctrlbox h3{font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
+  /* ---------- INVESTMENT ---------- */
+  .inv{padding:30px 0 70px}
+  .tranches{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+  @media(max-width:900px){.tranches{grid-template-columns:1fr}}
+  .tbox{border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--card)}
+  .tbox.t1{border-top:4px solid var(--red)}.tbox.t2{border-top:4px solid var(--amber)}.tbox.bond{border-top:4px solid var(--blue);background:var(--panel2)}
+  .tbox .th{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey2);font-weight:700}
+  .tbox .tp{font-size:12px;color:var(--grey2);margin-top:2px}
+  .tbox .tv{font-family:var(--serif);font-size:38px;margin:10px 0 4px;line-height:1}
+  .tbox.t1 .tv{color:var(--red)}.tbox.t2 .tv{color:var(--amber)}.tbox.bond .tv{color:var(--blue)}
+  .tbox .trow{display:flex;justify-content:space-between;font-size:12.5px;padding:6px 0;border-bottom:1px dashed var(--line);color:var(--ink2)}
+  .tbox .trow:last-child{border-bottom:none}.tbox .trow .v{font-weight:600}
+  .bigfund{border:2px solid var(--ink);border-radius:14px;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:8px}
+  .bigfund .l{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--grey2)}
+  .bigfund .big{font-family:var(--serif);font-size:46px;line-height:1}.bigfund .big .cur{color:var(--red)}
+  .bigfund .note{font-size:12px;color:var(--grey2);max-width:360px}
+  .ctrlbox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;max-width:460px;margin:14px 0}
   .ctrl{margin-bottom:15px}.ctrl .top{display:flex;justify-content:space-between;margin-bottom:6px}.ctrl label{font-size:12.5px}.ctrl .val{font-family:var(--serif);font-size:16px;color:var(--red)}
   input[type=range]{width:100%;height:5px;-webkit-appearance:none;appearance:none;background:var(--panel3);border-radius:100px}
   input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--red);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2);cursor:pointer}
+  /* return table */
+  .rtwrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin-top:8px}
+  table.rt{border-collapse:collapse;font-size:12px;width:max-content;min-width:100%}
+  table.rt th,table.rt td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:8px 10px;text-align:right;white-space:nowrap}
+  table.rt thead th{background:#000;color:#fff;font-size:10px;letter-spacing:.5px;text-transform:uppercase;font-weight:700}
+  table.rt th.lbl,table.rt td.lbl{text-align:left;position:sticky;left:0;background:#fff;border-right:2px solid var(--line2);min-width:180px;font-weight:600}
+  table.rt thead th.lbl{background:#000}
+  table.rt td{font-family:var(--serif)}
+  table.rt tr.pax td{color:var(--blue)}
+  table.rt tr.net td.neg{color:var(--red)}table.rt tr.net td.pos{color:var(--green)}
+  table.rt tr.tot td{background:var(--panel2);border-left:2px solid var(--line2);font-weight:700}
+
   footer{padding:26px 0 60px;text-align:center;border-top:1px solid var(--line);color:var(--grey2);font-size:12px;line-height:1.8}footer b{color:var(--grey)}
   .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;font-size:12px;font-weight:700;padding:9px 17px;border-radius:100px;opacity:0;transition:.25s;pointer-events:none;z-index:200}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-  .hint{font-size:12px;color:var(--grey2);margin:-6px 0 14px}
 </style>
 </head>
 <body>
@@ -148,17 +167,49 @@
 </div></header>
 
 <nav class="tabs"><div class="wrap"><div class="tabs-inner" id="tabs">
-  <div class="tab active" data-p="model"><span class="n">£</span>The Model</div>
-  <div class="tab" data-p="opportunity"><span class="n">1</span>The Opportunity</div>
-  <div class="tab" data-p="deliver"><span class="n">2</span>What We Deliver</div>
-  <div class="tab" data-p="invest"><span class="n">3</span>Investment</div>
+  <div class="tab active" data-p="opportunity"><span class="n">1</span>Opportunity &amp; Services</div>
+  <div class="tab" data-p="budget"><span class="n">2</span>The Budget</div>
+  <div class="tab" data-p="invest"><span class="n">3</span>Investment Needed</div>
 </div></div></nav>
 
-<div class="wrap">
+<!-- ===== TAB 1 — OPPORTUNITY & SERVICES ===== -->
+<section class="page active" id="opportunity"><div class="wrap narrow op">
+  <div class="eyebrow"><span class="rule"></span><span>The Opportunity · 2027</span></div>
+  <h1 class="big">Build in the UK what we proved in <em>Australia.</em></h1>
+  <p class="lead">The ORN Australia operation has been a success — selling globally from one operational base. We now need the same in the UK: an office that sells Europe and worldwide, and acts as the DMC, quality-control and delivery engine for European travel across the whole group.</p>
 
-<section class="page active" id="model">
+  <div class="quote">Australia proved the model. The UK, sitting inside Europe, is the natural hub to contract, control and deliver European product — for every ORN office and in its own right.</div>
+
+  <h2>The Australia → UK <em>conversion</em></h2>
+  <p class="body">Australia built a profitable global-selling operation from scratch. The UK has a structural advantage Australia didn't: it sits on Europe's doorstep, the destination the whole group is selling. That shortens the path from set-up to revenue — the UK can convert fast because the product, the suppliers and the demand are all here.</p>
+  <div class="flow">
+    <div class="node">🇦🇺 Australia — proven global seller</div><div class="arw">→</div>
+    <div class="node">🇬🇧 UK office — same model</div><div class="arw">→</div>
+    <div class="node red">🇪🇺 Europe — contracted, controlled, delivered</div>
+  </div>
+
+  <h2>What the UK office <em>delivers</em></h2>
+  <div class="grid2 g3">
+    <div class="card"><h3><span class="ic">📝</span>Contracting (DMC)</h3><ul><li>Hotels at source across Europe</li><li>Cruise, river &amp; transfers</li><li>Coaches, guides, experiences</li><li>Rates 10%+ below market</li></ul></div>
+    <div class="card"><h3><span class="ic">✅</span>Quality &amp; delivery</h3><ul><li>6-point reconfirmation on every booking</li><li>Correcting wrongly-loaded product</li><li>One delivery standard, every office</li><li>24/7 guest support</li></ul></div>
+    <div class="card"><h3><span class="ic">💷</span>Direct sales</h3><ul><li>Sells Europe &amp; worldwide (like AUS)</li><li>FIT, groups, series, MICE</li><li>Member-club credits</li><li>Own revenue once licensed</li></ul></div>
+    <div class="card"><h3><span class="ic">🌐</span>Servicing the group</h3><ul><li>India (Bangalore) inbound</li><li>Australia &amp; Oceania inbound</li><li>TAG USA &amp; worldwide</li><li>Follow-the-sun cover</li></ul></div>
+    <div class="card"><h3><span class="ic">🎫</span>Member clubs</h3><ul><li>White-label travel clubs</li><li>Member credits &amp; rewards</li><li>Recurring revenue</li></ul></div>
+    <div class="card"><h3><span class="ic">💳</span>Financial control</h3><ul><li>Same-day supplier payment</li><li>Xero transparent reporting</li><li>Margin protected, not leaked</li></ul></div>
+  </div>
+
+  <h2>Why <em>now</em></h2>
+  <div class="grid2 g2">
+    <div class="card" style="border-top-color:var(--line)"><h3>Proven, not speculative</h3><p>This isn't a bet — it's replicating a model that already works in Australia, in the one market closest to the product. The risk is in <em>not</em> doing it: margin keeps leaking through poor booking and no control on the ground.</p></div>
+    <div class="card" style="border-top-color:var(--line)"><h3>A full trading year in 2027</h3><p>Licensed, funded and staffed now, 2027 is a complete trading year. By year-end the operation is profitable — the investment funds the ramp, not an ongoing loss.</p></div>
+  </div>
+  <div class="pill-row"><span class="pill">Proven in Australia</span><span class="pill">Europe on the doorstep</span><span class="pill">DMC + QC + delivery</span><span class="pill">Profitable by year-end</span></div>
+</div></section>
+
+<!-- ===== TAB 2 — BUDGET ===== -->
+<section class="page" id="budget"><div class="wrap">
   <div class="modelhead">
-    <div><h1>ORN Europe — UK operation <em>revenue model</em></h1>
+    <div><h1>ORN Europe — UK operation <em>budget</em></h1>
       <div class="sub">12-month seasonal projection · Nov 2026 → Oct 2027 · every month editable · all £</div></div>
     <div class="editacts">
       <button class="lgbtn pri" id="saveLockBtn" onclick="saveAndLock()">Save &amp; Lock</button>
@@ -166,74 +217,56 @@
       <button class="lgbtn" id="resetBtn" onclick="resetModel()">Reset</button>
     </div>
   </div>
-
   <div class="summary" id="summary"></div>
   <div class="editbar" id="editbar"><span class="dot"></span><span id="editstate">Unlocked — click any month cell to edit. Totals update live.</span></div>
   <div class="scn"><span class="lbl">Scenarios:</span>
     <button id="scnLean" onclick="applyScenario('lean')">Lean start</button>
     <button id="scnBase" onclick="applyScenario('base')">Base case</button>
     <button id="scnGrowth" onclick="applyScenario('growth')">Growth 2027</button></div>
-  <p class="hint">Scroll the grid sideways to see all 12 months. The row label stays fixed on the left. Each revenue line shows Bookings · Value · Margin per month, with the calculated Revenue beneath.</p>
-
+  <p class="hint">Scroll the grid sideways to see all 12 months. The row label stays fixed on the left. Each revenue line shows Bookings · Value · Margin per month, with the calculated Revenue beneath. Pax = bookings × average pax per booking.</p>
   <div class="gridwrap"><table class="grid" id="grid"></table></div>
-</section>
+</div></section>
 
-<section class="page ct" id="opportunity">
-  <div class="eyebrow"><span class="rule"></span><span>The Opportunity · 2027</span></div>
-  <h1 class="big">A serious UK operation — <em>Europe's delivery engine.</em></h1>
-  <p class="lead">For ORN to win in Europe, it needs a real European office — not a nominal one. A London-based operational DMC that contracts product, controls quality, delivers every booking, and owns the member-club credit programme.</p>
-  <div class="grid2 g3" style="margin-top:8px">
-    <div class="card"><h3><span class="ic">🇪🇺</span>Europe is the prize</h3><p>High-value inbound from India, the Middle East, Southeast Asia and Australia — all flowing into European product. The margin leaks today through poor booking and no control on the ground.</p></div>
-    <div class="card"><h3><span class="ic">🏛️</span>Mayfair base</h3><p>17 Hanover Square — a credible operational HQ that partners, hotels and airlines take seriously.</p></div>
-    <div class="card"><h3><span class="ic">🎫</span>Member clubs &amp; credits</h3><p>A recurring revenue line beyond servicing — white-label membership travel clubs distributing member credits.</p></div>
-  </div>
-  <h2>Why <em>now</em></h2>
-  <div class="grid2 g2">
-    <div class="card" style="border-top-color:var(--line)"><h3>The cost of doing nothing</h3><p>Europe has been funded for years with no delivery to standard. Every month without a real operation is money left on the table.</p></div>
-    <div class="card" style="border-top-color:var(--line)"><h3>The 2027 window</h3><p>Set up now and 2027 is a full trading year as a licensed UK operation — not a standing start.</p></div>
-  </div>
-</section>
-
-<section class="page ct" id="deliver">
-  <div class="eyebrow"><span class="rule"></span><span>What We Deliver</span></div>
-  <h1 class="big">One operation. <em>The full European chain.</em></h1>
-  <div class="grid2 g3">
-    <div class="card"><h3><span class="ic">📝</span>Contracting</h3><ul><li>Hotels at source across Europe</li><li>Cruise &amp; river product</li><li>Transfers, coaches, guides</li></ul></div>
-    <div class="card"><h3><span class="ic">✅</span>Quality control</h3><ul><li>6-point reconfirmation</li><li>Correcting wrongly-loaded product</li><li>One delivery standard</li></ul></div>
-    <div class="card"><h3><span class="ic">🎬</span>Operations &amp; delivery</h3><ul><li>Booking &amp; reconfirmation</li><li>24/7 guest support</li><li>Live on the Ops Hub</li></ul></div>
-    <div class="card"><h3><span class="ic">🧳</span>Product</h3><ul><li>White-label running tours</li><li>Bespoke ORN itineraries</li><li>Series &amp; FIT programmes</li></ul></div>
-    <div class="card"><h3><span class="ic">🎫</span>Member clubs</h3><ul><li>White-label travel clubs</li><li>Member credits &amp; rewards</li><li>Recurring revenue</li></ul></div>
-    <div class="card"><h3><span class="ic">💳</span>Financial control</h3><ul><li>Same-day supplier payment</li><li>Xero reporting</li><li>Margin protection</li></ul></div>
-  </div>
-  <h2>The global <em>operating model</em></h2>
-  <div class="grid2 g3">
-    <div class="card" style="border-top-color:var(--blue)"><h3><span class="ic">🇮🇳</span>India — Bangalore</h3><p>Inbound sales &amp; tech for India. Europe services, QCs and delivers — and sells once licensed.</p></div>
-    <div class="card" style="border-top-color:var(--blue)"><h3><span class="ic">🇦🇺</span>Oceania — Australia</h3><p>Inbound sales for Australia &amp; NZ. Europe owns reconfirmation, QC and delivery.</p></div>
-    <div class="card" style="border-top-color:var(--red)"><h3><span class="ic">🇬🇧</span>UK &amp; Europe — London</h3><p>The hub: contracting, QC, delivery, product, member clubs — and direct sales once licensed.</p></div>
-  </div>
-  <div class="pill-row"><span class="pill">Service &amp; QC for all offices today</span><span class="pill">Direct sales once licensed</span><span class="pill">ATOL / ABTA licensed</span></div>
-</section>
-
-<section class="page ct" id="invest">
+<!-- ===== TAB 3 — INVESTMENT ===== -->
+<section class="page" id="invest"><div class="wrap inv">
   <div class="eyebrow"><span class="rule"></span><span>Investment Needed</span></div>
-  <h1 class="big">What we need to <em>set this up now.</em></h1>
-  <p class="lead">Funding covers the cumulative loss across the funded months while sales build seasonally, plus one-off set-up and licensing.</p>
-  <div class="ctrlbox">
-    <div class="ctrl"><div class="top"><label>One-off set-up &amp; licensing (£)</label><span class="val" id="setupV">£20,000</span></div><input type="range" id="setup" min="0" max="60000" step="1000"></div>
-    <div class="ctrl"><div class="top"><label>Months funded (from month 1)</label><span class="val" id="runwayV">6</span></div><input type="range" id="runway" min="3" max="12" step="1"></div>
+  <h1 class="big">Funding the operation — <em>two tranches.</em></h1>
+  <p class="lead">The investment funds the <b>running cost of the operation</b> for the year while sales build — by year-end it is profitable. We draw it in two 6-month tranches, plus a bank-guaranteed bond.</p>
+
+  <div class="bigfund">
+    <div><div class="l">Total cash funding to agree</div><div class="big"><span class="cur">£</span><span id="fundBig">0</span></div></div>
+    <div class="note">Covers the full 12-month running cost of the UK operation plus one-off set-up &amp; licensing. The £50k ABTA/ATOL bond is a bank guarantee, not cash.</div>
   </div>
-  <div class="investbox">
-    <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b8041a;margin-bottom:8px">Total funding to agree</div>
-    <div class="big"><span class="cur">£</span><span id="fundBig">0</span></div>
-    <div style="margin-top:18px">
-      <div class="investrow"><span>Cumulative loss across funded months</span><span class="v" id="invGap">£0</span></div>
-      <div class="investrow"><span>One-off set-up &amp; licensing</span><span class="v" id="invSetup">£0</span></div>
-      <div class="investrow"><span>Year-1 net (all 12 months)</span><span class="v" id="invYear">£0</span></div>
+
+  <div class="tranches">
+    <div class="tbox t1"><div class="th">Tranche 1 · on approval</div><div class="tp">Months 1–6 (Nov 26 – Apr 27)</div>
+      <div class="tv" id="t1v">£0</div>
+      <div class="trow"><span>Running cost, months 1–6</span><span class="v" id="t1run">£0</span></div>
+      <div class="trow"><span>One-off set-up &amp; licensing</span><span class="v" id="t1setup">£0</span></div>
+    </div>
+    <div class="tbox t2"><div class="th">Tranche 2 · month 6</div><div class="tp">Months 7–12 (May 27 – Oct 27)</div>
+      <div class="tv" id="t2v">£0</div>
+      <div class="trow"><span>Running cost, months 7–12</span><span class="v" id="t2run">£0</span></div>
+      <div class="trow"><span>By now partly self-funding</span><span class="v" style="color:var(--green)">revenue building</span></div>
+    </div>
+    <div class="tbox bond"><div class="th">Bond · bank guarantee</div><div class="tp">ABTA / ATOL — not cash</div>
+      <div class="tv" id="bondv">£50,000</div>
+      <div class="trow"><span>Bank-guaranteed, not drawn</span><span class="v">guarantee</span></div>
+      <div class="trow"><span>Separate from cash tranches</span><span class="v">—</span></div>
     </div>
   </div>
-</section>
 
-</div>
+  <div class="ctrlbox">
+    <div class="ctrl"><div class="top"><label>One-off set-up &amp; licensing (£)</label><span class="val" id="setupV">£50,000</span></div><input type="range" id="setup" min="0" max="100000" step="1000"></div>
+    <div class="ctrl"><div class="top"><label>Bond — bank guarantee (£)</label><span class="val" id="bondV">£50,000</span></div><input type="range" id="bond" min="0" max="100000" step="5000"></div>
+    <p class="body" style="font-size:12px;color:var(--grey2);margin:0">Funding tranches are driven live by the running costs on The Budget tab — change a cost there and the tranches update. Revenue builds the operation into profit; funding covers the cost base.</p>
+  </div>
+
+  <h2>12-month <em>return &amp; passenger</em> projection</h2>
+  <p class="body">Based on your monthly bookings at an average of <b id="paxAvgLbl">3</b> passengers per booking. Shows revenue returned, bookings and passengers carried, and the net position building to profit.</p>
+  <div class="rtwrap"><table class="rt" id="rtbl"></table></div>
+  <p class="body" style="font-size:12.5px;color:var(--grey2);margin-top:12px">The group earns the booking margin in each selling office's P&amp;L; ORN Europe protects and delivers it. The funding above covers Europe's running cost, repaid by the operation reaching monthly profit within the year.</p>
+</div></section>
 
 <footer><div class="wrap">
   <b>ORN Europe Limited</b> · 17 Hanover Square · London W1S 1BN · Confidential — Internal<br>
@@ -246,64 +279,70 @@
 let FB=null;
 async function loadFirebase(){const a=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");const d=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js");return {initializeApp:a.initializeApp,getDatabase:d.getDatabase,ref:d.ref,onValue:d.onValue,set:d.set};}
 const firebaseConfig={apiKey:"AIzaSyDEA_UgSvAUEWoyJHF6qBw3zWD_7-uiNKo",authDomain:"orn-hotel-review.firebaseapp.com",databaseURL:"https://orn-hotel-review-default-rtdb.europe-west1.firebasedatabase.app",projectId:"orn-hotel-review",storageBucket:"orn-hotel-review.firebasestorage.app",messagingSenderId:"130842489297",appId:"1:130842489297:web:5a554ef0691b42182330f0"};
-const DB_PATH="orn_board/uk_business_case/model_v4";
+const DB_PATH="orn_board/uk_business_case/model_v5";
 const UNLOCK_PW="3131";
 const MONTHS=["Nov 26","Dec 26","Jan 27","Feb 27","Mar 27","Apr 27","May 27","Jun 27","Jul 27","Aug 27","Sep 27","Oct 27"];
 const N=12;
-const arr=(v)=>Array.from({length:N},()=>v);
+const A=(list)=>list.slice(0,N);
 
 function defaults(){return{
+  paxAvg:3,
   sales:[
-    {name:"FIT bookings — ORN AU + TAG + India", bk:arr(20), val:arr(5000), mgn:arr(15)},
-    {name:"Membership club bookings", bk:arr(10), val:arr(1500), mgn:arr(15)},
-    {name:"Group / series bookings", bk:arr(4), val:arr(8000), mgn:arr(15)},
-    {name:"Other / misc revenue", bk:arr(4), val:arr(2500), mgn:arr(15)},
+    {name:"FIT bookings — ORN AU + TAG + India", bk:A([10,20,50,50,75,75,100,100,200,200,200,200]), val:A([2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000]), mgn:A([15,15,15,15,15,15,15,15,15,15,15,15])},
+    {name:"Membership club bookings", bk:A([0,0,50,50,50,75,75,75,100,100,100,100]), val:A([1500,1500,1500,1500,1500,1500,1500,1500,1500,1500,1500,1500]), mgn:A([15,15,15,15,15,15,15,15,15,15,15,15])},
+    {name:"Other / misc revenue", bk:A([4,4,4,4,4,4,4,4,4,4,4,4]), val:A([2500,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500]), mgn:A([15,15,15,15,15,15,15,15,15,15,15,15])},
   ],
   costs:[
-    {name:"Ken Newton — Operations Manager",m:arr(3000)},
-    {name:"Contractor — Contracting",m:arr(3000)},
-    {name:"Tim Windsor — GIT QC Manager",m:arr(2400)},
-    {name:"Admin — Office Support",m:arr(2400)},
-    {name:"Office rent — 17 Hanover Sq, Mayfair",m:arr(3500)},
-    {name:"Office services & business rates",m:arr(1100)},
-    {name:"Phones (3CX / mobiles)",m:arr(250)},
-    {name:"IT, software & systems",m:arr(400)},
-    {name:"Insurance",m:arr(150)},
-    {name:"Legal & compliance",m:arr(200)},
-    {name:"Marketing — social & digital",m:arr(1500)},
-    {name:"Marketing — events & roadshows",m:arr(2200)},
-    {name:"Marketing — offline / print & PR",m:arr(1000)},
-    {name:"Travel & client entertainment",m:arr(500)},
-    {name:"Contingency / misc",m:arr(400)},
+    {name:"Ken Newton — Operations Manager",m:A([3000,3000,3000,3000,3000,3000,3000,3000,3000,3000,3000,3000])},
+    {name:"Contractor — Contracting",m:A([3000,3000,3000,3000,3000,3000,3000,3000,3000,3000,3000,3000])},
+    {name:"Tim Windsor — GIT QC Manager",m:A([2400,2400,2400,2400,2400,2400,2400,2400,2400,2400,2400,2400])},
+    {name:"Admin — Office Support",m:A([1500,1500,1500,1500,1500,1500,1500,1500,1500,1500,1500,1500])},
+    {name:"Office rent — 17 Hanover Sq, Mayfair",m:A([2500,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500])},
+    {name:"Phones (3CX / mobiles)",m:A([250,250,250,250,250,250,250,250,250,250,250,250])},
+    {name:"IT, software & systems",m:A([400,400,400,400,400,400,400,400,400,400,400,400])},
+    {name:"Insurance",m:A([150,150,150,150,150,150,150,150,150,150,150,150])},
+    {name:"Legal & compliance",m:A([200,200,200,200,200,200,200,200,200,200,200,200])},
+    {name:"Marketing — social & digital",m:A([0,1500,1500,1500,1500,1500,1500,1500,1500,1500,1500,1500])},
+    {name:"Marketing — events & roadshows",m:A([0,0,2200,2200,2200,2200,2200,2200,2200,2200,2200,2200])},
+    {name:"Marketing — offline / print & PR",m:A([0,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000])},
+    {name:"Travel & client entertainment",m:A([0,500,500,500,500,500,500,500,500,500,500,500])},
+    {name:"Contingency / misc",m:A([400,400,400,400,400,400,400,400,400,400,400,400])},
+    {name:"ATOL Licence",m:A([450,450,450,450,450,450,450,450,450,450,450,450])},
+    {name:"CEO",m:A([10000,10000,10000,10000,10000,10000,10000,10000,10000,10000,10000,10000])},
   ],
-  setup:20000, runway:6, locked:false
+  setup:50000, bond:50000, locked:false
 };}
 
 let M=migrate(load()||defaults());
 let db=null,connected=false;
-const LKEY="orn_uk_case_v4";
+const LKEY="orn_uk_case_v5";
 function load(){try{return JSON.parse(localStorage.getItem(LKEY));}catch(e){return null;}}
-
-function migrate(v){
-  const d=defaults();v=Object.assign({},d,v||{});
-  // ensure arrays length N on every line
+function arr(v){return Array.from({length:N},()=>v);}
+function migrate(v){const d=defaults();v=Object.assign({},d,v||{});
   (v.sales||[]).forEach(s=>{["bk","val","mgn"].forEach(k=>{if(!Array.isArray(s[k]))s[k]=arr(s[k]||0);while(s[k].length<N)s[k].push(s[k][s[k].length-1]||0);s[k]=s[k].slice(0,N);});});
   (v.costs||[]).forEach(c=>{if(!Array.isArray(c.m))c.m=arr(c.m||c.cost||0);while(c.m.length<N)c.m.push(c.m[c.m.length-1]||0);c.m=c.m.slice(0,N);});
-  return v;
-}
+  if(!v.paxAvg)v.paxAvg=3;if(v.setup===undefined)v.setup=50000;if(v.bond===undefined)v.bond=50000;
+  return v;}
 
-/* helpers */
 const gbp=n=>"£"+Math.round(n).toLocaleString("en-GB");
 const num=n=>Math.round(n).toLocaleString("en-GB");
 const salesRevMonth=(s,i)=>(Number(s.bk[i])||0)*(Number(s.val[i])||0)*((Number(s.mgn[i])||0)/100);
+const bookingsMonth=i=>M.sales.reduce((a,s)=>a+(Number(s.bk[i])||0),0);
+const paxMonth=i=>bookingsMonth(i)*(Number(M.paxAvg)||0);
 function revMonth(i){return M.sales.reduce((a,s)=>a+salesRevMonth(s,i),0);}
 function costMonth(i){return M.costs.reduce((a,c)=>a+(Number(c.m[i])||0),0);}
 function netMonthI(i){return revMonth(i)-costMonth(i);}
 function revYear(){let t=0;for(let i=0;i<N;i++)t+=revMonth(i);return t;}
 function costYear(){let t=0;for(let i=0;i<N;i++)t+=costMonth(i);return t;}
 function netYear(){return revYear()-costYear();}
+function bookingsYear(){let t=0;for(let i=0;i<N;i++)t+=bookingsMonth(i);return t;}
+function paxYear(){return bookingsYear()*(Number(M.paxAvg)||0);}
+// tranches: funding = full running cost. T1 = cost months 0-5 + setup; T2 = cost months 6-11.
+function costHalf(a,b){let t=0;for(let i=a;i<b;i++)t+=costMonth(i);return t;}
+function tranche1(){return costHalf(0,6)+(Number(M.setup)||0);}
+function tranche2(){return costHalf(6,12);}
+function totalFunding(){return tranche1()+tranche2();}
 
-/* firebase */
 async function initFB(){try{FB=await loadFirebase();const app=FB.initializeApp(firebaseConfig);db=FB.getDatabase(app);
   FB.onValue(FB.ref(db,DB_PATH),snap=>{connected=true;setSync(true);const v=snap.val();if(v){M=migrate(v);localStorage.setItem(LKEY,JSON.stringify(M));renderAll();}},e=>{setSync(false);console.warn(e.message);});
 }catch(e){setSync(false);console.warn("fb off",e.message);}}
@@ -311,143 +350,103 @@ function setSync(on){const d=document.getElementById("syncdot"),t=document.getEl
 function pushSave(){localStorage.setItem(LKEY,JSON.stringify(M));if(db&&connected&&FB){FB.set(FB.ref(db,DB_PATH),M).then(()=>toast("Saved")).catch(()=>{setSync(false);toast("Saved locally");});}else toast("Saved locally");}
 let saveT;function liveSave(){clearTimeout(saveT);saveT=setTimeout(pushSave,600);}
 
-/* lock */
 const locked=()=>!!M.locked;
 window.saveAndLock=()=>{M.locked=true;pushSave();renderAll();toast("Saved & locked");};
 window.unlock=()=>{const pw=prompt("Password to unlock editing:");if(pw===null)return;if(pw===UNLOCK_PW){M.locked=false;pushSave();renderAll();toast("Unlocked");}else alert("Incorrect password.");};
 window.resetModel=()=>{if(locked()){alert("Locked — unlock first.");return;}if(confirm("Reset to base plan?")){M=defaults();pushSave();renderAll();}};
 
-/* tabs */
 document.getElementById("tabs").addEventListener("click",e=>{const t=e.target.closest(".tab");if(!t)return;document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));t.classList.add("active");document.getElementById(t.dataset.p).classList.add("active");window.scrollTo({top:0,behavior:"smooth"});});
 
-/* ---------- GRID RENDER ----------
-   Inputs carry data-* coords. We only rebuild on structural change (add/remove/lock),
-   NOT on each keystroke — keystrokes update model + recomputed output cells in place. */
 function cellInput(val,cls,ds){const dis=locked()?"disabled":"";return `<input type="number" class="${cls}" value="${val}" ${dis} ${ds}>`;}
-
 function renderGrid(){
-  const g=document.getElementById("grid");if(!g)return;
-  let h="";
-  // header
-  h+="<thead><tr><th class='lbl cap'>Revenue model</th>"+MONTHS.map(m=>`<th>${m}</th>`).join("")+"<th class='tot'>Year 1</th></tr></thead>";
-  // ----- REVENUE -----
+  const g=document.getElementById("grid");if(!g)return;let h="";
+  h+="<thead><tr><th class='lbl cap'>Budget model</th>"+MONTHS.map(m=>`<th>${m}</th>`).join("")+"<th class='tot'>Year 1</th></tr></thead>";
   h+="<tbody id='salesBody'>";
   h+=`<tr class='sectn'><td class='lbl'>Revenue — sales &amp; member bookings</td>${MONTHS.map(()=>"<td></td>").join("")}<td class='tot'></td></tr>`;
   M.sales.forEach((s,si)=>{
     const del=locked()?"disabled":"";
-    // name row (group)
     h+=`<tr class='grp'><td class='lbl'><div class='lblflex'><input class='nm' data-snm='${si}' value="${(s.name||'').replace(/"/g,'&quot;')}" ${locked()?'disabled':''}><button class='del' data-sdel='${si}' ${del}>✕</button></div></td>${MONTHS.map(()=>"<td></td>").join("")}<td class='tot'></td></tr>`;
-    // bookings
     h+=`<tr class='subrow'><td class='lbl'>Bookings</td>${s.bk.map((v,i)=>`<td class='mcell'>${cellInput(v,'sbk',`data-s='${si}' data-i='${i}'`)}</td>`).join("")}<td class='tot' data-stot='bk-${si}'>${num(s.bk.reduce((a,x)=>a+(+x||0),0))}</td></tr>`;
-    // value
     h+=`<tr class='subrow'><td class='lbl'>Value £</td>${s.val.map((v,i)=>`<td class='mcell'>${cellInput(v,'sval',`data-s='${si}' data-i='${i}'`)}</td>`).join("")}<td class='tot'>—</td></tr>`;
-    // margin
     h+=`<tr class='subrow'><td class='lbl'>Margin %</td>${s.mgn.map((v,i)=>`<td class='mcell'>${cellInput(v,'smgn',`data-s='${si}' data-i='${i}'`)}</td>`).join("")}<td class='tot'>—</td></tr>`;
-    // revenue (calc)
     h+=`<tr class='revrow'><td class='lbl'>Revenue</td>${s.bk.map((_,i)=>`<td class='calc' data-srev='${si}-${i}'>${gbp(salesRevMonth(s,i))}</td>`).join("")}<td class='calc tot' data-srevtot='${si}'>${gbp(s.bk.reduce((a,_,i)=>a+salesRevMonth(s,i),0))}</td></tr>`;
   });
   h+=`<tr class='addbtnrow'><td colspan='${N+2}'><button data-add='sales' ${locked()?'disabled':''}>+ Add revenue line</button></td></tr>`;
   h+=`<tr class='totrow'><td class='lbl'>Total revenue</td>${MONTHS.map((_,i)=>`<td data-revtot='${i}'>${gbp(revMonth(i))}</td>`).join("")}<td class='tot' data-revtotY>${gbp(revYear())}</td></tr>`;
+  h+=`<tr class='subrow'><td class='lbl'>Bookings (all lines)</td>${MONTHS.map((_,i)=>`<td data-bk='${i}' style='text-align:right;padding:6px 8px'>${num(bookingsMonth(i))}</td>`).join("")}<td class='tot' data-bkY>${num(bookingsYear())}</td></tr>`;
+  h+=`<tr class='subrow'><td class='lbl'>Passengers (×<span data-paxlbl>${M.paxAvg}</span>)</td>${MONTHS.map((_,i)=>`<td data-pax='${i}' style='text-align:right;padding:6px 8px;color:var(--blue)'>${num(paxMonth(i))}</td>`).join("")}<td class='tot' data-paxY style='color:var(--blue)'>${num(paxYear())}</td></tr>`;
   h+="</tbody>";
-  // ----- COSTS -----
   h+="<tbody id='costBody'>";
   h+=`<tr class='sectn'><td class='lbl'>Costs — staff, premises, technology &amp; overheads</td>${MONTHS.map(()=>"<td></td>").join("")}<td class='tot'></td></tr>`;
-  M.costs.forEach((c,ci)=>{
-    const del=locked()?"disabled":"";
-    h+=`<tr><td class='lbl'><div class='lblflex'><input class='nm' data-cnm='${ci}' value="${(c.name||'').replace(/"/g,'&quot;')}" ${locked()?'disabled':''}><button class='del' data-cdel='${ci}' ${del}>✕</button></div></td>${c.m.map((v,i)=>`<td class='mcell'>${cellInput(v,'cm',`data-c='${ci}' data-i='${i}'`)}</td>`).join("")}<td class='tot' data-ctot='${ci}'>${gbp(c.m.reduce((a,x)=>a+(+x||0),0))}</td></tr>`;
-  });
+  M.costs.forEach((c,ci)=>{const del=locked()?"disabled":"";
+    h+=`<tr><td class='lbl'><div class='lblflex'><input class='nm' data-cnm='${ci}' value="${(c.name||'').replace(/"/g,'&quot;')}" ${locked()?'disabled':''}><button class='del' data-cdel='${ci}' ${del}>✕</button></div></td>${c.m.map((v,i)=>`<td class='mcell'>${cellInput(v,'cm',`data-c='${ci}' data-i='${i}'`)}</td>`).join("")}<td class='tot' data-ctot='${ci}'>${gbp(c.m.reduce((a,x)=>a+(+x||0),0))}</td></tr>`;});
   h+=`<tr class='addbtnrow'><td colspan='${N+2}'><button data-add='cost' ${locked()?'disabled':''}>+ Add cost line</button></td></tr>`;
   h+=`<tr class='totrow'><td class='lbl'>Total costs</td>${MONTHS.map((_,i)=>`<td data-costtot='${i}'>${gbp(costMonth(i))}</td>`).join("")}<td class='tot' data-costtotY>${gbp(costYear())}</td></tr>`;
   h+="</tbody>";
-  // ----- NET + CUM -----
   h+="<tbody>";
-  h+=`<tr class='netrow'><td class='lbl'>Net profit / (loss)</td>${MONTHS.map((_,i)=>{const n=netMonthI(i);return `<td class='${n<0?'neg':'pos'}' data-net='${i}'>${n<0?'('+gbp(-n)+')':gbp(n)}</td>`;}).join("")}<td class='tot ${netYear()<0?'neg':'pos'}' data-netY>${netYear()<0?'('+gbp(-netYear())+')':gbp(netYear())}</td></tr>`;
+  h+=`<tr class='netrow'><td class='lbl'>Net profit / (loss)</td>${MONTHS.map((_,i)=>{const n=netMonthI(i);return `<td class='${n<0?'neg':'pos'}' data-net='${i}'>${n<0?'('+gbp(-n)+')':gbp(n)}</td>`;}).join("")}<td class='tot' data-netY>${netYear()<0?'('+gbp(-netYear())+')':gbp(netYear())}</td></tr>`;
   let cum=0;h+=`<tr class='cumrow'><td class='lbl'>Cumulative net</td>${MONTHS.map((_,i)=>{cum+=netMonthI(i);return `<td data-cum='${i}'>${cum<0?'('+gbp(-cum)+')':gbp(cum)}</td>`;}).join("")}<td class='tot' data-cumY>${cum<0?'('+gbp(-cum)+')':gbp(cum)}</td></tr>`;
   h+="</tbody>";
-  g.innerHTML=h;
-  bindGrid();
+  g.innerHTML=h;bindGrid();
 }
-
 function bindGrid(){
   const g=document.getElementById("grid");
-  // name inputs
-  g.querySelectorAll("input.nm").forEach(inp=>{
-    inp.addEventListener("input",()=>{
-      if(inp.dataset.snm!==undefined)M.sales[+inp.dataset.snm].name=inp.value;
-      if(inp.dataset.cnm!==undefined)M.costs[+inp.dataset.cnm].name=inp.value;
-      liveSave();
-    });
-  });
-  // number cells
-  g.querySelectorAll("input.sbk,input.sval,input.smgn").forEach(inp=>{
-    inp.addEventListener("input",()=>{
-      const si=+inp.dataset.s,i=+inp.dataset.i,v=Number(inp.value)||0;
-      const s=M.sales[si];
-      if(inp.classList.contains("sbk"))s.bk[i]=v;
-      if(inp.classList.contains("sval"))s.val[i]=v;
-      if(inp.classList.contains("smgn"))s.mgn[i]=v;
-      updateOutputs();liveSave();
-    });
-  });
-  g.querySelectorAll("input.cm").forEach(inp=>{
-    inp.addEventListener("input",()=>{const ci=+inp.dataset.c,i=+inp.dataset.i;M.costs[ci].m[i]=Number(inp.value)||0;updateOutputs();liveSave();});
-  });
-  // delete / add
+  g.querySelectorAll("input.nm").forEach(inp=>{inp.addEventListener("input",()=>{if(inp.dataset.snm!==undefined)M.sales[+inp.dataset.snm].name=inp.value;if(inp.dataset.cnm!==undefined)M.costs[+inp.dataset.cnm].name=inp.value;liveSave();});});
+  g.querySelectorAll("input.sbk,input.sval,input.smgn").forEach(inp=>{inp.addEventListener("input",()=>{const si=+inp.dataset.s,i=+inp.dataset.i,v=Number(inp.value)||0;const s=M.sales[si];if(inp.classList.contains("sbk"))s.bk[i]=v;if(inp.classList.contains("sval"))s.val[i]=v;if(inp.classList.contains("smgn"))s.mgn[i]=v;updateOutputs();liveSave();});});
+  g.querySelectorAll("input.cm").forEach(inp=>{inp.addEventListener("input",()=>{const ci=+inp.dataset.c,i=+inp.dataset.i;M.costs[ci].m[i]=Number(inp.value)||0;updateOutputs();liveSave();});});
   g.querySelectorAll("[data-sdel]").forEach(b=>b.addEventListener("click",()=>{if(locked())return;M.sales.splice(+b.dataset.sdel,1);renderGrid();updateOutputs();liveSave();}));
   g.querySelectorAll("[data-cdel]").forEach(b=>b.addEventListener("click",()=>{if(locked())return;M.costs.splice(+b.dataset.cdel,1);renderGrid();updateOutputs();liveSave();}));
-  g.querySelectorAll("[data-add]").forEach(b=>b.addEventListener("click",()=>{if(locked())return;
-    if(b.dataset.add==="sales")M.sales.push({name:"New revenue line",bk:arr(5),val:arr(1500),mgn:arr(15)});
-    else M.costs.push({name:"New cost line",m:arr(500)});
-    renderGrid();updateOutputs();liveSave();}));
-}
-
-/* update only OUTPUT cells (not inputs) so typing is never interrupted */
-function updateOutputs(){
-  const g=document.getElementById("grid");if(!g)return;
-  // per-sales revenue + row totals
-  M.sales.forEach((s,si)=>{
-    let rt=0;
-    for(let i=0;i<N;i++){const rv=salesRevMonth(s,i);rt+=rv;const c=g.querySelector(`[data-srev='${si}-${i}']`);if(c)c.textContent=gbp(rv);}
-    const ct=g.querySelector(`[data-srevtot='${si}']`);if(ct)ct.textContent=gbp(rt);
-    const bkt=g.querySelector(`[data-stot='bk-${si}']`);if(bkt)bkt.textContent=num(s.bk.reduce((a,x)=>a+(+x||0),0));
-  });
-  // cost row totals
-  M.costs.forEach((c,ci)=>{const t=g.querySelector(`[data-ctot='${ci}']`);if(t)t.textContent=gbp(c.m.reduce((a,x)=>a+(+x||0),0));});
-  // monthly totals, net, cum
-  let cum=0;
-  for(let i=0;i<N;i++){
-    const rv=revMonth(i),co=costMonth(i),nt=rv-co;cum+=nt;
-    upd(g,`[data-revtot='${i}']`,gbp(rv));
-    upd(g,`[data-costtot='${i}']`,gbp(co));
-    const ncell=g.querySelector(`[data-net='${i}']`);if(ncell){ncell.textContent=nt<0?'('+gbp(-nt)+')':gbp(nt);ncell.className=nt<0?'neg':'pos';}
-    upd(g,`[data-cum='${i}']`,cum<0?'('+gbp(-cum)+')':gbp(cum));
-  }
-  upd(g,"[data-revtotY]",gbp(revYear()));
-  upd(g,"[data-costtotY]",gbp(costYear()));
-  const nY=g.querySelector("[data-netY]");if(nY){nY.textContent=netYear()<0?'('+gbp(-netYear())+')':gbp(netYear());nY.className="tot "+(netYear()<0?'neg':'pos');}
-  upd(g,"[data-cumY]",cum<0?'('+gbp(-cum)+')':gbp(cum));
-  renderSummary();renderInvest();
+  g.querySelectorAll("[data-add]").forEach(b=>b.addEventListener("click",()=>{if(locked())return;if(b.dataset.add==="sales")M.sales.push({name:"New revenue line",bk:arr(5),val:arr(1500),mgn:arr(15)});else M.costs.push({name:"New cost line",m:arr(500)});renderGrid();updateOutputs();liveSave();}));
 }
 function upd(g,sel,txt){const el=g.querySelector(sel);if(el)el.textContent=txt;}
-
+function updateOutputs(){
+  const g=document.getElementById("grid");if(!g)return;
+  M.sales.forEach((s,si)=>{let rt=0;for(let i=0;i<N;i++){const rv=salesRevMonth(s,i);rt+=rv;const c=g.querySelector(`[data-srev='${si}-${i}']`);if(c)c.textContent=gbp(rv);}const ct=g.querySelector(`[data-srevtot='${si}']`);if(ct)ct.textContent=gbp(rt);const bkt=g.querySelector(`[data-stot='bk-${si}']`);if(bkt)bkt.textContent=num(s.bk.reduce((a,x)=>a+(+x||0),0));});
+  M.costs.forEach((c,ci)=>{const t=g.querySelector(`[data-ctot='${ci}']`);if(t)t.textContent=gbp(c.m.reduce((a,x)=>a+(+x||0),0));});
+  let cum=0;
+  for(let i=0;i<N;i++){const rv=revMonth(i),co=costMonth(i),nt=rv-co;cum+=nt;
+    upd(g,`[data-revtot='${i}']`,gbp(rv));upd(g,`[data-costtot='${i}']`,gbp(co));
+    upd(g,`[data-bk='${i}']`,num(bookingsMonth(i)));upd(g,`[data-pax='${i}']`,num(paxMonth(i)));
+    const nc=g.querySelector(`[data-net='${i}']`);if(nc){nc.textContent=nt<0?'('+gbp(-nt)+')':gbp(nt);nc.className=nt<0?'neg':'pos';}
+    upd(g,`[data-cum='${i}']`,cum<0?'('+gbp(-cum)+')':gbp(cum));}
+  upd(g,"[data-revtotY]",gbp(revYear()));upd(g,"[data-costtotY]",gbp(costYear()));
+  upd(g,"[data-bkY]",num(bookingsYear()));upd(g,"[data-paxY]",num(paxYear()));
+  const nY=g.querySelector("[data-netY]");if(nY){nY.textContent=netYear()<0?'('+gbp(-netYear())+')':gbp(netYear());nY.className="tot "+(netYear()<0?'neg':'pos');}
+  upd(g,"[data-cumY]",cum<0?'('+gbp(-cum)+')':gbp(cum));
+  renderSummary();renderInvest();renderReturnTable();
+}
 function renderSummary(){
   const rev=revYear()/N,cost=costYear()/N,net=netYear(),mgn=revYear()>0?(net/revYear()*100):0;
   set("summary",`
     <div class="sbox rev"><div class="l">Avg revenue / month</div><div class="v green">${gbp(rev)}</div><div class="sub">${gbp(revYear())} year 1</div></div>
     <div class="sbox cost"><div class="l">Avg cost / month</div><div class="v red">${gbp(cost)}</div><div class="sub">${gbp(costYear())} year 1</div></div>
     <div class="sbox net"><div class="l">Year-1 net</div><div class="v ${net>=0?'green':'red'}">${net<0?'('+gbp(-net)+')':gbp(net)}</div><div class="sub">across 12 months</div></div>
-    <div class="sbox margin"><div class="l">Net margin</div><div class="v blue">${Math.round(mgn)}%</div><div class="sub">of revenue</div></div>
-    <div class="sbox fund"><div class="l">Funding to agree</div><div class="v amber">${gbp(funding())}</div><div class="sub">${M.runway} mth + set-up</div></div>`,true);
+    <div class="sbox pax"><div class="l">Passengers / year</div><div class="v blue">${num(paxYear())}</div><div class="sub">${num(bookingsYear())} bookings ×${M.paxAvg}</div></div>
+    <div class="sbox fund"><div class="l">Funding to agree</div><div class="v amber">${gbp(totalFunding())}</div><div class="sub">2 tranches + ${gbp(M.bond)} bond</div></div>`,true);
 }
-function cumLossOverRunway(){let gap=0,cum=0;for(let i=0;i<M.runway&&i<N;i++){cum+=netMonthI(i);}if(cum<0)gap=-cum;return gap;}
-function funding(){return cumLossOverRunway()+M.setup;}
 function renderInvest(){
-  set("fundBig",Math.round(funding()).toLocaleString("en-GB"));
-  set("invGap",gbp(cumLossOverRunway()));set("invSetup",gbp(M.setup));
-  const ny=netYear();set("invYear",ny<0?"("+gbp(-ny)+")":gbp(ny));
-  set("runwayV",M.runway);set("setupV",gbp(M.setup));
+  set("fundBig",Math.round(totalFunding()).toLocaleString("en-GB"));
+  set("t1v",gbp(tranche1()));set("t1run",gbp(costHalf(0,6)));set("t1setup",gbp(M.setup));
+  set("t2v",gbp(tranche2()));set("t2run",gbp(costHalf(6,12)));
+  set("bondv",gbp(M.bond));set("setupV",gbp(M.setup));set("bondV",gbp(M.bond));
+  const sv=document.getElementById("setup"),bv=document.getElementById("bond");if(sv)sv.value=M.setup;if(bv)bv.value=M.bond;
+  set("paxAvgLbl",M.paxAvg);
 }
-
+function renderReturnTable(){
+  const t=document.getElementById("rtbl");if(!t)return;
+  let h="<thead><tr><th class='lbl'>Per month</th>"+MONTHS.map(m=>`<th>${m}</th>`).join("")+"<th class='lbl' style='position:static;border-left:2px solid #333'>Year 1</th></tr></thead><tbody>";
+  const rowNum=(lbl,fn,cls="",fmt=num)=>{let tot=0;let tds="";for(let i=0;i<N;i++){const v=fn(i);tot+=v;tds+=`<td>${fmt(v)}</td>`;}return `<tr class='${cls}'><td class='lbl'>${lbl}</td>${tds}<td class='tot'>${fmt(tot)}</td></tr>`;};
+  h+=rowNum("Bookings",bookingsMonth);
+  h+=rowNum("Passengers (×"+M.paxAvg+")",paxMonth,"pax");
+  h+=rowNum("Revenue returned",revMonth,"",gbp);
+  h+=rowNum("Operating cost",costMonth,"",gbp);
+  // net row with sign
+  let nTds="",nTot=0;for(let i=0;i<N;i++){const nv=netMonthI(i);nTot+=nv;nTds+=`<td class='${nv<0?'neg':'pos'}'>${nv<0?'('+gbp(-nv)+')':gbp(nv)}</td>`;}
+  h+=`<tr class='net'><td class='lbl'>Net position</td>${nTds}<td class='tot ${nTot<0?'neg':'pos'}'>${nTot<0?'('+gbp(-nTot)+')':gbp(nTot)}</td></tr>`;
+  let cum=0,cTds="";for(let i=0;i<N;i++){cum+=netMonthI(i);cTds+=`<td class='${cum<0?'neg':'pos'}'>${cum<0?'('+gbp(-cum)+')':gbp(cum)}</td>`;}
+  h+=`<tr class='net'><td class='lbl'>Cumulative</td>${cTds}<td class='tot ${cum<0?'neg':'pos'}'>${cum<0?'('+gbp(-cum)+')':gbp(cum)}</td></tr>`;
+  h+="</tbody>";t.innerHTML=h;
+}
 function renderLockUI(){
   const L=locked();
   document.getElementById("lockpill").className="lockpill"+(L?" locked":"");
@@ -457,19 +456,17 @@ function renderLockUI(){
   document.getElementById("editstate").textContent=L?"Locked — figures are fixed. Unlock with password to edit.":"Unlocked — click any month cell to edit. Totals update live, then Save & Lock.";
   document.getElementById("saveLockBtn").style.display=L?"none":"";
   document.getElementById("unlockBtn").style.display=L?"":"none";
-  ["resetBtn","scnLean","scnBase","scnGrowth","setup","runway"].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=L;});
+  ["resetBtn","scnLean","scnBase","scnGrowth","setup","bond"].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=L;});
 }
-
 function renderAll(){renderLockUI();renderGrid();updateOutputs();
-  const sv=document.getElementById("setup"),rw=document.getElementById("runway");
-  if(sv)sv.value=M.setup;if(rw)rw.value=M.runway;}
+  const sv=document.getElementById("setup"),bv=document.getElementById("bond");if(sv)sv.value=M.setup;if(bv)bv.value=M.bond;}
 
-["setup","runway"].forEach(id=>{const el=document.getElementById(id);if(!el)return;el.addEventListener("input",()=>{if(locked())return;M[id]=Number(el.value);renderInvest();liveSave();});});
+["setup","bond"].forEach(id=>{const el=document.getElementById(id);if(!el)return;el.addEventListener("input",()=>{if(locked())return;M[id]=Number(el.value);renderInvest();renderSummary();liveSave();});});
 
 window.applyScenario=function(s){if(locked()){alert("Locked — unlock first.");return;}
   if(s==="base"){const k=M.locked;M=defaults();M.locked=k;}
-  if(s==="lean"){M.sales.forEach(x=>x.bk=x.bk.map(v=>Math.round(v*0.6)));M.runway=6;}
-  if(s==="growth"){M.sales.forEach(x=>x.bk=x.bk.map((v,i)=>Math.round(v*(1.2+i*0.08))));M.runway=9;} // seasonal build
+  if(s==="lean"){M.sales.forEach(x=>x.bk=x.bk.map(v=>Math.round(v*0.6)));}
+  if(s==="growth"){M.sales.forEach(x=>x.bk=x.bk.map(v=>Math.round(v*1.4)));}
   renderAll();liveSave();};
 
 function set(id,val,html){const el=document.getElementById(id);if(!el)return;if(html)el.innerHTML=val;else el.textContent=val;}
