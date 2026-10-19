@@ -11,158 +11,156 @@
     --line:#e4e4e2;--line2:#d4d4d1;
     --red:#DC051E;--red-soft:#fdecee;--red-line:#f3c9ce;
     --ink:#18181b;--ink2:#3f3f46;--grey:#52525b;--grey2:#8a8a90;
-    --green:#15803d;--amber:#b45309;--blue:#1d4ed8;
+    --green:#15803d;--green-soft:#e9f6ee;--amber:#b45309;--blue:#1d4ed8;
     --serif:Georgia,'Times New Roman',serif;
     --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 
   header.top{background:var(--headerbg);border-bottom:3px solid var(--red);position:sticky;top:0;z-index:100}
-  .top-inner{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .top-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
   .logo{display:flex;align-items:center;gap:12px}
   .logo-tile{background:var(--red);color:#fff;font-weight:800;font-size:19px;letter-spacing:-1px;padding:6px 11px 7px;border-radius:8px;line-height:1}
   .logo-txt .a{font-size:13px;letter-spacing:2px;font-weight:600;color:#fff}
   .logo-txt .b{font-size:8px;letter-spacing:2px;color:#8a8a90;text-transform:uppercase}
   .top-right{display:flex;align-items:center;gap:8px}
+  .lockpill{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:#d4d4d8;padding:5px 11px;border:1px solid #2a2a2e;border-radius:100px}
+  .lockpill.locked{color:#ff6274;border-color:var(--red)}
   .syncpill{display:flex;align-items:center;gap:6px;font-size:11px;color:#a1a1aa;padding:5px 11px;border:1px solid #2a2a2e;border-radius:100px}
   .syncdot{width:7px;height:7px;border-radius:50%;background:#555}
   .syncdot.on{background:#22c55e;box-shadow:0 0 6px #22c55e}.syncdot.off{background:var(--red)}
-  .lockpill{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:#d4d4d8;padding:5px 11px;border:1px solid #2a2a2e;border-radius:100px}
-  .lockpill.locked{color:#ff6274;border-color:var(--red)}
   .btn{font-size:11px;letter-spacing:.5px;font-weight:600;padding:7px 12px;border-radius:6px;border:1px solid #2a2a2e;color:#d4d4d8;background:#141417;cursor:pointer;transition:.15s}
   .btn:hover{color:#fff;border-color:var(--red)}
-  .btn.pri{background:var(--red);border-color:var(--red);color:#fff}
-  .btn.pri:hover{background:#b8041a}
 
-  nav.tabs{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:62px;z-index:90;overflow-x:auto}
+  nav.tabs{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:60px;z-index:90;overflow-x:auto}
   .tabs-inner{display:flex;gap:2px;min-width:max-content}
-  .tab{font-size:12.5px;letter-spacing:.5px;color:var(--grey);padding:15px 18px;white-space:nowrap;border-bottom:2px solid transparent;cursor:pointer;transition:.15s;font-weight:500}
+  .tab{font-size:12.5px;letter-spacing:.3px;color:var(--grey);padding:14px 16px;white-space:nowrap;border-bottom:2px solid transparent;cursor:pointer;transition:.15s;font-weight:500}
   .tab:hover{color:var(--ink)}
   .tab.active{color:var(--ink);border-bottom-color:var(--red)}
-  .tab .n{color:var(--red);font-weight:700;margin-right:7px}
+  .tab .n{color:var(--red);font-weight:700;margin-right:6px}
 
-  .kpibar{background:var(--panel2);border-bottom:1px solid var(--line)}
-  .kpibar-inner{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line)}
-  .kpi{background:var(--panel2);padding:13px 16px}
-  .kpi .l{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey2)}
-  .kpi .v{font-family:var(--serif);font-size:23px;margin-top:3px}
-  .kpi .v.red{color:var(--red)}.kpi .v.green{color:var(--green)}.kpi .v.amber{color:var(--amber)}
-  @media(max-width:820px){.kpibar-inner{grid-template-columns:repeat(2,1fr)}}
-
-  section.page{display:none;padding:34px 0 70px}
+  section.page{display:none}
   section.page.active{display:block}
-  .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-  .eyebrow .rule{width:34px;height:2px;background:var(--red)}
-  .eyebrow span{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red)}
-  h1{font-family:var(--serif);font-weight:400;font-size:38px;line-height:1.08;letter-spacing:-.5px;margin-bottom:16px}
-  h1 em{color:var(--red);font-style:italic}
-  h2{font-family:var(--serif);font-weight:400;font-size:25px;margin:30px 0 14px;letter-spacing:-.3px}
-  h2 em{color:var(--red);font-style:italic}
-  .lead{font-size:16px;color:var(--grey);max-width:800px;line-height:1.7;margin-bottom:10px}
-  p.body{font-size:14px;color:var(--grey);max-width:820px;margin-bottom:12px;line-height:1.7}
 
-  .grid{display:grid;gap:14px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
-  @media(max-width:820px){.g2,.g3{grid-template-columns:1fr}}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;border-top:3px solid var(--red)}
-  .card h3{font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:9px}
-  .card .ic{font-size:20px}
-  .card p{font-size:13px;color:var(--grey);line-height:1.6}
-  .card ul{list-style:none;margin-top:8px}
-  .card ul li{font-size:12.5px;color:var(--grey);padding:4px 0 4px 16px;position:relative;line-height:1.5}
-  .card ul li::before{content:"→";position:absolute;left:0;color:var(--red)}
-  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
-  .pill{font-size:11px;letter-spacing:.5px;padding:6px 12px;border-radius:100px;background:var(--red-soft);border:1px solid var(--red-line);color:#b8041a}
-
-  .scn{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0;align-items:center}
-  .scn .lbl{font-size:11px;color:var(--grey2);letter-spacing:1px;text-transform:uppercase}
-  .scn button{font-size:11px;padding:7px 13px;border-radius:100px;border:1px solid var(--line2);background:var(--card);color:var(--grey);cursor:pointer}
-  .scn button:hover{border-color:var(--red-line);color:var(--ink)}
-
-  /* edit banner */
-  .editbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
-    background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:18px}
-  .editbar .st{font-size:13px;display:flex;align-items:center;gap:9px}
-  .editbar .st .dot{width:9px;height:9px;border-radius:50%;background:var(--amber)}
-  .editbar.locked .st .dot{background:var(--red)}
-  .editbar .acts{display:flex;gap:8px}
-  .lgbtn{font-size:12px;font-weight:600;padding:9px 16px;border-radius:7px;cursor:pointer;border:1px solid var(--line2);background:#fff;color:var(--ink)}
+  /* ===== MODEL PAGE ===== */
+  .modelhead{padding:22px 0 6px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .modelhead h1{font-family:var(--serif);font-weight:400;font-size:28px;letter-spacing:-.4px}
+  .modelhead h1 em{color:var(--red);font-style:italic}
+  .modelhead .sub{font-size:12px;color:var(--grey2);margin-top:3px}
+  .editacts{display:flex;gap:8px;align-items:center}
+  .lgbtn{font-size:12px;font-weight:600;padding:9px 15px;border-radius:7px;cursor:pointer;border:1px solid var(--line2);background:#fff;color:var(--ink)}
   .lgbtn.pri{background:var(--red);border-color:var(--red);color:#fff}
   .lgbtn.pri:hover{background:#b8041a}
   .lgbtn:disabled{opacity:.4;cursor:default}
 
-  .ctrlgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
-  @media(max-width:820px){.ctrlgrid{grid-template-columns:1fr}}
-  .ctrlbox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
-  .ctrlbox h3{font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--grey);margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}
-  .ctrlbox h3 .sub{font-size:11px;color:var(--grey2);text-transform:none;letter-spacing:0}
+  /* SUMMARY BOXES */
+  .summary{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px 0 8px}
+  @media(max-width:860px){.summary{grid-template-columns:repeat(2,1fr)}}
+  .sbox{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);border-top:3px solid var(--line2)}
+  .sbox.rev{border-top-color:var(--green)}
+  .sbox.cost{border-top-color:var(--red)}
+  .sbox.net{border-top-color:var(--ink)}
+  .sbox.fund{border-top-color:var(--amber)}
+  .sbox.margin{border-top-color:var(--blue)}
+  .sbox .l{font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey2)}
+  .sbox .v{font-family:var(--serif);font-size:27px;margin-top:5px;line-height:1}
+  .sbox .v.green{color:var(--green)}.sbox .v.red{color:var(--red)}.sbox .v.amber{color:var(--amber)}.sbox .v.blue{color:var(--blue)}
+  .sbox .sub{font-size:11px;color:var(--grey2);margin-top:5px}
 
-  .lrow{display:grid;grid-template-columns:1fr 100px 50px 28px;gap:8px;align-items:center;margin-bottom:7px}
-  .lrow input[type=text]{background:#fff;border:1px solid var(--line2);color:var(--ink);border-radius:6px;padding:8px 9px;font-size:12.5px;font-family:var(--sans);width:100%}
-  .lrow input[type=number]{background:#fff;border:1px solid var(--line2);color:var(--ink);border-radius:6px;padding:8px;font-size:12.5px;width:100%;text-align:right;font-family:var(--sans)}
-  .lrow input:disabled{background:var(--panel3);color:var(--grey);cursor:not-allowed}
-  .lrow input:focus{outline:none;border-color:var(--red)}
-  .lrow .unit{font-size:10px;color:var(--grey2);text-align:center}
-  .lrow .del{background:transparent;border:none;color:var(--grey2);cursor:pointer;font-size:15px;line-height:1}
-  .lrow .del:hover{color:var(--red)}
-  .lrow .del:disabled{opacity:.3;cursor:default}
-  .lrow.hdr{color:var(--grey2);font-size:9px;letter-spacing:1px;text-transform:uppercase}
-  .addline{margin-top:8px;font-size:12px;color:var(--grey);background:transparent;border:1px dashed var(--line2);border-radius:7px;padding:9px;width:100%;cursor:pointer;transition:.12s}
-  .addline:hover{border-color:var(--red-line);color:var(--red)}
-  .addline:disabled{opacity:.4;cursor:default}
-  .subtot{display:flex;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:13px}
-  .subtot .v{font-family:var(--serif);font-size:16px}
+  .editbar{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--grey);background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:9px 14px;margin:6px 0 14px}
+  .editbar .dot{width:9px;height:9px;border-radius:50%;background:var(--amber);flex:none}
+  .editbar.locked .dot{background:var(--red)}
 
-  .ctrl{margin-bottom:15px}
-  .ctrl .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
-  .ctrl label{font-size:12.5px;color:var(--ink)}
-  .ctrl .val{font-family:var(--serif);font-size:16px;color:var(--red)}
-  input[type=range]{width:100%;height:5px;-webkit-appearance:none;appearance:none;background:var(--panel3);border-radius:100px;outline:none}
-  input[type=range]:disabled{opacity:.5}
-  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--red);cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}
-  input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--red);cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}
-  .rampnote{font-size:11px;color:var(--grey2);margin-top:2px}
+  /* SPREADSHEET TABLES */
+  .sheet{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:16px}
+  .sheet .cap{background:#000;color:#fff;padding:11px 16px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+  .sheet .cap .capr{font-family:var(--serif);font-size:16px;letter-spacing:0;text-transform:none;font-weight:400}
+  table.st{width:100%;border-collapse:collapse;font-size:13px}
+  table.st th{background:var(--panel2);font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--grey2);font-weight:700;padding:8px 12px;text-align:right;border-bottom:1px solid var(--line)}
+  table.st th:first-child{text-align:left}
+  table.st td{padding:6px 12px;border-bottom:1px solid var(--line);text-align:right}
+  table.st td:first-child{text-align:left}
+  table.st tr:last-child td{border-bottom:none}
+  table.st input{font-family:var(--sans);font-size:13px;border:1px solid transparent;background:transparent;border-radius:5px;padding:6px 7px;color:var(--ink)}
+  table.st input:hover:not(:disabled){border-color:var(--line2);background:#fff}
+  table.st input:focus{outline:none;border-color:var(--red);background:#fff}
+  table.st input:disabled{color:var(--ink);cursor:default}
+  table.st input.name{width:100%;text-align:left;font-weight:500}
+  table.st input.num{width:100%;text-align:right}
+  table.st .calc{font-family:var(--serif);font-size:14px;font-weight:400}
+  table.st .calc.green{color:var(--green)}
+  table.st .ann{font-family:var(--serif);color:var(--grey);font-size:13px}
+  table.st td.delc{width:34px;text-align:center;padding:6px 4px}
+  table.st .del{background:transparent;border:none;color:var(--grey2);cursor:pointer;font-size:14px}
+  table.st .del:hover{color:var(--red)}
+  table.st .del:disabled{opacity:.25;cursor:default}
+  table.st tr.subtot td{background:var(--panel3);font-weight:700}
+  table.st tr.subtot td .calc,table.st tr.subtot td{font-family:var(--serif)}
+  .addrow td{padding:0;border-bottom:1px solid var(--line)}
+  .addrow button{width:100%;text-align:left;background:transparent;border:none;color:var(--grey);font-size:12px;padding:9px 16px;cursor:pointer}
+  .addrow button:hover{color:var(--red);background:var(--panel2)}
+  .addrow button:disabled{opacity:.4;cursor:default}
 
-  /* P&L GRID */
-  .plwrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin-top:8px}
-  table.plg{border-collapse:collapse;width:100%;min-width:980px;font-size:12.5px}
-  table.plg th,table.plg td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
-  table.plg thead th{background:var(--panel2);font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:var(--grey2);font-weight:700;position:sticky;top:0}
-  table.plg th:first-child,table.plg td:first-child{text-align:left;position:sticky;left:0;background:#fff;z-index:2;min-width:190px;border-right:1px solid var(--line)}
-  table.plg thead th:first-child{background:var(--panel2);z-index:3}
-  table.plg td.tot{background:var(--panel2);font-weight:700;border-left:2px solid var(--line2)}
-  table.plg thead th.tot{border-left:2px solid var(--line2)}
-  table.plg tr.section td{background:#fafafa;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);font-weight:700;text-align:left}
-  table.plg tr.sub td.lbl{color:var(--grey);padding-left:18px}
-  table.plg tr.revtot td,table.plg tr.costtot td{font-weight:700;background:#fcfcfc}
-  table.plg tr.net td{background:var(--red-soft);font-weight:700;border-top:2px solid var(--red-line);border-bottom:2px solid var(--red-line)}
-  table.plg tr.cum td{color:var(--grey);font-style:italic}
-  .pos{color:var(--green)}.neg{color:var(--red)}
-  .noteline{font-size:12px;color:var(--grey2);margin-top:12px;font-style:italic;line-height:1.6}
+  /* column widths */
+  .sales col.cName{width:38%}.sales col.cNum{width:15%}
+  .costs col.cName{width:58%}.costs col.cMth{width:18%}.costs col.cAnn{width:18%}
 
+  .netbar{display:grid;grid-template-columns:1fr auto auto;gap:0;align-items:center;border:2px solid var(--ink);border-radius:12px;overflow:hidden;margin:4px 0 26px}
+  .netbar .nlbl{padding:16px 20px;font-family:var(--serif);font-size:19px}
+  .netbar .nmth,.netbar .nann{padding:16px 22px;text-align:right;font-family:var(--serif);font-size:22px;border-left:1px solid var(--line)}
+  .netbar .cap2{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--grey2);display:block;font-family:var(--sans);margin-bottom:2px}
+  .netbar.pos{border-color:var(--green)}.netbar.pos .nmth,.netbar.pos .nann{color:var(--green)}
+  .netbar.neg{border-color:var(--red)}.netbar.neg .nmth,.netbar.neg .nann{color:var(--red)}
+
+  .scn{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px;align-items:center}
+  .scn .lbl{font-size:11px;color:var(--grey2);letter-spacing:1px;text-transform:uppercase}
+  .scn button{font-size:11px;padding:7px 13px;border-radius:100px;border:1px solid var(--line2);background:#fff;color:var(--grey);cursor:pointer}
+  .scn button:hover{border-color:var(--red-line);color:var(--ink)}
+  .scn button:disabled{opacity:.4;cursor:default}
+
+  /* content tabs */
+  .ct{padding:34px 0 70px}
+  .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .eyebrow .rule{width:34px;height:2px;background:var(--red)}
+  .eyebrow span{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red)}
+  h1.big{font-family:var(--serif);font-weight:400;font-size:36px;line-height:1.08;letter-spacing:-.5px;margin-bottom:16px}
+  h1.big em{color:var(--red);font-style:italic}
+  h2{font-family:var(--serif);font-weight:400;font-size:24px;margin:28px 0 14px}
+  h2 em{color:var(--red);font-style:italic}
+  .lead{font-size:16px;color:var(--grey);max-width:800px;line-height:1.7;margin-bottom:10px}
+  p.body{font-size:14px;color:var(--grey);max-width:820px;margin-bottom:12px;line-height:1.7}
+  .grid{display:grid;gap:14px}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:1fr 1fr}
+  @media(max-width:820px){.g3,.g2{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;border-top:3px solid var(--red)}
+  .card h3{font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:9px}.card .ic{font-size:20px}
+  .card p{font-size:13px;color:var(--grey);line-height:1.6}
+  .card ul{list-style:none;margin-top:8px}
+  .card ul li{font-size:12.5px;color:var(--grey);padding:4px 0 4px 16px;position:relative}
+  .card ul li::before{content:"→";position:absolute;left:0;color:var(--red)}
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+  .pill{font-size:11px;padding:6px 12px;border-radius:100px;background:var(--red-soft);border:1px solid var(--red-line);color:#b8041a}
   .mbars{margin-top:14px}
   .mbar{display:grid;grid-template-columns:170px 1fr 90px;gap:12px;align-items:center;margin-bottom:9px}
-  .mbar .ml{font-size:12.5px;color:var(--ink)}
-  .mbar .track{height:10px;background:var(--panel3);border-radius:100px;overflow:hidden}
-  .mbar .fill{height:100%;background:var(--red);border-radius:100px}
-  .mbar .mv{font-family:var(--serif);font-size:14px;text-align:right;color:var(--red)}
-
+  .mbar .ml{font-size:12.5px}.mbar .track{height:10px;background:var(--panel3);border-radius:100px;overflow:hidden}
+  .mbar .fill{height:100%;background:var(--red);border-radius:100px}.mbar .mv{font-family:var(--serif);font-size:14px;text-align:right;color:var(--red)}
   .investbox{background:linear-gradient(180deg,var(--red-soft),transparent);border:1px solid var(--red-line);border-radius:14px;padding:24px;margin-top:10px}
-  .investbox .big{font-family:var(--serif);font-size:44px;color:var(--ink);line-height:1}
-  .investbox .big .cur{color:var(--red)}
+  .investbox .big{font-family:var(--serif);font-size:44px;line-height:1}.investbox .big .cur{color:var(--red)}
   .investrow{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
-  .investrow:last-child{border-bottom:none}
-  .investrow .v{font-family:var(--serif);font-size:17px}
+  .investrow:last-child{border-bottom:none}.investrow .v{font-family:var(--serif);font-size:17px}
+  .ctrl{margin-bottom:15px}.ctrl .top{display:flex;justify-content:space-between;margin-bottom:6px}
+  .ctrl label{font-size:12.5px}.ctrl .val{font-family:var(--serif);font-size:16px;color:var(--red)}
+  input[type=range]{width:100%;height:5px;-webkit-appearance:none;appearance:none;background:var(--panel3);border-radius:100px}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--red);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2);cursor:pointer}
+  .ctrlbox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;max-width:460px}
+  .ctrlbox h3{font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
 
   footer{padding:26px 0 60px;text-align:center;border-top:1px solid var(--line);color:var(--grey2);font-size:12px;line-height:1.8}
   footer b{color:var(--grey)}
   .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;font-size:12px;font-weight:700;padding:9px 17px;border-radius:100px;opacity:0;transition:.25s;pointer-events:none;z-index:200}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-  .horizon-toggle{display:inline-flex;border:1px solid var(--line2);border-radius:8px;overflow:hidden;margin-left:10px}
-  .horizon-toggle button{background:#fff;color:var(--grey);border:none;padding:6px 14px;font-size:12px;cursor:pointer}
-  .horizon-toggle button.on{background:var(--red);color:#fff}
 </style>
 </head>
 <body>
@@ -180,176 +178,141 @@
 </header>
 
 <nav class="tabs"><div class="wrap"><div class="tabs-inner" id="tabs">
-  <div class="tab active" data-p="opportunity"><span class="n">1</span>The Opportunity</div>
+  <div class="tab active" data-p="model"><span class="n">£</span>The Model</div>
+  <div class="tab" data-p="opportunity"><span class="n">1</span>The Opportunity</div>
   <div class="tab" data-p="deliver"><span class="n">2</span>What We Deliver</div>
-  <div class="tab" data-p="budget"><span class="n">3</span>Budget &amp; P&amp;L</div>
-  <div class="tab" data-p="marketing"><span class="n">4</span>Marketing</div>
-  <div class="tab" data-p="invest"><span class="n">5</span>Investment</div>
+  <div class="tab" data-p="marketing"><span class="n">3</span>Marketing</div>
+  <div class="tab" data-p="invest"><span class="n">4</span>Investment</div>
 </div></div></nav>
-
-<div class="kpibar"><div class="wrap"><div class="kpibar-inner" id="kpibar"></div></div></div>
 
 <div class="wrap">
 
-<!-- TAB 1 -->
-<section class="page active" id="opportunity">
-  <div class="eyebrow"><span class="rule"></span><span>The Opportunity · 2027</span></div>
-  <h1>A serious UK operation — <em>Europe's delivery engine.</em></h1>
-  <p class="lead">For ORN to win in Europe, it needs a real European office — not a nominal one. A London-based operational DMC that contracts product, controls quality, delivers every booking, and owns the member-club credit programme. This is the only way the UK and Europe will work now.</p>
-  <div class="scn"><span class="lbl">Quick scenarios:</span>
-    <button onclick="applyScenario('lean')">Lean start</button>
-    <button onclick="applyScenario('base')">Base case</button>
-    <button onclick="applyScenario('growth')">Growth 2027</button></div>
-  <div class="grid g3" style="margin-top:8px">
-    <div class="card"><h3><span class="ic">🇪🇺</span>Europe is the prize</h3><p>High-value inbound from India, the Middle East, Southeast Asia and Australia — all flowing into European product. The margin is real; today it leaks through poor booking and no control on the ground.</p></div>
-    <div class="card"><h3><span class="ic">🏛️</span>Mayfair base</h3><p>17 Hanover Square — best-in-class London address. A credible operational HQ that partners, hotels and airlines take seriously, not a back office.</p></div>
-    <div class="card"><h3><span class="ic">🎫</span>Member clubs &amp; credits</h3><p>A recurring revenue line beyond servicing — white-label membership travel clubs distributing member credits, built on our own platform.</p></div>
+<!-- ===== MODEL (landing) ===== -->
+<section class="page active" id="model">
+  <div class="modelhead">
+    <div><h1>ORN Europe — UK operation <em>revenue model</em></h1>
+      <div class="sub">12-month projection · all figures £ · monthly unless shown as annual</div></div>
+    <div class="editacts">
+      <button class="lgbtn pri" id="saveLockBtn" onclick="saveAndLock()">Save &amp; Lock</button>
+      <button class="lgbtn" id="unlockBtn" onclick="unlock()" style="display:none">Unlock</button>
+      <button class="lgbtn" id="resetBtn" onclick="resetModel()">Reset</button>
+    </div>
   </div>
-  <h2>Why <em>now</em></h2>
-  <div class="grid g2">
-    <div class="card" style="border-top-color:var(--line)"><h3>The cost of doing nothing</h3><p>Europe has been funded for years with no delivery to standard. Bookings are mishandled, product is wrongly loaded, and margin that belongs to the group is lost. Every month without a real operation is money left on the table.</p></div>
-    <div class="card" style="border-top-color:var(--line)"><h3>The 2027 window</h3><p>With licensing in place, a funded team and an agreed marketing budget, we move from fixing to selling. Set up now and 2027 is a full trading year as a licensed UK operation — not a standing start.</p></div>
+
+  <!-- SUMMARY BOXES -->
+  <div class="summary" id="summary"></div>
+
+  <div class="editbar" id="editbar"><span class="dot"></span><span id="editstate">Unlocked — click any figure to edit. Totals update live.</span></div>
+
+  <div class="scn"><span class="lbl">Scenarios:</span>
+    <button id="scnLean" onclick="applyScenario('lean')">Lean start</button>
+    <button id="scnBase" onclick="applyScenario('base')">Base case</button>
+    <button id="scnGrowth" onclick="applyScenario('growth')">Growth 2027</button></div>
+
+  <!-- SALES -->
+  <div class="sheet sales">
+    <div class="cap">Revenue — sales &amp; member bookings<span class="capr">bookings × value × margin % = revenue</span></div>
+    <table class="st"><colgroup><col class="cName"><col class="cNum"><col class="cNum"><col class="cNum"><col class="cNum"><col style="width:34px"></colgroup>
+    <thead><tr><th>Revenue line</th><th>Bookings / mth</th><th>Booking value £</th><th>Margin %</th><th>Revenue / mth</th><th></th></tr></thead>
+    <tbody id="salesRows"></tbody>
+    <tbody><tr class="addrow"><td colspan="6"><button id="addSalesBtn" onclick="addSales()">+ Add revenue line</button></td></tr>
+      <tr class="subtot"><td>Total revenue</td><td></td><td></td><td></td><td class="calc green" id="revTotal">£0</td><td></td></tr></tbody>
+    </table>
+  </div>
+
+  <!-- COSTS -->
+  <div class="sheet costs">
+    <div class="cap">Costs — staff, premises, technology &amp; overheads<span class="capr">monthly £ · annual = ×12</span></div>
+    <table class="st"><colgroup><col class="cName"><col class="cMth"><col class="cAnn"><col style="width:34px"></colgroup>
+    <thead><tr><th>Cost line</th><th>Per month £</th><th>Annual £</th><th></th></tr></thead>
+    <tbody id="costRows"></tbody>
+    <tbody><tr class="addrow"><td colspan="4"><button id="addCostBtn" onclick="addCost()">+ Add cost line</button></td></tr>
+      <tr class="subtot"><td>Total costs</td><td class="calc" id="costTotalM">£0</td><td class="calc" id="costTotalA">£0</td><td></td></tr></tbody>
+    </table>
+  </div>
+
+  <!-- NET -->
+  <div class="netbar" id="netbar">
+    <div class="nlbl">Net profit / (loss)</div>
+    <div class="nmth"><span class="cap2">Per month</span><span id="netMth">£0</span></div>
+    <div class="nann"><span class="cap2">Annual</span><span id="netAnn">£0</span></div>
   </div>
 </section>
 
-<!-- TAB 2 -->
-<section class="page" id="deliver">
+<!-- ===== CONTENT TABS ===== -->
+<section class="page ct" id="opportunity">
+  <div class="eyebrow"><span class="rule"></span><span>The Opportunity · 2027</span></div>
+  <h1 class="big">A serious UK operation — <em>Europe's delivery engine.</em></h1>
+  <p class="lead">For ORN to win in Europe, it needs a real European office — not a nominal one. A London-based operational DMC that contracts product, controls quality, delivers every booking, and owns the member-club credit programme. This is the only way the UK and Europe will work now.</p>
+  <div class="grid g3" style="margin-top:8px">
+    <div class="card"><h3><span class="ic">🇪🇺</span>Europe is the prize</h3><p>High-value inbound from India, the Middle East, Southeast Asia and Australia — all flowing into European product. The margin is real; today it leaks through poor booking and no control on the ground.</p></div>
+    <div class="card"><h3><span class="ic">🏛️</span>Mayfair base</h3><p>17 Hanover Square — best-in-class London address. A credible operational HQ that partners, hotels and airlines take seriously.</p></div>
+    <div class="card"><h3><span class="ic">🎫</span>Member clubs &amp; credits</h3><p>A recurring revenue line beyond servicing — white-label membership travel clubs distributing member credits, on our own platform.</p></div>
+  </div>
+  <h2>Why <em>now</em></h2>
+  <div class="grid g2">
+    <div class="card" style="border-top-color:var(--line)"><h3>The cost of doing nothing</h3><p>Europe has been funded for years with no delivery to standard. Bookings are mishandled, product wrongly loaded, and margin that belongs to the group is lost. Every month without a real operation is money left on the table.</p></div>
+    <div class="card" style="border-top-color:var(--line)"><h3>The 2027 window</h3><p>With licensing in place, a funded team and an agreed marketing budget, we move from fixing to selling. Set up now and 2027 is a full trading year as a licensed UK operation.</p></div>
+  </div>
+</section>
+
+<section class="page ct" id="deliver">
   <div class="eyebrow"><span class="rule"></span><span>What We Deliver</span></div>
-  <h1>One operation. <em>The full European chain.</em></h1>
+  <h1 class="big">One operation. <em>The full European chain.</em></h1>
   <p class="lead">ORN Europe owns the end-to-end delivery chain and runs it to a single standard — for every office selling Europe, and increasingly selling in its own right.</p>
   <div class="grid g3">
     <div class="card"><h3><span class="ic">📝</span>Contracting</h3><ul><li>Hotels at source across Europe</li><li>Cruise &amp; river product</li><li>Transfers, coaches, guides</li><li>10%+ below market targets</li></ul></div>
-    <div class="card"><h3><span class="ic">✅</span>Quality control</h3><ul><li>6-point reconfirmation on every booking</li><li>Correcting wrongly-loaded product</li><li>Supplier verification</li><li>One delivery standard</li></ul></div>
+    <div class="card"><h3><span class="ic">✅</span>Quality control</h3><ul><li>6-point reconfirmation</li><li>Correcting wrongly-loaded product</li><li>Supplier verification</li><li>One delivery standard</li></ul></div>
     <div class="card"><h3><span class="ic">🎬</span>Operations &amp; delivery</h3><ul><li>Booking &amp; reconfirmation</li><li>24/7 guest support</li><li>Arrivals &amp; escalation</li><li>Live on the Ops Hub</li></ul></div>
     <div class="card"><h3><span class="ic">🧳</span>Product</h3><ul><li>White-label running tours</li><li>Bespoke ORN itineraries</li><li>Series &amp; FIT programmes</li><li>Loaded for live booking</li></ul></div>
     <div class="card"><h3><span class="ic">🎫</span>Member clubs &amp; credits</h3><ul><li>White-label travel clubs</li><li>Member credits &amp; rewards</li><li>Branded booking sites</li><li>Recurring revenue</li></ul></div>
     <div class="card"><h3><span class="ic">💳</span>Financial control</h3><ul><li>Same-day supplier payment</li><li>Xero transparent reporting</li><li>Margin protection</li><li>Cost savings on components</li></ul></div>
   </div>
   <h2>The global <em>operating model</em></h2>
-  <p class="body">ORN Europe is the hub. Sales and tech for inbound sit close to each source market — but delivery, quality and control run through London.</p>
   <div class="grid g3">
-    <div class="card" style="border-top-color:var(--blue)"><h3><span class="ic">🇮🇳</span>India — Bangalore</h3><p>Inbound sales &amp; technology for the India market. ORN Europe services, quality-controls and delivers every booking — and sells once licensed.</p></div>
-    <div class="card" style="border-top-color:var(--blue)"><h3><span class="ic">🇦🇺</span>Oceania — Australia</h3><p>Inbound sales for Australia &amp; New Zealand. Europe owns reconfirmation, QC and ground delivery, with follow-the-sun cover.</p></div>
-    <div class="card" style="border-top-color:var(--red)"><h3><span class="ic">🇬🇧</span>UK &amp; Europe — London</h3><p>The operational hub: contracting, QC, delivery, product, member clubs — and direct European sales once licensed. The engine for all offices.</p></div>
+    <div class="card" style="border-top-color:var(--blue)"><h3><span class="ic">🇮🇳</span>India — Bangalore</h3><p>Inbound sales &amp; technology for India. ORN Europe services, QCs and delivers every booking — and sells once licensed.</p></div>
+    <div class="card" style="border-top-color:var(--blue)"><h3><span class="ic">🇦🇺</span>Oceania — Australia</h3><p>Inbound sales for Australia &amp; NZ. Europe owns reconfirmation, QC and ground delivery, follow-the-sun.</p></div>
+    <div class="card" style="border-top-color:var(--red)"><h3><span class="ic">🇬🇧</span>UK &amp; Europe — London</h3><p>The operational hub: contracting, QC, delivery, product, member clubs — and direct sales once licensed.</p></div>
   </div>
-  <div class="pill-row">
-    <span class="pill">Service &amp; QC for all offices today</span><span class="pill">Direct sales once licensed</span>
-    <span class="pill">Member-club credits</span><span class="pill">ATOL / ABTA licensed</span>
-  </div>
+  <div class="pill-row"><span class="pill">Service &amp; QC for all offices today</span><span class="pill">Direct sales once licensed</span><span class="pill">Member-club credits</span><span class="pill">ATOL / ABTA licensed</span></div>
 </section>
 
-<!-- TAB 3 -->
-<section class="page" id="budget">
-  <div class="eyebrow"><span class="rule"></span><span>Budget &amp; P&amp;L</span></div>
-  <h1>The operating model — <em>live.</em></h1>
-
-  <div class="editbar" id="editbar">
-    <div class="st"><span class="dot"></span><span id="editstate">Unlocked — you can edit. Changes update live.</span></div>
-    <div class="acts">
-      <button class="lgbtn pri" id="saveLockBtn" onclick="saveAndLock()">Save &amp; Lock</button>
-      <button class="lgbtn" id="unlockBtn" onclick="unlock()" style="display:none">Unlock (password)</button>
-      <button class="lgbtn" id="resetBtn" onclick="resetModel()">Reset to base</button>
-    </div>
-  </div>
-
-  <p class="lead">Edit anything — staff, pay, trips, rates, costs. Sales <b>ramp</b> across the year from a starting level to a target. Lock when agreed so no-one changes it.</p>
-
-  <div class="ctrlgrid">
-    <div class="ctrlbox">
-      <h3>Team <span class="sub">min 4 · £/month each</span></h3>
-      <div class="lrow hdr"><div>Role</div><div style="text-align:right">£/month</div><div></div><div></div></div>
-      <div id="staffRows"></div>
-      <button class="addline" id="addStaffBtn" onclick="addLine('staff')">+ Add staff member</button>
-      <div class="subtot"><span>Monthly payroll</span><span class="v" id="staffSub">£0</span></div>
-    </div>
-    <div class="ctrlbox">
-      <h3>Operating costs <span class="sub">£/month</span></h3>
-      <div class="lrow hdr"><div>Item</div><div style="text-align:right">£/month</div><div></div><div></div></div>
-      <div id="opsRows"></div>
-      <button class="addline" id="addOpsBtn" onclick="addLine('ops')">+ Add cost line</button>
-      <div class="subtot"><span>Monthly operating costs</span><span class="v" id="opsSub">£0</span></div>
-    </div>
-  </div>
-
-  <div class="ctrlgrid" style="margin-top:16px">
-    <div class="ctrlbox">
-      <h3>Income — tour bookings <span class="sub">ramp over 12 months</span></h3>
-      <div class="ctrl"><div class="top"><label>Trips / week — START</label><span class="val" id="tripsStartV">2</span></div><input type="range" id="tripsStart" min="0" max="50" step="1"></div>
-      <div class="ctrl"><div class="top"><label>Trips / week — END (month 12)</label><span class="val" id="tripsEndV">10</span></div><input type="range" id="tripsEnd" min="0" max="50" step="1"></div>
-      <div class="ctrl"><div class="top"><label>Average trip value (£)</label><span class="val" id="tripValV">£1,500</span></div><input type="range" id="tripVal" min="500" max="10000" step="100"></div>
-      <div class="ctrl"><div class="top"><label>Margin on bookings (%)</label><span class="val" id="marginV">15%</span></div><input type="range" id="margin" min="5" max="40" step="1"></div>
-      <div class="rampnote">Builds from START to END evenly across the year.</div>
-    </div>
-    <div class="ctrlbox">
-      <h3>Income — member clubs <span class="sub">ramp over 12 months</span></h3>
-      <div class="ctrl"><div class="top"><label>Member bookings / mth — START</label><span class="val" id="memStartV">5</span></div><input type="range" id="memStart" min="0" max="300" step="1"></div>
-      <div class="ctrl"><div class="top"><label>Member bookings / mth — END</label><span class="val" id="memEndV">40</span></div><input type="range" id="memEnd" min="0" max="300" step="1"></div>
-      <div class="ctrl"><div class="top"><label>Average member booking (£)</label><span class="val" id="memValV">£1,500</span></div><input type="range" id="memVal" min="1500" max="10000" step="100"></div>
-      <div class="ctrl"><div class="top"><label>Margin on member bookings (%)</label><span class="val" id="memMarginV">15%</span></div><input type="range" id="memMargin" min="5" max="40" step="1"></div>
-    </div>
-  </div>
-
-  <h2>Profit &amp; Loss — <em>month by month</em></h2>
-  <p class="body" style="margin-top:-4px">Income across the top (ramping by month), costs beneath, net and cumulative per month. Marketing / advertising is included as a cost line.</p>
-  <div class="plwrap"><table class="plg"><thead id="plHead"></thead><tbody id="plBody"></tbody></table></div>
-  <p class="noteline" id="plNote"></p>
-</section>
-
-<!-- TAB 4 -->
-<section class="page" id="marketing">
-  <div class="eyebrow"><span class="rule"></span><span>Marketing · 12-month plan</span></div>
-  <h1>A funded plan to <em>drive European sales.</em></h1>
-  <p class="lead">A fixed, agreed marketing budget is non-negotiable for 2027. Set the monthly spend by channel — the annual plan and P&amp;L update live.</p>
-  <div class="ctrlbox" style="margin-top:6px">
-    <h3>Marketing budget <span class="sub">£/month by channel</span></h3>
-    <div class="lrow hdr"><div>Channel</div><div style="text-align:right">£/month</div><div></div><div></div></div>
-    <div id="mktRows"></div>
-    <button class="addline" id="addMktBtn" onclick="addLine('mkt')">+ Add channel</button>
-    <div class="subtot"><span>Monthly marketing</span><span class="v" id="mktSub">£0</span></div>
-    <div class="subtot" style="border-top:none;padding-top:2px"><span style="color:var(--grey2)">Annual marketing (12 mth)</span><span class="v" id="mktAnnual" style="color:var(--grey)">£0</span></div>
-  </div>
+<section class="page ct" id="marketing">
+  <div class="eyebrow"><span class="rule"></span><span>Marketing</span></div>
+  <h1 class="big">A funded plan to <em>drive European sales.</em></h1>
+  <p class="lead">Marketing lines live in the cost sheet on The Model tab (edit them there). This is the channel view.</p>
   <h2>Spend by <em>channel</em></h2>
   <div class="mbars" id="mktBars"></div>
+  <p class="body" id="mktNote"></p>
 </section>
 
-<!-- TAB 5 -->
-<section class="page" id="invest">
+<section class="page ct" id="invest">
   <div class="eyebrow"><span class="rule"></span><span>Investment Needed</span></div>
-  <h1>What we need to <em>set this up now.</em></h1>
-  <p class="lead">A fixed funding commitment and an agreed marketing budget. With these in place, the UK operation runs as a licensed DMC and 2027 is a full trading year.</p>
-  <div class="ctrlgrid">
-    <div class="ctrlbox">
-      <h3>One-off set-up</h3>
-      <div class="lrow hdr"><div>Item</div><div style="text-align:right">£ one-off</div><div></div><div></div></div>
-      <div id="setupRows"></div>
-      <button class="addline" id="addSetupBtn" onclick="addLine('setup')">+ Add set-up cost</button>
-      <div class="subtot"><span>Total set-up</span><span class="v" id="setupSub">£0</span></div>
-    </div>
-    <div class="ctrlbox">
-      <h3>Funding logic</h3>
-      <div class="ctrl"><div class="top"><label>Months funded</label><span class="val" id="runwayV">6</span></div><input type="range" id="runway" min="3" max="12" step="1"></div>
-      <p class="body" style="font-size:12.5px;margin-top:4px">Covers the full running cost (team, office, operations, marketing) for the funded period at the ramping sales plan, plus one-off set-up and licensing — the fixed commitment to agree.</p>
-    </div>
+  <h1 class="big">What we need to <em>set this up now.</em></h1>
+  <p class="lead">A fixed funding commitment covers the running cost while sales build, plus one-off set-up and licensing.</p>
+  <div class="ctrlbox">
+    <h3>Funding logic</h3>
+    <div class="ctrl"><div class="top"><label>One-off set-up &amp; licensing (£)</label><span class="val" id="setupV">£20,000</span></div><input type="range" id="setup" min="0" max="60000" step="1000"></div>
+    <div class="ctrl"><div class="top"><label>Months funded</label><span class="val" id="runwayV">6</span></div><input type="range" id="runway" min="3" max="12" step="1"></div>
   </div>
   <div class="investbox">
     <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b8041a;margin-bottom:8px">Total funding to agree</div>
     <div class="big"><span class="cur">£</span><span id="fundBig">0</span></div>
     <div style="margin-top:18px">
-      <div class="investrow"><span>Cumulative funding gap over <span id="runwayN">6</span> months (at ramp)</span><span class="v" id="invGap">£0</span></div>
+      <div class="investrow"><span>Net monthly position</span><span class="v" id="invNet">£0</span></div>
+      <div class="investrow"><span>Months funded</span><span class="v" id="invRunway">6</span></div>
+      <div class="investrow"><span>Running cost cover (if loss-making)</span><span class="v" id="invCover">£0</span></div>
       <div class="investrow"><span>One-off set-up &amp; licensing</span><span class="v" id="invSetup">£0</span></div>
-      <div class="investrow"><span>Monthly running cost</span><span class="v" id="invMonthly">£0</span></div>
-      <div class="investrow"><span>Month-12 income (at ramp end)</span><span class="v" id="invIncome" style="color:var(--green)">£0</span></div>
-      <div class="investrow"><span>Month-12 net</span><span class="v" id="invNet">£0</span></div>
     </div>
   </div>
-  <p class="noteline">Funding = cumulative monthly losses across the funded ramp period (while sales build) + one-off set-up &amp; licensing. Once the ramp matures, monthly net turns positive. Component cost-savings and the margin that sits in selling offices' P&amp;Ls are further upside, not modelled here.</p>
+  <p class="body" style="font-size:12.5px;color:var(--grey2);margin-top:12px">If the model is already profitable monthly, funding covers only the one-off set-up. If it runs at a monthly loss, funding also covers that loss across the funded months while volume builds.</p>
 </section>
 
 </div>
 
 <footer><div class="wrap">
   <b>ORN Europe Limited</b> · 17 Hanover Square · London W1S 1BN · Confidential — Internal<br>
-  UK Operation Business Case · Prepared by Ajay Kawa for Raj Kumar &amp; Vinay Gupta · Orchestrated Rhythms of Nature
+  UK Operation Business Case · Prepared by Ajay Kawa for Raj Kumar &amp; Vinay Gupta
 </div></footer>
 
 <div class="toast" id="toast">Saved</div>
@@ -362,226 +325,174 @@ async function loadFirebase(){
   return {initializeApp:a.initializeApp,getDatabase:d.getDatabase,ref:d.ref,onValue:d.onValue,set:d.set};
 }
 const firebaseConfig={apiKey:"AIzaSyDEA_UgSvAUEWoyJHF6qBw3zWD_7-uiNKo",authDomain:"orn-hotel-review.firebaseapp.com",databaseURL:"https://orn-hotel-review-default-rtdb.europe-west1.firebasedatabase.app",projectId:"orn-hotel-review",storageBucket:"orn-hotel-review.firebasestorage.app",messagingSenderId:"130842489297",appId:"1:130842489297:web:5a554ef0691b42182330f0"};
-const DB_PATH="orn_board/uk_business_case/model_v2";
+const DB_PATH="orn_board/uk_business_case/model_v3";
 const UNLOCK_PW="3131";
-const MONTHS=["M1","M2","M3","M4","M5","M6","M7","M8","M9","M10","M11","M12"];
 
 function defaults(){return{
-  staff:[{name:"Ken Newton — Operations Manager",pay:3000},{name:"Contractor — Contracting",pay:3000},{name:"Tim Windsor — GIT QC Manager",pay:2400},{name:"Admin — Office Support",pay:2400}],
-  ops:[{name:"Office rent — 17 Hanover Sq, Mayfair",cost:3500},{name:"Office services & business rates",cost:1100},{name:"Phones (3CX / mobiles)",cost:250},{name:"IT, software & systems",cost:400},{name:"Insurance",cost:150},{name:"Legal & compliance",cost:200},{name:"Travel & client entertainment",cost:500},{name:"Contingency / misc",cost:400}],
-  mkt:[{name:"Social media & digital ads",cost:1500},{name:"Events & exhibitions",cost:1200},{name:"Roadshows & agent visits",cost:1000},{name:"Offline / print & PR",cost:600},{name:"Content & collateral",cost:400},{name:"Email & CRM / website",cost:300}],
-  setup:[{name:"ATOL / ABTA licensing & bonding",cost:10000},{name:"Company set-up, legal & banking",cost:3000},{name:"Systems, branding & website build",cost:4000},{name:"Office fit-out & equipment",cost:3000}],
-  tripsStart:2,tripsEnd:10,tripVal:1500,margin:15,
-  memStart:5,memEnd:40,memVal:1500,memMargin:15,
-  runway:6, locked:false
+  sales:[
+    {name:"FIT bookings — ORN AU + TAG + India",bk:20,val:5000,mgn:15},
+    {name:"Membership club bookings",bk:10,val:1500,mgn:15},
+    {name:"Group / series bookings",bk:4,val:8000,mgn:15},
+    {name:"Other / misc revenue",bk:4,val:2500,mgn:15},
+  ],
+  costs:[
+    {name:"Ken Newton — Operations Manager",cost:3000},
+    {name:"Contractor — Contracting",cost:3000},
+    {name:"Tim Windsor — GIT QC Manager",cost:2400},
+    {name:"Admin — Office Support",cost:2400},
+    {name:"Office rent — 17 Hanover Sq, Mayfair",cost:3500},
+    {name:"Office services & business rates",cost:1100},
+    {name:"Phones (3CX / mobiles)",cost:250},
+    {name:"IT, software & systems (Zoho / Nexus)",cost:400},
+    {name:"Insurance",cost:150},
+    {name:"Legal & compliance",cost:200},
+    {name:"Marketing — social & digital",cost:1500},
+    {name:"Marketing — events & roadshows",cost:2200},
+    {name:"Marketing — offline / print & PR",cost:1000},
+    {name:"Marketing — content & CRM",cost:300},
+    {name:"Travel & client entertainment",cost:500},
+    {name:"Contingency / misc",cost:400},
+  ],
+  setup:20000, runway:6, locked:false
 };}
 
 let M=defaults();
-let db=null,connected=false,remoteApplying=false;
-const LKEY="orn_uk_case_v2";
-const SLIDERS=[["tripsStart",v=>v],["tripsEnd",v=>v],["tripVal",v=>gbp(v)],["margin",v=>v+"%"],["memStart",v=>v],["memEnd",v=>v],["memVal",v=>gbp(v)],["memMargin",v=>v+"%"],["runway",v=>v]];
+let db=null,connected=false;
+const LKEY="orn_uk_case_v3";
 
-/* ---------- helpers ---------- */
 const gbp=n=>"£"+Math.round(n).toLocaleString("en-GB");
-const sum=(a,k)=>a.reduce((x,y)=>x+(Number(y[k])||0),0);
-const payroll=()=>sum(M.staff,"pay"), opsCost=()=>sum(M.ops,"cost"), mktCost=()=>sum(M.mkt,"cost"), setupCost=()=>sum(M.setup,"cost");
-const runningM=()=>payroll()+opsCost()+mktCost();
-function lerp(a,b,i){return a+(b-a)*(i/11);}           // month index 0..11
-function tripsMonth(i){return lerp(M.tripsStart,M.tripsEnd,i);}
-function memMonth(i){return lerp(M.memStart,M.memEnd,i);}
-function salesMarginMonth(i){return tripsMonth(i)*4.333*M.tripVal*(M.margin/100);}
-function memMarginMonth(i){return memMonth(i)*M.memVal*(M.memMargin/100);}
-function incomeMonth(i){return salesMarginMonth(i)+memMarginMonth(i);}
-function netMonth(i){return incomeMonth(i)-runningM();}
+const revOf=r=>(Number(r.bk)||0)*(Number(r.val)||0)*((Number(r.mgn)||0)/100);
+const revTotal=()=>M.sales.reduce((a,r)=>a+revOf(r),0);
+const costTotal=()=>M.costs.reduce((a,c)=>a+(Number(c.cost)||0),0);
+const netM=()=>revTotal()-costTotal();
+const isMkt=c=>/market/i.test(c.name);
 
-/* ---------- firebase ---------- */
+/* firebase */
 async function initFB(){
-  try{
-    FB=await loadFirebase();const app=FB.initializeApp(firebaseConfig);db=FB.getDatabase(app);
-    FB.onValue(FB.ref(db,DB_PATH),snap=>{
-      connected=true;setSync(true);
-      const v=snap.val();
-      if(v){ remoteApplying=true; M=migrate(v); localStorage.setItem(LKEY,JSON.stringify(M)); renderAll(); remoteApplying=false; }
-    },e=>{setSync(false);console.warn("read",e.message);});
-  }catch(e){setSync(false);console.warn("fb unavailable",e.message);}
+  try{FB=await loadFirebase();const app=FB.initializeApp(firebaseConfig);db=FB.getDatabase(app);
+    FB.onValue(FB.ref(db,DB_PATH),snap=>{connected=true;setSync(true);const v=snap.val();if(v){M=migrate(v);localStorage.setItem(LKEY,JSON.stringify(M));renderAll();}},e=>{setSync(false);console.warn(e.message);});
+  }catch(e){setSync(false);console.warn("fb off",e.message);}
 }
 function migrate(v){return Object.assign({},defaults(),v);}
 function setSync(on){const d=document.getElementById("syncdot"),t=document.getElementById("synctext");if(!d)return;d.className="syncdot "+(on?"on":"off");t.textContent=on?"Live · synced":"Offline · local";}
-function pushSave(){
-  localStorage.setItem(LKEY,JSON.stringify(M));
-  if(db&&connected&&FB){FB.set(FB.ref(db,DB_PATH),M).then(()=>toast("Saved")).catch(()=>{setSync(false);toast("Saved locally");});}
-  else toast("Saved locally");
-}
+function pushSave(){localStorage.setItem(LKEY,JSON.stringify(M));if(db&&connected&&FB){FB.set(FB.ref(db,DB_PATH),M).then(()=>toast("Saved")).catch(()=>{setSync(false);toast("Saved locally");});}else toast("Saved locally");}
+let saveT;function liveSave(){clearTimeout(saveT);saveT=setTimeout(pushSave,600);}
 
-/* ---------- lock ---------- */
-function isLocked(){return !!M.locked;}
-window.saveAndLock=function(){ M.locked=true; pushSave(); renderLockUI(); renderAll(); toast("Saved & locked"); };
-window.unlock=function(){
-  const pw=prompt("Enter password to unlock editing:");
-  if(pw===null)return;
-  if(pw===UNLOCK_PW){ M.locked=false; pushSave(); renderLockUI(); renderAll(); toast("Unlocked"); }
-  else alert("Incorrect password.");
-};
-window.resetModel=function(){
-  if(isLocked()){alert("Locked. Unlock first (password) to reset.");return;}
-  if(confirm("Reset all figures to the base plan?")){M=defaults();pushSave();renderAll();}
-};
-function renderLockUI(){
-  const locked=isLocked();
-  document.getElementById("lockpill").className="lockpill"+(locked?" locked":"");
-  document.getElementById("lockicon").textContent=locked?"🔒":"🔓";
-  document.getElementById("lockword").textContent=locked?"Locked":"Unlocked";
-  document.getElementById("editbar").className="editbar"+(locked?" locked":"");
-  document.getElementById("editstate").textContent=locked?"Locked — figures are fixed. Unlock with password to edit.":"Unlocked — you can edit. Changes update live, then Save & Lock.";
-  document.getElementById("saveLockBtn").style.display=locked?"none":"";
-  document.getElementById("unlockBtn").style.display=locked?"":"none";
-  document.getElementById("resetBtn").disabled=locked;
-}
+/* lock */
+const locked=()=>!!M.locked;
+window.saveAndLock=()=>{M.locked=true;pushSave();renderAll();toast("Saved & locked");};
+window.unlock=()=>{const pw=prompt("Password to unlock editing:");if(pw===null)return;if(pw===UNLOCK_PW){M.locked=false;pushSave();renderAll();toast("Unlocked");}else alert("Incorrect password.");};
+window.resetModel=()=>{if(locked()){alert("Locked — unlock first.");return;}if(confirm("Reset to base plan?")){M=defaults();pushSave();renderAll();}};
 
-/* ---------- tabs ---------- */
-document.getElementById("tabs").addEventListener("click",e=>{
-  const t=e.target.closest(".tab");if(!t)return;
+/* tabs */
+document.getElementById("tabs").addEventListener("click",e=>{const t=e.target.closest(".tab");if(!t)return;
   document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
   document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
-  t.classList.add("active");document.getElementById(t.dataset.p).classList.add("active");
-  window.scrollTo({top:0,behavior:"smooth"});
-});
+  t.classList.add("active");document.getElementById(t.dataset.p).classList.add("active");window.scrollTo({top:0,behavior:"smooth"});});
 
-/* ---------- editable line lists ----------
-   KEY FIX: while a field has focus we do NOT re-render it (so typing never gets wiped).
-   Totals/P&L update live via recalc() which touches only output nodes, not the inputs. */
-function renderLineList(containerId,arr,key){
-  const c=document.getElementById(containerId);
-  if(!c)return;
-  const locked=isLocked();
-  c.innerHTML="";
-  arr.forEach((item,i)=>{
-    const row=document.createElement("div");row.className="lrow";
-    row.innerHTML=`<input type="text" value="${(item.name||'').replace(/"/g,'&quot;')}" ${locked?'disabled':''}>
-      <input type="number" value="${item[key]||0}" min="0" step="50" ${locked?'disabled':''}>
-      <div class="unit">/mth</div>
-      <button class="del" title="Remove" ${locked?'disabled':''}>✕</button>`;
-    const [nameI,valI]=row.querySelectorAll("input");
-    nameI.addEventListener("input",()=>{item.name=nameI.value;liveSave();});
-    valI.addEventListener("input",()=>{item[key]=Number(valI.value)||0;recalc();liveSave();});
-    row.querySelector(".del").addEventListener("click",()=>{if(isLocked())return;arr.splice(i,1);renderAll();liveSave();});
-    c.appendChild(row);
+/* ---- rows: inputs are not rebuilt while focused (totals update via recalc only) ---- */
+function renderSales(){
+  const tb=document.getElementById("salesRows");if(!tb)return;const dis=locked()?"disabled":"";tb.innerHTML="";
+  M.sales.forEach((r,i)=>{
+    const tr=document.createElement("tr");
+    tr.innerHTML=`<td><input class="name" type="text" value="${(r.name||'').replace(/"/g,'&quot;')}" ${dis}></td>
+      <td><input class="num" type="number" min="0" step="1" value="${r.bk}" ${dis}></td>
+      <td><input class="num" type="number" min="0" step="100" value="${r.val}" ${dis}></td>
+      <td><input class="num" type="number" min="0" step="1" value="${r.mgn}" ${dis}></td>
+      <td class="calc green" data-rev>${gbp(revOf(r))}</td>
+      <td class="delc"><button class="del" ${dis}>✕</button></td>`;
+    const [nm,bk,val,mgn]=tr.querySelectorAll("input");const revCell=tr.querySelector("[data-rev]");
+    nm.addEventListener("input",()=>{r.name=nm.value;liveSave();renderMktBars();});
+    const upd=()=>{r.bk=Number(bk.value)||0;r.val=Number(val.value)||0;r.mgn=Number(mgn.value)||0;revCell.textContent=gbp(revOf(r));recalcTotals();liveSave();};
+    bk.addEventListener("input",upd);val.addEventListener("input",upd);mgn.addEventListener("input",upd);
+    tr.querySelector(".del").addEventListener("click",()=>{if(locked())return;M.sales.splice(i,1);renderSales();recalcTotals();liveSave();});
+    tb.appendChild(tr);
   });
 }
-window.addLine=function(kind){
-  if(isLocked())return;
-  if(kind==="staff")M.staff.push({name:"New role",pay:2400});
-  if(kind==="ops")M.ops.push({name:"New cost",cost:100});
-  if(kind==="mkt")M.mkt.push({name:"New channel",cost:500});
-  if(kind==="setup")M.setup.push({name:"New set-up cost",cost:1000});
-  renderAll();liveSave();
-};
+function renderCosts(){
+  const tb=document.getElementById("costRows");if(!tb)return;const dis=locked()?"disabled":"";tb.innerHTML="";
+  M.costs.forEach((c,i)=>{
+    const tr=document.createElement("tr");
+    tr.innerHTML=`<td><input class="name" type="text" value="${(c.name||'').replace(/"/g,'&quot;')}" ${dis}></td>
+      <td><input class="num" type="number" min="0" step="50" value="${c.cost}" ${dis}></td>
+      <td class="ann" data-ann>${gbp((Number(c.cost)||0)*12)}</td>
+      <td class="delc"><button class="del" ${dis}>✕</button></td>`;
+    const [nm,cost]=tr.querySelectorAll("input");const annCell=tr.querySelector("[data-ann]");
+    nm.addEventListener("input",()=>{c.name=nm.value;liveSave();renderMktBars();});
+    cost.addEventListener("input",()=>{c.cost=Number(cost.value)||0;annCell.textContent=gbp(c.cost*12);recalcTotals();liveSave();renderMktBars();});
+    tr.querySelector(".del").addEventListener("click",()=>{if(locked())return;M.costs.splice(i,1);renderCosts();recalcTotals();liveSave();renderMktBars();});
+    tb.appendChild(tr);
+  });
+}
+window.addSales=()=>{if(locked())return;M.sales.push({name:"New revenue line",bk:5,val:1500,mgn:15});renderSales();recalcTotals();liveSave();};
+window.addCost=()=>{if(locked())return;M.costs.push({name:"New cost line",cost:500});renderCosts();recalcTotals();liveSave();renderMktBars();};
 
-/* ---------- debounced live save (does NOT re-render; avoids wiping fields) ---------- */
-let saveT;
-function liveSave(){clearTimeout(saveT);saveT=setTimeout(pushSave,600);}
+function recalcTotals(){
+  const rev=revTotal(),cost=costTotal(),net=rev-cost;
+  set("revTotal",gbp(rev));set("costTotalM",gbp(cost));set("costTotalA",gbp(cost*12));
+  set("netMth",net<0?"("+gbp(-net)+")":gbp(net));set("netAnn",net<0?"("+gbp(-net*12)+")":gbp(net*12));
+  const nb=document.getElementById("netbar");if(nb)nb.className="netbar "+(net>=0?"pos":"neg");
+  // summary boxes
+  const mgn=rev>0?(net/rev*100):0;
+  set("summary",`
+    <div class="sbox rev"><div class="l">Revenue / month</div><div class="v green">${gbp(rev)}</div><div class="sub">${gbp(rev*12)} / year</div></div>
+    <div class="sbox cost"><div class="l">Costs / month</div><div class="v red">${gbp(cost)}</div><div class="sub">${gbp(cost*12)} / year</div></div>
+    <div class="sbox net"><div class="l">Net / month</div><div class="v ${net>=0?'green':'red'}">${net<0?'('+gbp(-net)+')':gbp(net)}</div><div class="sub">${net<0?'('+gbp(-net*12)+')':gbp(net*12)} / year</div></div>
+    <div class="sbox margin"><div class="l">Net margin</div><div class="v blue">${Math.round(mgn)}%</div><div class="sub">of revenue</div></div>
+    <div class="sbox fund"><div class="l">Funding to agree</div><div class="v amber">${gbp(funding())}</div><div class="sub">${M.runway} mth + set-up</div></div>`,true);
+  // investment
+  set("fundBig",Math.round(funding()).toLocaleString("en-GB"));
+  const inv=document.getElementById("invNet");if(inv){inv.textContent=net<0?"("+gbp(-net)+")":gbp(net);inv.className="v "+(net>=0?"":"");}
+  set("invRunway",M.runway);set("invCover",gbp(net<0?-net*M.runway:0));set("invSetup",gbp(M.setup));
+}
+function funding(){const net=netM();return (net<0?-net*M.runway:0)+M.setup;}
 
-/* ---------- render ---------- */
+function renderMktBars(){
+  const bars=document.getElementById("mktBars");if(!bars)return;
+  const mkt=M.costs.filter(isMkt);
+  if(!mkt.length){bars.innerHTML='<p class="body">No marketing lines yet — add cost lines named "Marketing…" on The Model tab.</p>';set("mktNote","");return;}
+  const mx=Math.max(1,...mkt.map(c=>Number(c.cost)||0));
+  bars.innerHTML=mkt.map(c=>`<div class="mbar"><div class="ml">${c.name}</div><div class="track"><div class="fill" style="width:${(c.cost/mx*100)}%"></div></div><div class="mv">${gbp(c.cost)}</div></div>`).join("");
+  const tot=mkt.reduce((a,c)=>a+(Number(c.cost)||0),0);
+  set("mktNote",`Total marketing: ${gbp(tot)} / month · ${gbp(tot*12)} / year.`);
+}
+
+function renderLockUI(){
+  const L=locked();
+  document.getElementById("lockpill").className="lockpill"+(L?" locked":"");
+  document.getElementById("lockicon").textContent=L?"🔒":"🔓";
+  document.getElementById("lockword").textContent=L?"Locked":"Unlocked";
+  document.getElementById("editbar").className="editbar"+(L?" locked":"");
+  document.getElementById("editstate").textContent=L?"Locked — figures are fixed. Unlock with password to edit.":"Unlocked — click any figure to edit. Totals update live, then Save & Lock.";
+  document.getElementById("saveLockBtn").style.display=L?"none":"";
+  document.getElementById("unlockBtn").style.display=L?"":"none";
+  ["resetBtn","addSalesBtn","addCostBtn","scnLean","scnBase","scnGrowth","setup","runway"].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=L;});
+}
+
 function renderAll(){
-  renderLockUI();
-  renderLineList("staffRows",M.staff,"pay");
-  renderLineList("opsRows",M.ops,"cost");
-  renderLineList("mktRows",M.mkt,"cost");
-  renderLineList("setupRows",M.setup,"cost");
-  // sliders
-  SLIDERS.forEach(([id,fmt])=>{const el=document.getElementById(id);if(el){el.value=M[id];el.disabled=isLocked();document.getElementById(id+"V").textContent=fmt(M[id]);}});
-  // add buttons disabled when locked
-  ["addStaffBtn","addOpsBtn","addMktBtn","addSetupBtn"].forEach(id=>{const b=document.getElementById(id);if(b)b.disabled=isLocked();});
-  recalc();
+  renderLockUI();renderSales();renderCosts();renderMktBars();
+  const sv=document.getElementById("setup"),rw=document.getElementById("runway");
+  if(sv){sv.value=M.setup;document.getElementById("setupV").textContent=gbp(M.setup);}
+  if(rw){rw.value=M.runway;document.getElementById("runwayV").textContent=M.runway;}
+  recalcTotals();
 }
 
-function recalc(){
-  // subtotals
-  set("staffSub",gbp(payroll()));set("opsSub",gbp(opsCost()));set("mktSub",gbp(mktCost()));
-  set("mktAnnual",gbp(mktCost()*12));set("setupSub",gbp(setupCost()));
+/* investment sliders */
+["setup","runway"].forEach(id=>{const el=document.getElementById(id);if(!el)return;
+  el.addEventListener("input",()=>{if(locked())return;M[id]=Number(el.value);document.getElementById(id+"V").textContent=id==="setup"?gbp(M[id]):M[id];recalcTotals();liveSave();});});
 
-  // annual totals for KPI + averages
-  let totIncome=0,totNet=0;for(let i=0;i<12;i++){totIncome+=incomeMonth(i);totNet+=netMonth(i);}
-  const avgIncome=totIncome/12;
-
-  // KPI bar
-  set("kpibar",`
-    <div class="kpi"><div class="l">Avg monthly income</div><div class="v green">${gbp(avgIncome)}</div></div>
-    <div class="kpi"><div class="l">Monthly running cost</div><div class="v red">${gbp(runningM())}</div></div>
-    <div class="kpi"><div class="l">Year-1 net</div><div class="v ${totNet>=0?'green':'red'}">${gbp(totNet)}</div></div>
-    <div class="kpi"><div class="l">Headcount</div><div class="v">${M.staff.length}</div></div>
-    <div class="kpi"><div class="l">Funding to agree</div><div class="v amber">${gbp(fundingNeeded())}</div></div>`,true);
-
-  // ---- P&L GRID ----
-  const head=document.getElementById("plHead");
-  head.innerHTML="<tr><th>£ per month</th>"+MONTHS.map(m=>`<th>${m}</th>`).join("")+`<th class="tot">Year 1</th></tr>`;
-  const rowsOut=[];
-  const mkCells=(fn,cls="")=>{let t=0;let tds="";for(let i=0;i<12;i++){const v=fn(i);t+=v;tds+=`<td class="${cls} ${v<0?'neg':''}">${v<0?'('+gbp(-v)+')':gbp(v)}</td>`;}tds+=`<td class="tot ${cls} ${t<0?'neg':''}">${t<0?'('+gbp(-t)+')':gbp(t)}</td>`;return tds;};
-  // INCOME
-  rowsOut.push(`<tr class="section"><td>Income</td>${MONTHS.map(()=>'<td></td>').join('')}<td class="tot"></td></tr>`);
-  rowsOut.push(`<tr class="sub"><td class="lbl">Tour booking margin</td>${mkCells(i=>salesMarginMonth(i),'pos')}</tr>`);
-  rowsOut.push(`<tr class="sub"><td class="lbl">Member-club margin</td>${mkCells(i=>memMarginMonth(i),'pos')}</tr>`);
-  rowsOut.push(`<tr class="revtot"><td>Total income</td>${mkCells(i=>incomeMonth(i))}</tr>`);
-  // COSTS
-  rowsOut.push(`<tr class="section"><td>Costs</td>${MONTHS.map(()=>'<td></td>').join('')}<td class="tot"></td></tr>`);
-  rowsOut.push(`<tr class="sub"><td class="lbl">Team / payroll</td>${mkCells(()=>payroll())}</tr>`);
-  rowsOut.push(`<tr class="sub"><td class="lbl">Operating costs</td>${mkCells(()=>opsCost())}</tr>`);
-  rowsOut.push(`<tr class="sub"><td class="lbl">Marketing / advertising</td>${mkCells(()=>mktCost())}</tr>`);
-  rowsOut.push(`<tr class="costtot"><td>Total costs</td>${mkCells(()=>runningM())}</tr>`);
-  // NET
-  rowsOut.push(`<tr class="net"><td>Net profit / (loss)</td>${mkCells(i=>netMonth(i))}</tr>`);
-  // CUMULATIVE
-  let cum=0;let cumTds="";for(let i=0;i<12;i++){cum+=netMonth(i);cumTds+=`<td class="${cum<0?'neg':'pos'}">${cum<0?'('+gbp(-cum)+')':gbp(cum)}</td>`;}
-  cumTds+=`<td class="tot ${cum<0?'neg':'pos'}">${cum<0?'('+gbp(-cum)+')':gbp(cum)}</td>`;
-  rowsOut.push(`<tr class="cum"><td class="lbl">Cumulative net</td>${cumTds}</tr>`);
-  document.getElementById("plBody").innerHTML=rowsOut.join("");
-
-  // break-even month
-  let beMonth=0,run=0;for(let i=0;i<12;i++){if(netMonth(i)>=0){beMonth=i+1;break;}}
-  const m12net=netMonth(11);
-  set("plNote", m12net>=0
-    ? `Sales ramp to a positive month-12 net of ${gbp(m12net)}. ${beMonth?('Monthly break-even reached around month '+beMonth+'.'):''} Year-1 net ${gbp(totNet)}. The funding covers the early loss-making months while volume builds.`
-    : `Even at month 12 the plan runs at ${gbp(-m12net)}/month — volume or rates need to rise, or costs fall, to reach break-even. Drag the ramp END sliders up to see the effect.`);
-
-  // Marketing bars
-  const mx=Math.max(1,...M.mkt.map(c=>Number(c.cost)||0));
-  set("mktBars",M.mkt.map(c=>`<div class="mbar"><div class="ml">${c.name}</div><div class="track"><div class="fill" style="width:${(c.cost/mx*100)}%"></div></div><div class="mv">${gbp(c.cost)}</div></div>`).join(""),true);
-
-  // Investment
-  set("runwayN",M.runway);set("runwayV",M.runway);
-  set("invGap",gbp(fundingGapOnly()));
-  set("invSetup",gbp(setupCost()));
-  set("invMonthly",gbp(runningM()));
-  set("invIncome",gbp(incomeMonth(11)));
-  const nn=document.getElementById("invNet");if(nn){nn.textContent=gbp(netMonth(11));nn.className="v "+(netMonth(11)>=0?"pos":"neg");}
-  set("fundBig",Math.round(fundingNeeded()).toLocaleString("en-GB"));
-}
-// funding = cumulative losses across runway months (floored at 0 gain) + setup
-function fundingGapOnly(){let gap=0;for(let i=0;i<M.runway;i++){const n=netMonth(i);if(n<0)gap+=-n;}return gap;}
-function fundingNeeded(){return fundingGapOnly()+setupCost();}
+/* scenarios */
+window.applyScenario=function(s){if(locked()){alert("Locked — unlock first.");return;}
+  if(s==="base"){const k=M.locked;M=defaults();M.locked=k;}
+  if(s==="lean"){M.sales.forEach(r=>r.bk=Math.round(r.bk*0.6));M.costs.filter(isMkt).forEach(c=>c.cost=Math.round(c.cost*0.6));M.runway=6;}
+  if(s==="growth"){M.sales.forEach(r=>r.bk=Math.round(r.bk*1.8));M.runway=9;}
+  renderAll();liveSave();};
 
 function set(id,val,html){const el=document.getElementById(id);if(!el)return;if(html)el.innerHTML=val;else el.textContent=val;}
-
-/* ---------- sliders (bound once; never re-created, so no typing conflict) ---------- */
-SLIDERS.forEach(([id,fmt])=>{
-  const el=document.getElementById(id);if(!el)return;
-  el.addEventListener("input",()=>{if(isLocked())return;M[id]=Number(el.value);document.getElementById(id+"V").textContent=fmt(M[id]);recalc();liveSave();});
-});
-
-/* ---------- scenarios ---------- */
-window.applyScenario=function(s){
-  if(isLocked()){alert("Locked. Unlock first to change the model.");return;}
-  if(s==="lean"){M.tripsStart=1;M.tripsEnd=5;M.memStart=2;M.memEnd=15;M.mkt.forEach(c=>c.cost=Math.round(c.cost*0.6));M.runway=6;}
-  if(s==="base"){const keepLock=M.locked;M=defaults();M.locked=keepLock;}
-  if(s==="growth"){M.tripsStart=4;M.tripsEnd=16;M.tripVal=1800;M.memStart=10;M.memEnd=60;M.runway=9;if(M.staff.length<5)M.staff.push({name:"Sales Executive — Europe",pay:3000});}
-  renderAll();liveSave();
-};
-
-/* ---------- boot ---------- */
 let toastT;function toast(m){const e=document.getElementById("toast");e.textContent=m;e.classList.add("show");clearTimeout(toastT);toastT=setTimeout(()=>e.classList.remove("show"),1300);}
+
 try{const c=JSON.parse(localStorage.getItem(LKEY));if(c)M=migrate(c);}catch(e){}
-renderAll();
-initFB();
+renderAll();initFB();
 </script>
 </body>
 </html>
