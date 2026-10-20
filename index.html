@@ -70,6 +70,51 @@
   .flow .arw{color:var(--red);font-size:18px}
   .quote{border-left:3px solid var(--red);padding:8px 0 8px 18px;font-family:var(--serif);font-size:19px;color:var(--ink);margin:18px 0;max-width:820px;font-style:italic}
 
+  /* ---------- GROWTH TO £10M ---------- */
+  #growth{padding:40px 0 80px}
+  .gstats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:22px 0 20px}
+  @media(max-width:900px){.gstats{grid-template-columns:repeat(2,1fr)}}
+  .gstat{border:1px solid var(--line);border-radius:12px;padding:16px 16px;background:var(--panel2);border-top:3px solid var(--red)}
+  .gstat .gl{font-size:11px;color:var(--grey2);text-transform:uppercase;letter-spacing:.5px}
+  .gstat .gv{font-family:var(--serif);font-size:28px;line-height:1.1;margin-top:5px;color:var(--ink)}
+  .gstat .gs{font-size:11.5px;color:var(--grey2);margin-top:3px}
+  .gcard{border:1px solid var(--line);border-radius:14px;padding:20px 22px;background:var(--card)}
+  .gcard h3{font-family:var(--serif);font-weight:400;font-size:19px;margin-bottom:4px}
+  .gchd{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+  .glegend{display:flex;gap:14px}.lg{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--grey)}.lg i{width:12px;height:12px;border-radius:3px;display:inline-block}
+  .chartwrap{overflow-x:auto}
+  .chart{display:flex;align-items:flex-end;gap:10px;height:230px;min-width:620px;border-bottom:2px solid var(--ink);border-left:1px solid var(--line);padding:0 4px}
+  .bar{flex:1;display:flex;flex-direction:column-reverse;align-items:stretch;position:relative;min-width:26px}
+  .bar .seg{width:100%}
+  .bar .seg.d{background:var(--ink)}
+  .bar .seg.m{background:var(--red)}
+  .bar.setup .seg{background:repeating-linear-gradient(45deg,#e3e3e0,#e3e3e0 4px,#f3f3f1 4px,#f3f3f1 8px);outline:1px dashed var(--line2);outline-offset:-1px}
+  .bar .bl{position:absolute;bottom:-20px;left:0;right:0;text-align:center;font-size:10.5px;color:var(--grey2)}
+  .bar .bv{position:absolute;top:-17px;left:0;right:0;text-align:center;font-size:10px;font-weight:600;color:var(--ink)}
+  .cumline{margin-top:30px;font-size:12.5px;color:var(--grey);border-top:1px solid var(--line);padding-top:10px}
+  .cumline b{color:var(--red)}
+  .splitbar{display:flex;height:34px;border-radius:8px;overflow:hidden;margin:14px 0 14px;border:1px solid var(--line)}
+  .splitbar .sd{background:var(--ink);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:600}
+  .splitbar .sm{background:var(--red);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:600}
+  .splitrows{display:flex;flex-direction:column;gap:8px}
+  .splitrow{display:flex;align-items:center;justify-content:space-between;font-size:13px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel2)}
+  .splitrow .sk{display:flex;align-items:center;gap:8px}.splitrow .dot{width:11px;height:11px;border-radius:3px}
+  .splitrow .sv{font-weight:600}
+  .stages{display:flex;flex-direction:column;gap:12px;margin-top:10px}
+  .stg{display:flex;gap:12px;align-items:flex-start}
+  .stg .sgn{flex:none;width:28px;height:28px;border-radius:50%;background:var(--red);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .stg .sgt{font-size:13.5px;font-weight:600}.stg .sgd{font-size:12.5px;color:var(--grey);line-height:1.55;margin-top:2px}
+  .funnel{display:flex;flex-direction:column;align-items:center;gap:4px}
+  .fn{width:100%;max-width:640px;border-radius:10px;padding:14px 18px;text-align:center;border:1px solid var(--line)}
+  .fn .fnl{font-size:12px;color:var(--grey2);text-transform:uppercase;letter-spacing:.5px}
+  .fn .fnv{font-family:var(--serif);font-size:26px;margin:3px 0 2px}
+  .fn .fns{font-size:11.5px;color:var(--grey2)}
+  .fn.f1{background:#111;color:#fff;max-width:720px}.fn.f1 .fnl,.fn.f1 .fns{color:#bbb}
+  .fn.f2{background:#3a3a3a;color:#fff;max-width:600px}.fn.f2 .fnl,.fn.f2 .fns{color:#ccc}
+  .fn.f3{background:var(--red-soft);border-color:var(--red-line);max-width:480px}.fn.f3 .fnv{color:var(--red)}
+  .fn.f4{background:var(--red);color:#fff;max-width:380px}.fn.f4 .fnl,.fn.f4 .fns{color:#ffd7dc}
+  .fnar{color:var(--line2);font-size:16px;line-height:1}
+
   /* ---------- MODEL / BUDGET ---------- */
   .modelhead{padding:20px 0 4px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px}
   .modelhead h1{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:-.4px}.modelhead h1 em{color:var(--red);font-style:italic}
@@ -176,17 +221,25 @@
 
 <nav class="tabs"><div class="wrap"><div class="tabs-inner" id="tabs">
   <div class="tab active" data-p="opportunity"><span class="n">1</span>Opportunity &amp; Services</div>
-  <div class="tab" data-p="budget"><span class="n">2</span>The Budget</div>
-  <div class="tab" data-p="invest"><span class="n">3</span>Investment Needed</div>
+  <div class="tab" data-p="growth"><span class="n">2</span>Growth to £10m</div>
+  <div class="tab" data-p="budget"><span class="n">3</span>The Budget</div>
+  <div class="tab" data-p="invest"><span class="n">4</span>Investment Needed</div>
 </div></div></nav>
 
 <!-- ===== TAB 1 — OPPORTUNITY & SERVICES ===== -->
 <section class="page active" id="opportunity"><div class="wrap narrow op">
-  <div class="eyebrow"><span class="rule"></span><span>The Opportunity · 2027</span></div>
+  <div class="eyebrow"><span class="rule"></span><span>The Opportunity · £10m Year 1</span></div>
   <h1 class="big">Build in the UK what we proved in <em>Australia.</em></h1>
-  <p class="lead">The ORN Australia operation has been a success — selling globally from one operational base. We now need the same in the UK: an office that sells Europe and worldwide, and acts as the DMC, quality-control and delivery engine for European travel across the whole group.</p>
+  <p class="lead">The ORN Australia operation has been a success — selling globally from one operational base. We now need the same in the UK: an office that sells Europe and worldwide, and acts as the DMC, quality-control and delivery engine for European travel across the whole group. <b>We are not starting cold — the UK team already has the experience, the live sales and the supplier and partner contacts, and we are <em style="color:var(--red);font-style:normal">IN Europe</em>, on the doorstep of the product.</b></p>
 
-  <div class="quote">Australia proved the model. The UK, sitting inside Europe, is the natural hub to contract, control and deliver European product — for every ORN office and in its own right.</div>
+  <div class="quote">Australia proved the model. The UK, sitting inside Europe with an experienced team and contacts already in place, is the natural hub to contract, control and deliver European product — for every ORN office and in its own right. The target: <b>£10m of sales in year one.</b></div>
+
+  <!-- three proof points -->
+  <div class="grid2 g3" style="margin:18px 0 6px">
+    <div class="card" style="border-top-color:var(--red)"><h3><span class="ic">🤝</span>Experience &amp; contacts</h3><p style="font-size:13px">Decades in European travel. Supplier, hotel and partner relationships already built — trust that takes years, in place from day one.</p></div>
+    <div class="card" style="border-top-color:var(--red)"><h3><span class="ic">💷</span>Live sales already</h3><p style="font-size:13px">The team is already selling — existing clients, bookings and pipeline to bring across, not a standing start.</p></div>
+    <div class="card" style="border-top-color:var(--red)"><h3><span class="ic">🇪🇺</span>We are IN Europe</h3><p style="font-size:13px">On the doorstep of the product. Short path from set-up to revenue — the suppliers, the demand and the destination are all here.</p></div>
+  </div>
 
   <h2>The Australia → UK <em>conversion</em></h2>
   <p class="body">Australia built a profitable global-selling operation from scratch. The UK has a structural advantage Australia didn't: it sits on Europe's doorstep, the destination the whole group is selling. That shortens the path from set-up to revenue — the UK can convert fast because the product, the suppliers and the demand are all here.</p>
@@ -227,11 +280,65 @@
   <div class="pill-row"><span class="pill">Proven in Australia</span><span class="pill">Europe on the doorstep</span><span class="pill">DMC + QC + delivery</span><span class="pill">Profitable by year-end</span></div>
 </div></section>
 
-<!-- ===== TAB 2 — BUDGET ===== -->
+<!-- ===== TAB 2 — GROWTH TO £10M ===== -->
+<section class="page" id="growth"><div class="wrap">
+  <div class="eyebrow"><span class="rule"></span><span>Growth to £10m · Year 1</span></div>
+  <h1 class="big">How we get to <em>£10 million</em> in year one.</h1>
+  <p class="lead">Worked backwards from the target. £10m of sales, split 70% direct and 30% member clubs, built across the selling year — Nov–Dec 2026 to set up, then a ramp from January as the credit programme goes live.</p>
+
+  <!-- headline numbers -->
+  <div class="gstats" id="gstats"></div>
+
+  <!-- ramp chart -->
+  <div class="gcard">
+    <div class="gchd"><h3>Sales ramp — building to £10m</h3><div class="glegend"><span class="lg"><i style="background:var(--ink)"></i>Direct</span><span class="lg"><i style="background:var(--red)"></i>Member clubs</span><span class="lg"><i style="background:var(--line2);outline:1px dashed var(--grey2)"></i>Set-up</span></div></div>
+    <div class="chartwrap"><div class="chart" id="rampChart"></div></div>
+    <div class="cumline" id="cumLine"></div>
+  </div>
+
+  <!-- split + stages -->
+  <div class="grid2 g2" style="margin-top:14px">
+    <div class="gcard">
+      <h3>Revenue split — direct vs member clubs</h3>
+      <div class="splitbar" id="splitBar"></div>
+      <div class="splitrows" id="splitRows"></div>
+      <p class="hint" style="margin-top:10px">Both lines are editable on The Budget tab — change the monthly bookings and this view updates.</p>
+    </div>
+    <div class="gcard">
+      <h3>Stages of growth</h3>
+      <div class="stages">
+        <div class="stg"><div class="sgn">1</div><div><div class="sgt">Set up · Nov–Dec 26</div><div class="sgd">Licensing (ABTA/ATOL), office, team, systems and the credit-programme build. Minimal selling.</div></div></div>
+        <div class="stg"><div class="sgn">2</div><div><div class="sgt">Launch &amp; ramp · Jan–Mar 27</div><div class="sgd">Credit programme live. Direct sales and member clubs switch on and begin to climb month on month.</div></div></div>
+        <div class="stg"><div class="sgn">3</div><div><div class="sgt">Scale · Apr–Jul 27</div><div class="sgd">Member reach compounds, direct pipeline matures. This is where working capital may need topping up.</div></div></div>
+        <div class="stg"><div class="sgn">4</div><div><div class="sgt">Peak &amp; profit · Aug–Oct 27</div><div class="sgd">Full run-rate across both channels — the year lands on £10m and the operation is in profit.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- member reach funnel -->
+  <div class="gcard" style="margin-top:14px">
+    <h3>Member reach — the credit programme engine</h3>
+    <p class="body" style="margin:4px 0 16px">We have access to roughly <b>5.5 million members</b> through sports federations and clubs — Swim England, British sports federations and partner networks. The credit programme converts a small fraction of that reach into bookings.</p>
+    <div class="funnel">
+      <div class="fn f1"><div class="fnl">Member reach accessible</div><div class="fnv">5,500,000</div><div class="fns">Swim England · British sports federations · partner clubs</div></div>
+      <div class="fnar">↓</div>
+      <div class="fn f2"><div class="fnl">Engaged via credit programme</div><div class="fnv">~110,000</div><div class="fns">~2% engaged with member credits &amp; offers</div></div>
+      <div class="fnar">↓</div>
+      <div class="fn f3"><div class="fnl">Member bookings · year 1</div><div class="fnv" id="fnBook">1,714</div><div class="fns">~1.6% of engaged — conservative conversion</div></div>
+      <div class="fnar">↓</div>
+      <div class="fn f4"><div class="fnl">Member revenue · year 1</div><div class="fnv" id="fnRev">£3.0m</div><div class="fns">@ £1,750 average booking value</div></div>
+    </div>
+    <p class="hint" style="margin-top:12px">Only a fraction of a fraction of the member base needs to convert. The reach is the engine — the programme turns it on from January.</p>
+  </div>
+
+  <div class="pill-row" style="margin-top:20px"><span class="pill">70% direct · £7.0m</span><span class="pill">30% member · £3.0m</span><span class="pill">12% gross margin</span><span class="pill">~15,700 passengers</span></div>
+</div></section>
+
+<!-- ===== TAB 3 — BUDGET ===== -->
 <section class="page" id="budget"><div class="wrap">
   <div class="modelhead">
     <div><h1>ORN Europe — UK operation <em>budget</em></h1>
-      <div class="sub">12-month seasonal projection · Nov 2026 → Oct 2027 · every month editable · all £</div></div>
+      <div class="sub">£10m year-1 target · 12-month seasonal projection · Nov 2026 → Oct 2027 · every month editable · all £</div></div>
     <div class="editacts">
       <button class="lgbtn pri" id="saveLockBtn" onclick="saveAndLock()">Save &amp; Lock</button>
       <button class="lgbtn" id="unlockBtn" onclick="unlock()" style="display:none">Unlock</button>
@@ -284,6 +391,11 @@
   <p class="body">Based on your monthly bookings at an average of <b id="paxAvgLbl">3</b> passengers per booking. Shows revenue returned, bookings and passengers carried, and the net position building to profit.</p>
   <div class="rtwrap"><table class="rt" id="rtbl"></table></div>
   <p class="body" style="font-size:12.5px;color:var(--grey2);margin-top:12px">The group earns the booking margin in each selling office's P&amp;L; ORN Europe protects and delivers it. The funding above covers Europe's running cost, repaid by the operation reaching monthly profit within the year.</p>
+
+  <div class="card" style="border-top-color:var(--amber);background:#fdf6ec;margin-top:18px">
+    <h3 style="color:var(--amber)">⚠ Working capital as sales scale</h3>
+    <p style="font-size:13px">The set-up and running costs above are held flat — as agreed, we are not inflating the cost base. But £10m of sales means real cash moving: deposits to suppliers often go out before client monies clear, so <b>as bookings ramp from spring, additional short-term working capital may be needed to bridge supplier payments.</b> This is funding against secured, paid-for bookings — not operating loss — and would be drawn only as volume requires.</p>
+  </div>
 </div></section>
 
 <footer><div class="wrap">
@@ -297,7 +409,7 @@
 let FB=null;
 async function loadFirebase(){const a=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");const d=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js");return {initializeApp:a.initializeApp,getDatabase:d.getDatabase,ref:d.ref,onValue:d.onValue,set:d.set};}
 const firebaseConfig={apiKey:"AIzaSyDEA_UgSvAUEWoyJHF6qBw3zWD_7-uiNKo",authDomain:"orn-hotel-review.firebaseapp.com",databaseURL:"https://orn-hotel-review-default-rtdb.europe-west1.firebasedatabase.app",projectId:"orn-hotel-review",storageBucket:"orn-hotel-review.firebasestorage.app",messagingSenderId:"130842489297",appId:"1:130842489297:web:5a554ef0691b42182330f0"};
-const DB_PATH="orn_board/uk_business_case/model_v6";
+const DB_PATH="orn_board/uk_business_case/model_v8";
 const UNLOCK_PW="3131";
 const MONTHS=["Nov 26","Dec 26","Jan 27","Feb 27","Mar 27","Apr 27","May 27","Jun 27","Jul 27","Aug 27","Sep 27","Oct 27"];
 const N=12;
@@ -306,9 +418,10 @@ const A=(list)=>list.slice(0,N);
 function defaults(){return{
   paxAvg:3,
   sales:[
-    {name:"FIT bookings — ORN AU + TAG + India", bk:A([10,20,50,50,75,75,100,100,200,200,200,200]), val:A([2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000]), mgn:A([15,15,15,15,15,15,15,15,15,15,15,15])},
-    {name:"Membership club bookings", bk:A([0,0,50,50,50,75,75,75,100,100,100,100]), val:A([1500,1500,1500,1500,1500,1500,1500,1500,1500,1500,1500,1500]), mgn:A([15,15,15,15,15,15,15,15,15,15,15,15])},
-    {name:"Other / misc revenue", bk:A([4,4,4,4,4,4,4,4,4,4,4,4]), val:A([2500,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500]), mgn:A([15,15,15,15,15,15,15,15,15,15,15,15])},
+    // Direct sales — 70% of £10m = £7.0m · 3,500 bookings @ £2,000 · ramps Jan–Oct. Nov–Dec = set-up.
+    {name:"Direct sales — Europe & worldwide", bk:A([0,35,140,175,245,280,350,385,420,455,490,525]), val:A([2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000]), mgn:A([12,12,12,12,12,12,12,12,12,12,12,12])},
+    // Member clubs — 30% of £10m = £3.0m · ~1,714 bookings @ £1,750 · credit programme from Jan.
+    {name:"Member clubs — credit programme (5.5m reach)", bk:A([0,0,69,87,121,138,173,190,208,225,243,260]), val:A([1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750]), mgn:A([12,12,12,12,12,12,12,12,12,12,12,12])},
   ],
   costs:[
     {name:"Ken Newton — Operations Manager",m:A([3000,3000,3000,3000,3000,3000,3000,3000,3000,3000,3000,3000])},
@@ -334,7 +447,7 @@ function defaults(){return{
 
 let M=migrate(load()||defaults());
 let db=null,connected=false;
-const LKEY="orn_uk_case_v6";
+const LKEY="orn_uk_case_v8";
 function load(){try{return JSON.parse(localStorage.getItem(LKEY));}catch(e){return null;}}
 function arr(v){return Array.from({length:N},()=>v);}
 function migrate(v){const d=defaults();v=Object.assign({},d,v||{});
@@ -415,7 +528,7 @@ function bindGrid(){
   g.querySelectorAll("input.cm").forEach(inp=>{inp.addEventListener("input",()=>{const ci=+inp.dataset.c,i=+inp.dataset.i;M.costs[ci].m[i]=Number(inp.value)||0;updateOutputs();liveSave();});});
   g.querySelectorAll("[data-sdel]").forEach(b=>b.addEventListener("click",()=>{if(locked())return;M.sales.splice(+b.dataset.sdel,1);renderGrid();updateOutputs();liveSave();}));
   g.querySelectorAll("[data-cdel]").forEach(b=>b.addEventListener("click",()=>{if(locked())return;M.costs.splice(+b.dataset.cdel,1);renderGrid();updateOutputs();liveSave();}));
-  g.querySelectorAll("[data-add]").forEach(b=>b.addEventListener("click",()=>{if(locked())return;if(b.dataset.add==="sales")M.sales.push({name:"New revenue line",bk:arr(5),val:arr(1500),mgn:arr(15)});else M.costs.push({name:"New cost line",m:arr(500)});renderGrid();updateOutputs();liveSave();}));
+  g.querySelectorAll("[data-add]").forEach(b=>b.addEventListener("click",()=>{if(locked())return;if(b.dataset.add==="sales")M.sales.push({name:"New revenue line",bk:arr(5),val:arr(1750),mgn:arr(12)});else M.costs.push({name:"New cost line",m:arr(500)});renderGrid();updateOutputs();liveSave();}));
 }
 function upd(g,sel,txt){const el=g.querySelector(sel);if(el)el.textContent=txt;}
 function updateOutputs(){
@@ -432,14 +545,17 @@ function updateOutputs(){
   upd(g,"[data-bkY]",num(bookingsYear()));upd(g,"[data-paxY]",num(paxYear()));
   const nY=g.querySelector("[data-netY]");if(nY){nY.textContent=netYear()<0?'('+gbp(-netYear())+')':gbp(netYear());nY.className="tot "+(netYear()<0?'neg':'pos');}
   upd(g,"[data-cumY]",cum<0?'('+gbp(-cum)+')':gbp(cum));
-  renderSummary();renderInvest();renderReturnTable();
+  renderSummary();renderInvest();renderReturnTable();renderGrowth();
 }
 function renderSummary(){
-  const rev=revYear()/N,cost=costYear()/N,net=netYear(),mgn=revYear()>0?(net/revYear()*100):0;
+  const salesVal=salesValYear();           // gross sales value (£10m target)
+  const gross=revYear();                    // group gross margin earned (12%)
+  const cost=costYear(),net=gross-cost;
+  const grossPct=salesVal>0?(gross/salesVal*100):0, netPct=salesVal>0?(net/salesVal*100):0;
   set("summary",`
-    <div class="sbox rev"><div class="l">Avg revenue / month</div><div class="v green">${gbp(rev)}</div><div class="sub">${gbp(revYear())} year 1</div></div>
-    <div class="sbox cost"><div class="l">Avg cost / month</div><div class="v red">${gbp(cost)}</div><div class="sub">${gbp(costYear())} year 1</div></div>
-    <div class="sbox net"><div class="l">Year-1 net</div><div class="v ${net>=0?'green':'red'}">${net<0?'('+gbp(-net)+')':gbp(net)}</div><div class="sub">across 12 months</div></div>
+    <div class="sbox rev"><div class="l">Year-1 sales</div><div class="v green">${gbp(salesVal)}</div><div class="sub">${num(bookingsYear())} bookings · target £10m</div></div>
+    <div class="sbox cost"><div class="l">Gross margin (${grossPct.toFixed(0)}%)</div><div class="v">${gbp(gross)}</div><div class="sub">earned by group on bookings</div></div>
+    <div class="sbox net"><div class="l">Net after op cost</div><div class="v ${net>=0?'green':'red'}">${net<0?'('+gbp(-net)+')':gbp(net)}</div><div class="sub">≈ ${netPct.toFixed(1)}% · 5% floor target</div></div>
     <div class="sbox pax"><div class="l">Passengers / year</div><div class="v blue">${num(paxYear())}</div><div class="sub">${num(bookingsYear())} bookings ×${M.paxAvg}</div></div>
     <div class="sbox fund"><div class="l">Funding to agree</div><div class="v amber">${gbp(totalFunding())}</div><div class="sub">2 tranches + ${gbp(M.bond)} bond</div></div>`,true);
 }
@@ -464,6 +580,62 @@ function renderReturnTable(){
   let cum=0,cTds="";for(let i=0;i<N;i++){cum+=netMonthI(i);cTds+=`<td class='${cum<0?'neg':'pos'}'>${cum<0?'('+gbp(-cum)+')':gbp(cum)}</td>`;}
   h+=`<tr class='net'><td class='lbl'>Cumulative</td>${cTds}<td class='tot ${cum<0?'neg':'pos'}'>${cum<0?'('+gbp(-cum)+')':gbp(cum)}</td></tr>`;
   h+="</tbody>";t.innerHTML=h;
+}
+// ---- Growth tab (driven live from the model) ----
+function lineRev(s){let t=0;for(let i=0;i<N;i++)t+=(Number(s.bk[i])||0)*(Number(s.val[i])||0);return t;}   // gross sales value (not margin)
+function lineRevMonth(s,i){return (Number(s.bk[i])||0)*(Number(s.val[i])||0);}
+function lineBook(s){let t=0;for(let i=0;i<N;i++)t+=(Number(s.bk[i])||0);return t;}
+function pickLine(key){ // key 'direct' | 'member'
+  const list=M.sales||[];
+  for(const s of list){const n=(s.name||'').toLowerCase();if(key==='direct'&&n.includes('direct'))return s;if(key==='member'&&(n.includes('member')||n.includes('club')))return s;}
+  // fallback by position
+  return key==='direct'?list[0]:list[1];
+}
+function salesValYear(){let t=0;(M.sales||[]).forEach(s=>t+=lineRev(s));return t;}
+function m1(n){return "£"+(n/1e6).toFixed(n>=1e7?1:2)+"m";}
+function renderGrowth(){
+  const D=pickLine('direct'),Mem=pickLine('member');
+  const dv=D?lineRev(D):0, mv=Mem?lineRev(Mem):0, tot=dv+mv;
+  const totBook=bookingsYear(), gross=salesValYear()*0 + (function(){let g=0;for(let i=0;i<N;i++)g+=revMonth(i);return g;})();
+  // revMonth already applies margin% → that's the group gross margin earned
+  // headline stats
+  const grossMargin=tot>0?(gross/tot*100):0;
+  const opCost=costYear(), net=gross-opCost, netPct=tot>0?(net/tot*100):0;
+  set("gstats",`
+    <div class="gstat"><div class="gl">Year-1 sales target</div><div class="gv">${m1(tot)}</div><div class="gs">${gbp(tot)} total bookings value</div></div>
+    <div class="gstat"><div class="gl">Gross margin · 12%</div><div class="gv">${gbp(gross)}</div><div class="gs">earned by the group on bookings</div></div>
+    <div class="gstat"><div class="gl">Net after op cost</div><div class="gv">${gbp(net)}</div><div class="gs">≈ ${netPct.toFixed(1)}% · beats the 5% floor</div></div>
+    <div class="gstat"><div class="gl">Bookings · year 1</div><div class="gv">${num(totBook)}</div><div class="gs">${num(paxYear())} passengers ×${M.paxAvg}</div></div>
+    <div class="gstat"><div class="gl">Member reach</div><div class="gv">5.5m</div><div class="gs">credit programme from Jan</div></div>`,true);
+  // ramp chart — stacked direct+member per month, scaled to max month
+  let maxM=1;for(let i=0;i<N;i++){const v=(D?lineRevMonth(D,i):0)+(Mem?lineRevMonth(Mem,i):0);if(v>maxM)maxM=v;}
+  let bars="";
+  for(let i=0;i<N;i++){
+    const d=D?lineRevMonth(D,i):0, mm=Mem?lineRevMonth(Mem,i):0, v=d+mm;
+    const setup=(i<2&&v< (tot*0.01)); // Nov/Dec with ~no sales
+    const hPx=Math.round((v/maxM)*200);
+    const dH=v>0?Math.round(hPx*(d/v)):0, mH=hPx-dH;
+    const lab=MONTHS[i].replace(' ',"'");
+    if(setup){
+      bars+=`<div class="bar setup"><div class="bv">set-up</div><div class="seg" style="height:8px"></div><div class="bl">${lab}</div></div>`;
+    }else{
+      bars+=`<div class="bar"><div class="bv">${v>=1e6?'£'+(v/1e6).toFixed(1)+'m':'£'+Math.round(v/1000)+'k'}</div><div class="seg d" style="height:${dH}px"></div><div class="seg m" style="height:${mH}px"></div><div class="bl">${lab}</div></div>`;
+    }
+  }
+  set("rampChart",bars,true);
+  // cumulative line
+  let run=0,parts=[];for(let i=0;i<N;i++){run+=(D?lineRevMonth(D,i):0)+(Mem?lineRevMonth(Mem,i):0);}
+  set("cumLine",`Cumulative sales build to <b>${gbp(run)}</b> across the year — Nov–Dec set-up, then ten selling months Jan–Oct. Each month's bar shows direct (black) stacked with member clubs (red).`,true);
+  // split bar
+  const dPct=tot>0?Math.round(dv/tot*100):70, mPct=100-dPct;
+  set("splitBar",`<div class="sd" style="flex:${dv||70}">${dPct}% direct</div><div class="sm" style="flex:${mv||30}">${mPct}% member</div>`,true);
+  set("splitRows",`
+    <div class="splitrow"><span class="sk"><span class="dot" style="background:var(--ink)"></span>Direct sales @ ${gbp(D?D.val[2]||2000:2000)} avg</span><span class="sv">${gbp(dv)} · ${num(D?lineBook(D):0)} bookings</span></div>
+    <div class="splitrow"><span class="sk"><span class="dot" style="background:var(--red)"></span>Member clubs @ ${gbp(Mem?Mem.val[2]||1750:1750)} avg</span><span class="sv">${gbp(mv)} · ${num(Mem?lineBook(Mem):0)} bookings</span></div>
+    <div class="splitrow" style="background:var(--panel3)"><span class="sk"><b>Total sales</b></span><span class="sv">${gbp(tot)} · ${num(totBook)} bookings</span></div>`,true);
+  // funnel figures (member)
+  set("fnBook",num(Mem?lineBook(Mem):0));
+  set("fnRev",m1(mv));
 }
 function renderLockUI(){
   const L=locked();
