@@ -179,6 +179,17 @@
   table.grid tr.netrow td{background:var(--red-soft);font-weight:700;font-family:var(--serif);border-top:2px solid var(--red-line);border-bottom:2px solid var(--red-line)}table.grid tr.netrow td.lbl{background:var(--red-soft)}
   table.grid tr.netrow td.neg{color:var(--red)}table.grid tr.netrow td.pos{color:var(--green)}
   table.grid tr.cumrow td{background:#fff;color:var(--grey);font-style:italic}table.grid tr.cumrow td.lbl{background:#fff}
+  /* readability: zebra striping on cost rows + group accent for reservations */
+  table.grid tr.costrow:nth-of-type(even) td:not(.lbl):not(.tot){background:#fbfbfa}
+  table.grid tr.costrow:nth-of-type(even) td.lbl{background:#fbfbfa}
+  table.grid tr.costrow td.lbl{font-weight:500}
+  table.grid tr.resrow td.lbl{border-left:3px solid var(--red);padding-left:12px;color:#444}
+  table.grid tr.resrow td.lbl::before{content:"👤 ";font-size:11px}
+  table.grid tr.resrow td:not(.lbl):not(.tot){background:#fdf6f7}
+  table.grid tr.resrow td.lbl{background:#fdf6f7}
+  table.grid tr.grp td.lbl::before{content:"";display:inline-block}
+  table.grid tr.grp td{background:#f3f0ec;border-top:2px solid var(--line2)}
+  table.grid tr.grp td.lbl{background:#f3f0ec;font-size:13px}
   .lblflex{display:flex;align-items:center;gap:6px}
   .lblflex input.nm{flex:1;border:1px solid transparent;background:transparent;font-size:12px;padding:3px 5px;border-radius:4px;color:var(--ink);font-weight:inherit;font-family:var(--sans)}
   .lblflex input.nm:hover:not(:disabled){border-color:var(--line2);background:#fff}.lblflex input.nm:focus{outline:none;border-color:var(--red);background:#fff}
@@ -469,12 +480,13 @@
 let FB=null;
 async function loadFirebase(){const a=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");const d=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js");return {initializeApp:a.initializeApp,getDatabase:d.getDatabase,ref:d.ref,onValue:d.onValue,set:d.set};}
 const firebaseConfig={apiKey:"AIzaSyDEA_UgSvAUEWoyJHF6qBw3zWD_7-uiNKo",authDomain:"orn-hotel-review.firebaseapp.com",databaseURL:"https://orn-hotel-review-default-rtdb.europe-west1.firebasedatabase.app",projectId:"orn-hotel-review",storageBucket:"orn-hotel-review.firebasestorage.app",messagingSenderId:"130842489297",appId:"1:130842489297:web:5a554ef0691b42182330f0"};
-const DB_PATH="orn_board/uk_business_case/model_v8";
+const DB_PATH="orn_board/uk_business_case/model_v9";
 const UNLOCK_PW="3131";
 const MONTHS=["Nov 26","Dec 26","Jan 27","Feb 27","Mar 27","Apr 27","May 27","Jun 27","Jul 27","Aug 27","Sep 27","Oct 27"];
 const N=12;
 const A=(list)=>list.slice(0,N);
 
+const MODELVER=8;  // bump to force the reservations/marketing structure onto any older saved model
 function defaults(){return{
   paxAvg:3,
   sales:[
@@ -518,13 +530,28 @@ function defaults(){return{
 
 let M=migrate(load()||defaults());
 let db=null,connected=false;
-const LKEY="orn_uk_case_v8";
+const LKEY="orn_uk_case_v9";
 function load(){try{return JSON.parse(localStorage.getItem(LKEY));}catch(e){return null;}}
 function arr(v){return Array.from({length:N},()=>v);}
 function migrate(v){const d=defaults();v=Object.assign({},d,v||{});
   (v.sales||[]).forEach(s=>{["bk","val","mgn"].forEach(k=>{if(!Array.isArray(s[k]))s[k]=arr(s[k]||0);while(s[k].length<N)s[k].push(s[k][s[k].length-1]||0);s[k]=s[k].slice(0,N);});});
   (v.costs||[]).forEach(c=>{if(!Array.isArray(c.m))c.m=arr(c.m||c.cost||0);while(c.m.length<N)c.m.push(c.m[c.m.length-1]||0);c.m=c.m.slice(0,N);});
   if(!v.paxAvg)v.paxAvg=3;if(v.bond===undefined)v.bond=40000;delete v.setup;
+  // --- guarantee the Reservations 1..11 staff lines exist (added in v8) ---
+  // If a saved model predates them (no "Reservations" line), inject them after Admin.
+  const hasRes=(v.costs||[]).some(c=>/^Reservations\b/i.test(c.name||""));
+  if(!hasRes){
+    const resLines=[
+      ["Reservations 1 — from Jan",2],["Reservations 2 — from Jan",2],["Reservations 3 — from Jan",2],["Reservations 4 — from Jan",2],
+      ["Reservations 5 — from Apr",5],["Reservations 6 — from Apr",5],["Reservations 7 — from Apr",5],["Reservations 8 — from Apr",5],
+      ["Reservations 9 — from Jul",8],["Reservations 10 — from Jul",8],["Reservations 11 — from Jul",8]
+    ].map(([nm,st])=>({name:nm,m:Array.from({length:N},(_,i)=>i>=st?2500:0)}));
+    // find Admin row to insert after; else append
+    let idx=(v.costs||[]).findIndex(c=>/admin/i.test(c.name||""));
+    if(idx<0)idx=(v.costs||[]).length-1;
+    v.costs.splice(idx+1,0,...resLines);
+  }
+  v.modelVer=MODELVER;
   return v;}
 
 const gbp=n=>"£"+Math.round(n).toLocaleString("en-GB");
@@ -582,7 +609,9 @@ function renderGrid(){
   h+="<tbody id='costBody'>";
   h+=`<tr class='sectn'><td class='lbl'>Costs — staff, premises, technology &amp; overheads</td>${MONTHS.map(()=>"<td></td>").join("")}<td class='tot'></td></tr>`;
   M.costs.forEach((c,ci)=>{const del=locked()?"disabled":"";
-    h+=`<tr><td class='lbl'><div class='lblflex'><input class='nm' data-cnm='${ci}' value="${(c.name||'').replace(/"/g,'&quot;')}" ${locked()?'disabled':''}><button class='del' data-cdel='${ci}' ${del}>✕</button></div></td>${c.m.map((v,i)=>`<td class='mcell'>${cellInput(v,'cm',`data-c='${ci}' data-i='${i}'`)}</td>`).join("")}<td class='tot' data-ctot='${ci}'>${gbp(c.m.reduce((a,x)=>a+(+x||0),0))}</td></tr>`;});
+    const isRes=/^Reservations\b/i.test(c.name||"");
+    const rowcls="costrow"+(isRes?" resrow":"");
+    h+=`<tr class='${rowcls}'><td class='lbl'><div class='lblflex'><input class='nm' data-cnm='${ci}' value="${(c.name||'').replace(/"/g,'&quot;')}" ${locked()?'disabled':''}><button class='del' data-cdel='${ci}' ${del}>✕</button></div></td>${c.m.map((v,i)=>`<td class='mcell'>${cellInput(v,'cm',`data-c='${ci}' data-i='${i}'`)}</td>`).join("")}<td class='tot' data-ctot='${ci}'>${gbp(c.m.reduce((a,x)=>a+(+x||0),0))}</td></tr>`;});
   h+=`<tr class='addbtnrow'><td colspan='${N+2}'><button data-add='cost' ${locked()?'disabled':''}>+ Add cost line</button></td></tr>`;
   h+=`<tr class='totrow'><td class='lbl'>Total costs</td>${MONTHS.map((_,i)=>`<td data-costtot='${i}'>${gbp(costMonth(i))}</td>`).join("")}<td class='tot' data-costtotY>${gbp(costYear())}</td></tr>`;
   h+="</tbody>";
