@@ -58,6 +58,15 @@
   .mstat .ml{font-size:12.5px;color:#e4e4e4;margin-top:6px;line-height:1.4}
   .mstat .ms{font-size:11px;color:#8f8f94;margin-top:4px}
   .mstat:nth-child(6){background:var(--red)}.mstat:nth-child(6) .ml{color:#ffe1e5}.mstat:nth-child(6) .ms{color:#ffc2ca}
+  .desttbl{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .desttbl table{width:100%;border-collapse:collapse;font-size:13px}
+  .desttbl th{background:#0e0e0f;color:#fff;text-align:left;padding:11px 14px;font-size:11.5px;letter-spacing:.4px;text-transform:uppercase;font-weight:600}
+  .desttbl th:nth-child(2),.desttbl th:nth-child(3){text-align:right}
+  .desttbl td{padding:10px 14px;border-top:1px solid var(--line);color:var(--ink)}
+  .desttbl td:nth-child(2),.desttbl td:nth-child(3){text-align:right;font-variant-numeric:tabular-nums}
+  .desttbl tr:nth-child(even) td{background:var(--panel2)}
+  .desttbl td.muted{color:var(--grey2);font-style:italic}
+  .desttbl td b{font-weight:600}
   .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:16px}.eyebrow .rule{width:34px;height:2px;background:var(--red)}
   .eyebrow span{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red)}
   h1.big{font-family:var(--serif);font-weight:400;font-size:40px;line-height:1.08;margin-bottom:16px;letter-spacing:-.5px}h1.big em{color:var(--red);font-style:italic}
@@ -267,20 +276,47 @@
   </div>
 
   <h2>The <em>market</em> — UK travellers to Europe</h2>
-  <p class="body">This isn't a niche we're hoping to create — it's a vast, established market we're positioned to take a share of. UK residents made <b>94.6 million</b> trips abroad in 2024, spending <b>£78.7 billion</b>, and Europe is where the majority of that goes. Capturing £10m of sales is a fraction of a fraction of the flow.</p>
+  <p class="body">This isn't a niche we're hoping to create — it's a vast, established market we're positioned to take a share of. UK residents make <b>94.6 million</b> trips abroad a year, spending close to <b>£79 billion</b> — and <b>77% of those trips, 70.6 million, are to Europe</b>. Capturing £10m of sales is a fraction of a fraction of that flow.</p>
   <div class="mstats">
-    <div class="mstat"><div class="mv">94.6m</div><div class="ml">UK visits abroad in 2024</div><div class="ms">ONS Travel Trends 2024</div></div>
-    <div class="mstat"><div class="mv">£78.7bn</div><div class="ml">spent by UK residents abroad</div><div class="ms">ONS Travel Trends 2024</div></div>
-    <div class="mstat"><div class="mv">18.2m</div><div class="ml">visits to Spain — #1 destination</div><div class="ms">France 9.1m · Italy 4.9m</div></div>
-    <div class="mstat"><div class="mv">~70%</div><div class="ml">of UK outbound travel is to Europe</div><div class="ms">top destinations all European</div></div>
+    <div class="mstat"><div class="mv">94.6m</div><div class="ml">UK visits abroad a year</div><div class="ms">ONS Travel Trends</div></div>
+    <div class="mstat"><div class="mv">70.6m</div><div class="ml">of those are to Europe — 77%</div><div class="ms">our market, on our doorstep</div></div>
+    <div class="mstat"><div class="mv">£79bn</div><div class="ml">spent by UK residents abroad</div><div class="ms">~£831 average per trip</div></div>
+    <div class="mstat"><div class="mv">17.8m</div><div class="ml">visit Spain — #1 destination</div><div class="ms">France 9.3m · Italy 4.8m</div></div>
     <div class="mstat"><div class="mv">+15%</div><div class="ml">forecast outbound growth, 5 yrs</div><div class="ms">ABTA outlook</div></div>
     <div class="mstat"><div class="mv">£10m</div><div class="ml">our year-1 target</div><div class="ms">a sliver of the European flow</div></div>
   </div>
-  <div class="grid2 g2" style="margin-top:14px">
-    <div class="card" style="border-top-color:var(--red)"><h3><span class="ic">🚌</span>Tours &amp; escorted touring</h3><p style="font-size:13px">Escorted and group touring is one of the fastest-recovering segments — higher value, higher margin, and exactly what an in-Europe DMC contracts and delivers best. Spain, Italy and France lead demand.</p></div>
-    <div class="card" style="border-top-color:var(--red)"><h3><span class="ic">🚐</span>Private van &amp; small-group tours</h3><p style="font-size:13px">Premium, bespoke private touring — the Sacred Journeys model and private van product — commands £2,000+ per booking and travels well across member clubs.</p></div>
-    <div class="card" style="border-top-color:var(--red)"><h3><span class="ic">🏙️</span>City breaks</h3><p style="font-size:13px">The volume engine — short, repeatable European city breaks feed the direct-sales line and the member-club credit programme alike. High frequency, broad appeal.</p></div>
-    <div class="card" style="border-top-color:var(--red)"><h3><span class="ic">🛳️</span>Cruise, river &amp; experiences</h3><p style="font-size:13px">European river cruise and experience product rounds out the mix — contracted at source, delivered to the group's one standard.</p></div>
+
+  <h3 style="font-family:var(--serif);font-weight:400;font-size:18px;margin:24px 0 10px">Where UK travellers go in Europe — and what they spend</h3>
+  <div class="desttbl">
+    <table>
+      <thead><tr><th>Destination</th><th>UK visits / year</th><th>Typical spend / day</th><th>What ORN sells there</th></tr></thead>
+      <tbody>
+        <tr><td><b>Spain</b> · Barcelona, Madrid, islands</td><td>17.8m</td><td>£105</td><td>City breaks · touring · beach</td></tr>
+        <tr><td><b>France</b> · Paris, Nice, regions</td><td>9.3m</td><td>£144</td><td>City breaks · escorted touring</td></tr>
+        <tr><td><b>Italy</b> · Rome, Venice, Florence</td><td>4.8m</td><td>£114</td><td>Escorted touring · city breaks</td></tr>
+        <tr><td><b>Greece</b> · Athens, islands</td><td>3.8m</td><td>£113</td><td>Island touring · private tours</td></tr>
+        <tr><td><b>Portugal</b> · Lisbon, Algarve</td><td>3.7m</td><td>£98</td><td>City breaks · touring</td></tr>
+        <tr><td><b>Germany</b> · cities &amp; Rhine</td><td>3.2m</td><td>£106</td><td>River cruise · city breaks</td></tr>
+        <tr><td><b>Switzerland</b> · Alps &amp; lakes</td><td class="muted">premium</td><td>£172</td><td>Private van · escorted touring</td></tr>
+        <tr><td><b>Netherlands</b> · Amsterdam</td><td class="muted">high</td><td>£124</td><td>City breaks · river cruise</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="hint" style="margin-top:8px">Spain, France and Italy alone account for ~32m UK visits a year. Switzerland and the Netherlands carry the highest daily spend — the premium touring and private-van product we're built to deliver.</p>
+
+  <h3 style="font-family:var(--serif);font-weight:400;font-size:18px;margin:24px 0 10px">The product mix we sell into it</h3>
+  <div class="grid2 g2" style="margin-top:4px">
+    <div class="card" style="border-top-color:var(--red)"><h3><span class="ic">🚌</span>Tours &amp; escorted touring</h3><p style="font-size:13px">One of the fastest-recovering, highest-margin segments — multi-country itineraries through France, Switzerland, Italy. Exactly what an in-Europe DMC contracts and delivers best.</p></div>
+    <div class="card" style="border-top-color:var(--red)"><h3><span class="ic">🚐</span>Private van &amp; small-group tours</h3><p style="font-size:13px">Premium, bespoke private touring — the Sacred Journeys model — commands £2,000+ per booking, highest daily spend, and travels well across member clubs.</p></div>
+    <div class="card" style="border-top-color:var(--red)"><h3><span class="ic">🏙️</span>City breaks</h3><p style="font-size:13px">The volume engine — Paris, Barcelona, Madrid, Rome, Amsterdam. Short, repeatable, broad appeal; feeds both direct sales and the member-club credit programme.</p></div>
+    <div class="card" style="border-top-color:var(--red)"><h3><span class="ic">🛳️</span>Cruise, river &amp; experiences</h3><p style="font-size:13px">Rhine and European river cruise, plus experiences — contracted at source, delivered to the group's one standard.</p></div>
+  </div>
+
+  <h2>Why do this — and why <em>now</em></h2>
+  <div class="grid2 g3">
+    <div class="card" style="border-top-color:var(--red)"><h3>The market is already here</h3><p>70.6m UK trips to Europe every year, growing 15% over five years. We don't need to create demand — we need to capture a sliver of an established, growing flow we sit right inside.</p></div>
+    <div class="card" style="border-top-color:var(--red)"><h3>We're positioned, not starting cold</h3><p>Experienced team, live sales, supplier and partner contacts, and 5.5m member reach through the credit programme — the pieces are in place now, not in two years.</p></div>
+    <div class="card" style="border-top-color:var(--red)"><h3>The cost of waiting</h3><p>Every month without control on the ground, margin leaks through poor booking and errors. Australia proved the model; delay just hands the European upside to someone else.</p></div>
   </div>
 
   <h2>The <em>benefits</em> to the group</h2>
@@ -452,7 +488,17 @@ function defaults(){return{
     {name:"Contractor — Contracting",m:A([3000,3000,3000,3000,3000,3000,3000,3000,3000,3000,3000,3000])},
     {name:"Tim Windsor — GIT QC Manager",m:A([2400,2400,2400,2400,2400,2400,2400,2400,2400,2400,2400,2400])},
     {name:"Admin — Office Support",m:A([1500,1500,1500,1500,1500,1500,1500,1500,1500,1500,1500,1500])},
-    {name:"Reservations team — scales with sales (+4 Jan, +4 Apr, +3 Jul @ £2,500)",m:A([0,0,10000,10000,10000,20000,20000,20000,27500,27500,27500,27500])},
+    {name:"Reservations 1 — from Jan",m:A([0,0,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500])},
+    {name:"Reservations 2 — from Jan",m:A([0,0,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500])},
+    {name:"Reservations 3 — from Jan",m:A([0,0,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500])},
+    {name:"Reservations 4 — from Jan",m:A([0,0,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500])},
+    {name:"Reservations 5 — from Apr",m:A([0,0,0,0,0,2500,2500,2500,2500,2500,2500,2500])},
+    {name:"Reservations 6 — from Apr",m:A([0,0,0,0,0,2500,2500,2500,2500,2500,2500,2500])},
+    {name:"Reservations 7 — from Apr",m:A([0,0,0,0,0,2500,2500,2500,2500,2500,2500,2500])},
+    {name:"Reservations 8 — from Apr",m:A([0,0,0,0,0,2500,2500,2500,2500,2500,2500,2500])},
+    {name:"Reservations 9 — from Jul",m:A([0,0,0,0,0,0,0,0,2500,2500,2500,2500])},
+    {name:"Reservations 10 — from Jul",m:A([0,0,0,0,0,0,0,0,2500,2500,2500,2500])},
+    {name:"Reservations 11 — from Jul",m:A([0,0,0,0,0,0,0,0,2500,2500,2500,2500])},
     {name:"Office rent — 17 Hanover Sq, Mayfair",m:A([2500,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500])},
     {name:"Phones (3CX / mobiles)",m:A([250,250,250,250,250,250,250,250,250,250,250,250])},
     {name:"IT, software & systems",m:A([400,400,400,400,400,400,400,400,400,400,400,400])},
